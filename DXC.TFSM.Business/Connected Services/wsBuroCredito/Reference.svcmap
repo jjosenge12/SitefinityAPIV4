@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="15e8e8ad-62f1-400d-ba2c-485f041d745d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>true</GenerateInternalTypes>
+    <GenerateMessageContracts>true</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://www.toyotafinanciamientotest.com.mx/wcfBuroCredito/ServiceBC.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BuroCredito.wsdl" MetadataType="Wsdl" ID="8b39e6e1-2fe9-4b27-908d-2c2108f102ec" SourceId="1" SourceUrl="https://www.toyotafinanciamientotest.com.mx/wcfBuroCredito/ServiceBC.svc?wsdl" />
+    <MetadataFile FileName="ServiceBC.xsd" MetadataType="Schema" ID="767dfda2-3ea3-44af-a4c4-7fb0ae0880b9" SourceId="1" SourceUrl="https://www.toyotafinanciamientotest.com.mx/wcfBuroCredito/ServiceBC.svc?xsd=xsd5" />
+    <MetadataFile FileName="ServiceBC.disco" MetadataType="Disco" ID="51171e71-51b2-4a24-b62b-a18281dd89d3" SourceId="1" SourceUrl="https://www.toyotafinanciamientotest.com.mx/wcfBuroCredito/ServiceBC.svc?disco" />
+    <MetadataFile FileName="ServiceBC1.xsd" MetadataType="Schema" ID="3b3bb5f1-b1e1-4051-87b5-22bb427827dc" SourceId="1" SourceUrl="https://www.toyotafinanciamientotest.com.mx/wcfBuroCredito/ServiceBC.svc?xsd=xsd4" />
+    <MetadataFile FileName="ServiceBC2.xsd" MetadataType="Schema" ID="53355f16-9dbb-4d7d-8cb4-18d88fd8c89d" SourceId="1" SourceUrl="https://www.toyotafinanciamientotest.com.mx/wcfBuroCredito/ServiceBC.svc?xsd=xsd6" />
+    <MetadataFile FileName="ServiceBC3.xsd" MetadataType="Schema" ID="137a7ed9-8627-43f5-8f8d-9b6d0a53d694" SourceId="1" SourceUrl="https://www.toyotafinanciamientotest.com.mx/wcfBuroCredito/ServiceBC.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceBC4.xsd" MetadataType="Schema" ID="31f874dd-40b5-49bf-b3e6-542f9ff06802" SourceId="1" SourceUrl="https://www.toyotafinanciamientotest.com.mx/wcfBuroCredito/ServiceBC.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceBC5.xsd" MetadataType="Schema" ID="e1e0b198-de87-4b67-aa9a-77390f7644e3" SourceId="1" SourceUrl="https://www.toyotafinanciamientotest.com.mx/wcfBuroCredito/ServiceBC.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServiceBC6.xsd" MetadataType="Schema" ID="1f559e21-4b9a-4d8b-8690-bbac3db6319b" SourceId="1" SourceUrl="https://www.toyotafinanciamientotest.com.mx/wcfBuroCredito/ServiceBC.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

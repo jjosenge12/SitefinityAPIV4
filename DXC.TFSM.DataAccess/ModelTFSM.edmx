@@ -1,0 +1,1659 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TFSM_Portal_CotizadorModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.paso_portal_C_Aseguradora' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="paso_portal_C_Aseguradora">
+          <Key>
+            <PropertyRef Name="id_aseguradora" />
+            <PropertyRef Name="descripcion" />
+            <PropertyRef Name="aplica_derecho" />
+          </Key>
+          <Property Name="id_aseguradora" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="aplica_derecho" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.paso_portal_C_Auto' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="paso_portal_C_Auto">
+          <Key>
+            <PropertyRef Name="id_auto" />
+            <PropertyRef Name="des_auto" />
+          </Key>
+          <Property Name="id_auto" Type="int" Nullable="false" />
+          <Property Name="des_auto" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.paso_portal_C_Coberturas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="paso_portal_C_Coberturas">
+          <Key>
+            <PropertyRef Name="id_aseguradora" />
+            <PropertyRef Name="descripcion_aseguradora" />
+            <PropertyRef Name="id_cobertura" />
+            <PropertyRef Name="descripcion" />
+            <PropertyRef Name="derecho" />
+          </Key>
+          <Property Name="id_aseguradora" Type="int" Nullable="false" />
+          <Property Name="descripcion_aseguradora" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_cobertura" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="derecho" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.paso_portal_C_DescEstados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="paso_portal_C_DescEstados">
+          <Key>
+            <PropertyRef Name="id_aseguradora" />
+            <PropertyRef Name="id_modelo" />
+          </Key>
+          <Property Name="id_aseguradora" Type="int" Nullable="false" />
+          <Property Name="id_modelo" Type="int" Nullable="false" />
+          <Property Name="AGS" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="BCN" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="BCS" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="CAMP" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="CHIS" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="CHIH" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="COAH" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="COL" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="DF" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="DGO" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="EDOMEX" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="GTO" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="GRO" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="HGO" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="JAL" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="NAY" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="NVO_LEON" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="MICH" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="MOR" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="OAX" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="PUE" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="QRO" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="Q_ROO" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="SLP" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="SIN" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="SON" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="TAB" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="TAMPS" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="TLAX" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="VER" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="YUC" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="ZAC" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="BCN_FRONTERA" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="CHIH_FRONTERA" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="NVO_LEON_FRONTERA" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="SON_FRONTERA" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="Q_ROO_FRONTERA" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="TAMPS_FRONTERA" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="BCS_FRONTERA" Type="decimal" Precision="18" Scale="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.paso_portal_C_Estados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="paso_portal_C_Estados">
+          <Key>
+            <PropertyRef Name="id_estado" />
+            <PropertyRef Name="descripcion" />
+          </Key>
+          <Property Name="id_estado" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cve" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.paso_portal_C_Modelos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="paso_portal_C_Modelos">
+          <Key>
+            <PropertyRef Name="id_auto" />
+            <PropertyRef Name="id_tipo" />
+            <PropertyRef Name="id_modelo" />
+            <PropertyRef Name="des_auto" />
+          </Key>
+          <Property Name="id_auto" Type="int" Nullable="false" />
+          <Property Name="id_tipo" Type="int" Nullable="false" />
+          <Property Name="id_modelo" Type="int" Nullable="false" />
+          <Property Name="des_auto" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descripcion_tipo" Type="varchar" MaxLength="50" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="precio" Type="decimal" Precision="18" Scale="4" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.paso_portal_C_PlazoAseguradora' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="paso_portal_C_PlazoAseguradora">
+          <Key>
+            <PropertyRef Name="id_aseguradora" />
+            <PropertyRef Name="id_plazo" />
+            <PropertyRef Name="factor" />
+            <PropertyRef Name="factor_ano" />
+          </Key>
+          <Property Name="id_aseguradora" Type="int" Nullable="false" />
+          <Property Name="id_plazo" Type="int" Nullable="false" />
+          <Property Name="factor" Type="numeric" Precision="18" Scale="8" Nullable="false" />
+          <Property Name="factor_ano" Type="numeric" Precision="18" Scale="8" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.paso_portal_C_Plazos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="paso_portal_C_Plazos">
+          <Key>
+            <PropertyRef Name="id_plazo" />
+            <PropertyRef Name="des_plazo" />
+          </Key>
+          <Property Name="id_plazo" Type="int" Nullable="false" />
+          <Property Name="des_plazo" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.paso_portal_C_Tipo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="paso_portal_C_Tipo">
+          <Key>
+            <PropertyRef Name="id_tipo" />
+            <PropertyRef Name="id_auto" />
+          </Key>
+          <Property Name="id_tipo" Type="int" Nullable="false" />
+          <Property Name="id_auto" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.tbl_cotizador_estados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbl_cotizador_estados">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="idPais" />
+            <PropertyRef Name="Codigo" />
+            <PropertyRef Name="estado" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idPais" Type="int" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estado" Type="varchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.tbl_cotizador_paises' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbl_cotizador_paises">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="codigo" />
+            <PropertyRef Name="pais" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="pais" Type="varchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_perfilador_C_Preguntas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Clave" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Titulo" Type="varchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Subtitulo" Type="varchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Pregunta" Type="varchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Activa" Type="bit" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_perfilador_Destinos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Clave" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Plan" Type="varchar" MaxLength="100" />
+          <Property Name="Imagen" Type="varchar" MaxLength="200" />
+          <Property Name="Activa" Type="bit" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.tbl_perfilador_Respuestas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbl_perfilador_Respuestas">
+          <Key>
+            <PropertyRef Name="IdRespuesta" />
+            <PropertyRef Name="Clave" />
+            <PropertyRef Name="Orden" />
+            <PropertyRef Name="Respuesta" />
+            <PropertyRef Name="Valor" />
+            <PropertyRef Name="Activa" />
+            <PropertyRef Name="IdPregunta" />
+          </Key>
+          <Property Name="IdRespuesta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Clave" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Orden" Type="int" Nullable="false" />
+          <Property Name="Respuesta" Type="varchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Valor" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="Activa" Type="bit" Nullable="false" />
+          <Property Name="IdPregunta" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.tbl_portal_C_Aseguradora' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbl_portal_C_Aseguradora">
+          <Key>
+            <PropertyRef Name="id_aseguradora" />
+            <PropertyRef Name="descripcion" />
+            <PropertyRef Name="aplica_derecho" />
+          </Key>
+          <Property Name="id_aseguradora" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="aplica_derecho" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.tbl_portal_C_Auto' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbl_portal_C_Auto">
+          <Key>
+            <PropertyRef Name="id_auto" />
+            <PropertyRef Name="des_auto" />
+          </Key>
+          <Property Name="id_auto" Type="int" Nullable="false" />
+          <Property Name="des_auto" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.tbl_portal_C_Coberturas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbl_portal_C_Coberturas">
+          <Key>
+            <PropertyRef Name="id_aseguradora" />
+            <PropertyRef Name="descripcion_aseguradora" />
+            <PropertyRef Name="id_cobertura" />
+            <PropertyRef Name="descripcion" />
+            <PropertyRef Name="derecho" />
+          </Key>
+          <Property Name="id_aseguradora" Type="int" Nullable="false" />
+          <Property Name="descripcion_aseguradora" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_cobertura" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="derecho" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.tbl_portal_C_CoeficienteAnualidad' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbl_portal_C_CoeficienteAnualidad">
+          <Key>
+            <PropertyRef Name="id_CoeficienteAnualidad" />
+            <PropertyRef Name="plazo" />
+            <PropertyRef Name="Minimo" />
+            <PropertyRef Name="Maximo" />
+          </Key>
+          <Property Name="id_CoeficienteAnualidad" Type="int" Nullable="false" />
+          <Property Name="plazo" Type="int" Nullable="false" />
+          <Property Name="Minimo" Type="numeric" Precision="18" Scale="3" Nullable="false" />
+          <Property Name="Maximo" Type="numeric" Precision="18" Scale="3" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.tbl_portal_C_DescEstados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbl_portal_C_DescEstados">
+          <Key>
+            <PropertyRef Name="id_aseguradora" />
+            <PropertyRef Name="id_modelo" />
+          </Key>
+          <Property Name="id_aseguradora" Type="int" Nullable="false" />
+          <Property Name="id_modelo" Type="int" Nullable="false" />
+          <Property Name="AGS" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="BCN" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="BCS" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="CAMP" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="CHIS" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="CHIH" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="COAH" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="COL" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="DF" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="DGO" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="EDOMEX" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="GTO" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="GRO" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="HGO" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="JAL" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="NAY" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="NVO_LEON" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="MICH" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="MOR" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="OAX" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="PUE" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="QRO" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="Q_ROO" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="SLP" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="SIN" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="SON" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="TAB" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="TAMPS" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="TLAX" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="VER" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="YUC" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="ZAC" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="BCN_FRONTERA" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="CHIH_FRONTERA" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="NVO_LEON_FRONTERA" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="SON_FRONTERA" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="Q_ROO_FRONTERA" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="TAMPS_FRONTERA" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="BCS_FRONTERA" Type="decimal" Precision="18" Scale="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.tbl_portal_C_DescEstados_V' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbl_portal_C_DescEstados_V">
+          <Key>
+            <PropertyRef Name="id_aseguradora" />
+            <PropertyRef Name="id_modelo" />
+          </Key>
+          <Property Name="id_aseguradora" Type="int" Nullable="false" />
+          <Property Name="id_modelo" Type="int" Nullable="false" />
+          <Property Name="estado" Type="varchar" MaxLength="30" />
+          <Property Name="valor" Type="decimal" Precision="18" Scale="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.tbl_portal_C_Estados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbl_portal_C_Estados">
+          <Key>
+            <PropertyRef Name="id_estado" />
+            <PropertyRef Name="descripcion" />
+          </Key>
+          <Property Name="id_estado" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cve" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.tbl_portal_C_Modelos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbl_portal_C_Modelos">
+          <Key>
+            <PropertyRef Name="id_auto" />
+            <PropertyRef Name="id_tipo" />
+            <PropertyRef Name="id_modelo" />
+            <PropertyRef Name="des_auto" />
+          </Key>
+          <Property Name="id_auto" Type="int" Nullable="false" />
+          <Property Name="id_tipo" Type="int" Nullable="false" />
+          <Property Name="id_modelo" Type="int" Nullable="false" />
+          <Property Name="des_auto" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descripcion_tipo" Type="varchar" MaxLength="50" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="precio" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="tipo_carrusel" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.tbl_portal_C_plan' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbl_portal_C_plan">
+          <Key>
+            <PropertyRef Name="id_plan" />
+            <PropertyRef Name="plan" />
+          </Key>
+          <Property Name="id_plan" Type="int" Nullable="false" />
+          <Property Name="plan" Type="varchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.tbl_portal_C_PlazoAseguradora' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbl_portal_C_PlazoAseguradora">
+          <Key>
+            <PropertyRef Name="id_aseguradora" />
+            <PropertyRef Name="id_plazo" />
+            <PropertyRef Name="factor" />
+            <PropertyRef Name="factor_ano" />
+          </Key>
+          <Property Name="id_aseguradora" Type="int" Nullable="false" />
+          <Property Name="id_plazo" Type="int" Nullable="false" />
+          <Property Name="factor" Type="numeric" Precision="18" Scale="8" Nullable="false" />
+          <Property Name="factor_ano" Type="numeric" Precision="18" Scale="8" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.tbl_portal_C_Plazos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbl_portal_C_Plazos">
+          <Key>
+            <PropertyRef Name="id_plazo" />
+            <PropertyRef Name="des_plazo" />
+          </Key>
+          <Property Name="id_plazo" Type="int" Nullable="false" />
+          <Property Name="des_plazo" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.tbl_portal_C_Tipo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbl_portal_C_Tipo">
+          <Key>
+            <PropertyRef Name="id_tipo" />
+            <PropertyRef Name="id_auto" />
+          </Key>
+          <Property Name="id_tipo" Type="int" Nullable="false" />
+          <Property Name="id_auto" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.tbl_portal_C_tipo_persona' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbl_portal_C_tipo_persona">
+          <Key>
+            <PropertyRef Name="id_tipo_persona" />
+            <PropertyRef Name="tipo_persona" />
+          </Key>
+          <Property Name="id_tipo_persona" Type="int" Nullable="false" />
+          <Property Name="tipo_persona" Type="varchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.tbl_portal_C_TipoUso' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbl_portal_C_TipoUso">
+          <Key>
+            <PropertyRef Name="id_tipo_uso" />
+          </Key>
+          <Property Name="id_tipo_uso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_portal_Distribuidores">
+          <Key>
+            <PropertyRef Name="IdDealer" />
+          </Key>
+          <Property Name="IdDealer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdState" Type="int" Nullable="false" />
+          <Property Name="Dealer" Type="varchar" MaxLength="900" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Adress" Type="varchar(max)" />
+          <Property Name="Lat" Type="varchar" MaxLength="500" />
+          <Property Name="Lng" Type="varchar" MaxLength="500" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="PostalCode" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.tbl_portal_Llaves' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbl_portal_Llaves">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="KeyValue" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KeyValue" Type="varchar" MaxLength="900" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFSM_Portal_Cotizador.dbo.tbl_portal_parametros' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbl_portal_parametros">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="valor" Type="float" />
+        </EntityType>
+        <Function Name="sp_actualiza_catalogos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_actualiza_catalogos_portal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_costo_total_seguro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Estado" Type="varchar" Mode="In" />
+          <Parameter Name="Aseguradora" Type="varchar" Mode="In" />
+          <Parameter Name="Cobertura" Type="varchar" Mode="In" />
+          <Parameter Name="Auto" Type="varchar" Mode="In" />
+          <Parameter Name="Tipo" Type="varchar" Mode="In" />
+          <Parameter Name="Modelo" Type="varchar" Mode="In" />
+          <Parameter Name="Tipo_Uso" Type="varchar" Mode="In" />
+          <Parameter Name="PagoInicial" Type="varchar" Mode="In" />
+          <Parameter Name="Plazo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_llena_C_DescEstados_V" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="trae_parametro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
+          <Parameter Name="nom_parametro" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="TFSM_Portal_CotizadorModelStoreContainer">
+          <EntitySet Name="tbl_perfilador_C_Preguntas" EntityType="Self.tbl_perfilador_C_Preguntas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_perfilador_Destinos" EntityType="Self.tbl_perfilador_Destinos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_portal_Distribuidores" EntityType="Self.tbl_portal_Distribuidores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="paso_portal_C_Aseguradora" EntityType="Self.paso_portal_C_Aseguradora" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [paso_portal_C_Aseguradora].[id_aseguradora] AS [id_aseguradora], 
+    [paso_portal_C_Aseguradora].[descripcion] AS [descripcion], 
+    [paso_portal_C_Aseguradora].[aplica_derecho] AS [aplica_derecho]
+    FROM [dbo].[paso_portal_C_Aseguradora] AS [paso_portal_C_Aseguradora]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="paso_portal_C_Auto" EntityType="Self.paso_portal_C_Auto" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [paso_portal_C_Auto].[id_auto] AS [id_auto], 
+    [paso_portal_C_Auto].[des_auto] AS [des_auto]
+    FROM [dbo].[paso_portal_C_Auto] AS [paso_portal_C_Auto]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="paso_portal_C_Coberturas" EntityType="Self.paso_portal_C_Coberturas" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [paso_portal_C_Coberturas].[id_aseguradora] AS [id_aseguradora], 
+    [paso_portal_C_Coberturas].[descripcion_aseguradora] AS [descripcion_aseguradora], 
+    [paso_portal_C_Coberturas].[id_cobertura] AS [id_cobertura], 
+    [paso_portal_C_Coberturas].[descripcion] AS [descripcion], 
+    [paso_portal_C_Coberturas].[derecho] AS [derecho]
+    FROM [dbo].[paso_portal_C_Coberturas] AS [paso_portal_C_Coberturas]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="paso_portal_C_DescEstados" EntityType="Self.paso_portal_C_DescEstados" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [paso_portal_C_DescEstados].[id_aseguradora] AS [id_aseguradora], 
+    [paso_portal_C_DescEstados].[id_modelo] AS [id_modelo], 
+    [paso_portal_C_DescEstados].[AGS] AS [AGS], 
+    [paso_portal_C_DescEstados].[BCN] AS [BCN], 
+    [paso_portal_C_DescEstados].[BCS] AS [BCS], 
+    [paso_portal_C_DescEstados].[CAMP] AS [CAMP], 
+    [paso_portal_C_DescEstados].[CHIS] AS [CHIS], 
+    [paso_portal_C_DescEstados].[CHIH] AS [CHIH], 
+    [paso_portal_C_DescEstados].[COAH] AS [COAH], 
+    [paso_portal_C_DescEstados].[COL] AS [COL], 
+    [paso_portal_C_DescEstados].[DF] AS [DF], 
+    [paso_portal_C_DescEstados].[DGO] AS [DGO], 
+    [paso_portal_C_DescEstados].[EDOMEX] AS [EDOMEX], 
+    [paso_portal_C_DescEstados].[GTO] AS [GTO], 
+    [paso_portal_C_DescEstados].[GRO] AS [GRO], 
+    [paso_portal_C_DescEstados].[HGO] AS [HGO], 
+    [paso_portal_C_DescEstados].[JAL] AS [JAL], 
+    [paso_portal_C_DescEstados].[NAY] AS [NAY], 
+    [paso_portal_C_DescEstados].[NVO_LEON] AS [NVO_LEON], 
+    [paso_portal_C_DescEstados].[MICH] AS [MICH], 
+    [paso_portal_C_DescEstados].[MOR] AS [MOR], 
+    [paso_portal_C_DescEstados].[OAX] AS [OAX], 
+    [paso_portal_C_DescEstados].[PUE] AS [PUE], 
+    [paso_portal_C_DescEstados].[QRO] AS [QRO], 
+    [paso_portal_C_DescEstados].[Q_ROO] AS [Q_ROO], 
+    [paso_portal_C_DescEstados].[SLP] AS [SLP], 
+    [paso_portal_C_DescEstados].[SIN] AS [SIN], 
+    [paso_portal_C_DescEstados].[SON] AS [SON], 
+    [paso_portal_C_DescEstados].[TAB] AS [TAB], 
+    [paso_portal_C_DescEstados].[TAMPS] AS [TAMPS], 
+    [paso_portal_C_DescEstados].[TLAX] AS [TLAX], 
+    [paso_portal_C_DescEstados].[VER] AS [VER], 
+    [paso_portal_C_DescEstados].[YUC] AS [YUC], 
+    [paso_portal_C_DescEstados].[ZAC] AS [ZAC], 
+    [paso_portal_C_DescEstados].[BCN_FRONTERA] AS [BCN_FRONTERA], 
+    [paso_portal_C_DescEstados].[CHIH_FRONTERA] AS [CHIH_FRONTERA], 
+    [paso_portal_C_DescEstados].[NVO_LEON_FRONTERA] AS [NVO_LEON_FRONTERA], 
+    [paso_portal_C_DescEstados].[SON_FRONTERA] AS [SON_FRONTERA], 
+    [paso_portal_C_DescEstados].[Q_ROO_FRONTERA] AS [Q_ROO_FRONTERA], 
+    [paso_portal_C_DescEstados].[TAMPS_FRONTERA] AS [TAMPS_FRONTERA], 
+    [paso_portal_C_DescEstados].[BCS_FRONTERA] AS [BCS_FRONTERA]
+    FROM [dbo].[paso_portal_C_DescEstados] AS [paso_portal_C_DescEstados]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="paso_portal_C_Estados" EntityType="Self.paso_portal_C_Estados" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [paso_portal_C_Estados].[id_estado] AS [id_estado], 
+    [paso_portal_C_Estados].[descripcion] AS [descripcion], 
+    [paso_portal_C_Estados].[cve] AS [cve]
+    FROM [dbo].[paso_portal_C_Estados] AS [paso_portal_C_Estados]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="paso_portal_C_Modelos" EntityType="Self.paso_portal_C_Modelos" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [paso_portal_C_Modelos].[id_auto] AS [id_auto], 
+    [paso_portal_C_Modelos].[id_tipo] AS [id_tipo], 
+    [paso_portal_C_Modelos].[id_modelo] AS [id_modelo], 
+    [paso_portal_C_Modelos].[des_auto] AS [des_auto], 
+    [paso_portal_C_Modelos].[descripcion_tipo] AS [descripcion_tipo], 
+    [paso_portal_C_Modelos].[descripcion] AS [descripcion], 
+    [paso_portal_C_Modelos].[precio] AS [precio]
+    FROM [dbo].[paso_portal_C_Modelos] AS [paso_portal_C_Modelos]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="paso_portal_C_PlazoAseguradora" EntityType="Self.paso_portal_C_PlazoAseguradora" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [paso_portal_C_PlazoAseguradora].[id_aseguradora] AS [id_aseguradora], 
+    [paso_portal_C_PlazoAseguradora].[id_plazo] AS [id_plazo], 
+    [paso_portal_C_PlazoAseguradora].[factor] AS [factor], 
+    [paso_portal_C_PlazoAseguradora].[factor_ano] AS [factor_ano]
+    FROM [dbo].[paso_portal_C_PlazoAseguradora] AS [paso_portal_C_PlazoAseguradora]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="paso_portal_C_Plazos" EntityType="Self.paso_portal_C_Plazos" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [paso_portal_C_Plazos].[id_plazo] AS [id_plazo], 
+    [paso_portal_C_Plazos].[des_plazo] AS [des_plazo]
+    FROM [dbo].[paso_portal_C_Plazos] AS [paso_portal_C_Plazos]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="paso_portal_C_Tipo" EntityType="Self.paso_portal_C_Tipo" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [paso_portal_C_Tipo].[id_tipo] AS [id_tipo], 
+    [paso_portal_C_Tipo].[id_auto] AS [id_auto], 
+    [paso_portal_C_Tipo].[descripcion] AS [descripcion]
+    FROM [dbo].[paso_portal_C_Tipo] AS [paso_portal_C_Tipo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbl_cotizador_estados" EntityType="Self.tbl_cotizador_estados" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbl_cotizador_estados].[id] AS [id], 
+    [tbl_cotizador_estados].[idPais] AS [idPais], 
+    [tbl_cotizador_estados].[Codigo] AS [Codigo], 
+    [tbl_cotizador_estados].[estado] AS [estado]
+    FROM [dbo].[tbl_cotizador_estados] AS [tbl_cotizador_estados]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbl_cotizador_paises" EntityType="Self.tbl_cotizador_paises" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbl_cotizador_paises].[id] AS [id], 
+    [tbl_cotizador_paises].[codigo] AS [codigo], 
+    [tbl_cotizador_paises].[pais] AS [pais]
+    FROM [dbo].[tbl_cotizador_paises] AS [tbl_cotizador_paises]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbl_perfilador_Respuestas" EntityType="Self.tbl_perfilador_Respuestas" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbl_perfilador_Respuestas].[IdRespuesta] AS [IdRespuesta], 
+    [tbl_perfilador_Respuestas].[Clave] AS [Clave], 
+    [tbl_perfilador_Respuestas].[Orden] AS [Orden], 
+    [tbl_perfilador_Respuestas].[Respuesta] AS [Respuesta], 
+    [tbl_perfilador_Respuestas].[Valor] AS [Valor], 
+    [tbl_perfilador_Respuestas].[Activa] AS [Activa], 
+    [tbl_perfilador_Respuestas].[IdPregunta] AS [IdPregunta]
+    FROM [dbo].[tbl_perfilador_Respuestas] AS [tbl_perfilador_Respuestas]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbl_portal_C_Aseguradora" EntityType="Self.tbl_portal_C_Aseguradora" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbl_portal_C_Aseguradora].[id_aseguradora] AS [id_aseguradora], 
+    [tbl_portal_C_Aseguradora].[descripcion] AS [descripcion], 
+    [tbl_portal_C_Aseguradora].[aplica_derecho] AS [aplica_derecho]
+    FROM [dbo].[tbl_portal_C_Aseguradora] AS [tbl_portal_C_Aseguradora]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbl_portal_C_Auto" EntityType="Self.tbl_portal_C_Auto" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbl_portal_C_Auto].[id_auto] AS [id_auto], 
+    [tbl_portal_C_Auto].[des_auto] AS [des_auto]
+    FROM [dbo].[tbl_portal_C_Auto] AS [tbl_portal_C_Auto]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbl_portal_C_Coberturas" EntityType="Self.tbl_portal_C_Coberturas" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbl_portal_C_Coberturas].[id_aseguradora] AS [id_aseguradora], 
+    [tbl_portal_C_Coberturas].[descripcion_aseguradora] AS [descripcion_aseguradora], 
+    [tbl_portal_C_Coberturas].[id_cobertura] AS [id_cobertura], 
+    [tbl_portal_C_Coberturas].[descripcion] AS [descripcion], 
+    [tbl_portal_C_Coberturas].[derecho] AS [derecho]
+    FROM [dbo].[tbl_portal_C_Coberturas] AS [tbl_portal_C_Coberturas]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbl_portal_C_CoeficienteAnualidad" EntityType="Self.tbl_portal_C_CoeficienteAnualidad" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbl_portal_C_CoeficienteAnualidad].[id_CoeficienteAnualidad] AS [id_CoeficienteAnualidad], 
+    [tbl_portal_C_CoeficienteAnualidad].[plazo] AS [plazo], 
+    [tbl_portal_C_CoeficienteAnualidad].[Minimo] AS [Minimo], 
+    [tbl_portal_C_CoeficienteAnualidad].[Maximo] AS [Maximo]
+    FROM [dbo].[tbl_portal_C_CoeficienteAnualidad] AS [tbl_portal_C_CoeficienteAnualidad]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbl_portal_C_DescEstados" EntityType="Self.tbl_portal_C_DescEstados" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbl_portal_C_DescEstados].[id_aseguradora] AS [id_aseguradora], 
+    [tbl_portal_C_DescEstados].[id_modelo] AS [id_modelo], 
+    [tbl_portal_C_DescEstados].[AGS] AS [AGS], 
+    [tbl_portal_C_DescEstados].[BCN] AS [BCN], 
+    [tbl_portal_C_DescEstados].[BCS] AS [BCS], 
+    [tbl_portal_C_DescEstados].[CAMP] AS [CAMP], 
+    [tbl_portal_C_DescEstados].[CHIS] AS [CHIS], 
+    [tbl_portal_C_DescEstados].[CHIH] AS [CHIH], 
+    [tbl_portal_C_DescEstados].[COAH] AS [COAH], 
+    [tbl_portal_C_DescEstados].[COL] AS [COL], 
+    [tbl_portal_C_DescEstados].[DF] AS [DF], 
+    [tbl_portal_C_DescEstados].[DGO] AS [DGO], 
+    [tbl_portal_C_DescEstados].[EDOMEX] AS [EDOMEX], 
+    [tbl_portal_C_DescEstados].[GTO] AS [GTO], 
+    [tbl_portal_C_DescEstados].[GRO] AS [GRO], 
+    [tbl_portal_C_DescEstados].[HGO] AS [HGO], 
+    [tbl_portal_C_DescEstados].[JAL] AS [JAL], 
+    [tbl_portal_C_DescEstados].[NAY] AS [NAY], 
+    [tbl_portal_C_DescEstados].[NVO_LEON] AS [NVO_LEON], 
+    [tbl_portal_C_DescEstados].[MICH] AS [MICH], 
+    [tbl_portal_C_DescEstados].[MOR] AS [MOR], 
+    [tbl_portal_C_DescEstados].[OAX] AS [OAX], 
+    [tbl_portal_C_DescEstados].[PUE] AS [PUE], 
+    [tbl_portal_C_DescEstados].[QRO] AS [QRO], 
+    [tbl_portal_C_DescEstados].[Q_ROO] AS [Q_ROO], 
+    [tbl_portal_C_DescEstados].[SLP] AS [SLP], 
+    [tbl_portal_C_DescEstados].[SIN] AS [SIN], 
+    [tbl_portal_C_DescEstados].[SON] AS [SON], 
+    [tbl_portal_C_DescEstados].[TAB] AS [TAB], 
+    [tbl_portal_C_DescEstados].[TAMPS] AS [TAMPS], 
+    [tbl_portal_C_DescEstados].[TLAX] AS [TLAX], 
+    [tbl_portal_C_DescEstados].[VER] AS [VER], 
+    [tbl_portal_C_DescEstados].[YUC] AS [YUC], 
+    [tbl_portal_C_DescEstados].[ZAC] AS [ZAC], 
+    [tbl_portal_C_DescEstados].[BCN_FRONTERA] AS [BCN_FRONTERA], 
+    [tbl_portal_C_DescEstados].[CHIH_FRONTERA] AS [CHIH_FRONTERA], 
+    [tbl_portal_C_DescEstados].[NVO_LEON_FRONTERA] AS [NVO_LEON_FRONTERA], 
+    [tbl_portal_C_DescEstados].[SON_FRONTERA] AS [SON_FRONTERA], 
+    [tbl_portal_C_DescEstados].[Q_ROO_FRONTERA] AS [Q_ROO_FRONTERA], 
+    [tbl_portal_C_DescEstados].[TAMPS_FRONTERA] AS [TAMPS_FRONTERA], 
+    [tbl_portal_C_DescEstados].[BCS_FRONTERA] AS [BCS_FRONTERA]
+    FROM [dbo].[tbl_portal_C_DescEstados] AS [tbl_portal_C_DescEstados]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbl_portal_C_DescEstados_V" EntityType="Self.tbl_portal_C_DescEstados_V" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbl_portal_C_DescEstados_V].[id_aseguradora] AS [id_aseguradora], 
+    [tbl_portal_C_DescEstados_V].[id_modelo] AS [id_modelo], 
+    [tbl_portal_C_DescEstados_V].[estado] AS [estado], 
+    [tbl_portal_C_DescEstados_V].[valor] AS [valor]
+    FROM [dbo].[tbl_portal_C_DescEstados_V] AS [tbl_portal_C_DescEstados_V]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbl_portal_C_Estados" EntityType="Self.tbl_portal_C_Estados" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbl_portal_C_Estados].[id_estado] AS [id_estado], 
+    [tbl_portal_C_Estados].[descripcion] AS [descripcion], 
+    [tbl_portal_C_Estados].[cve] AS [cve]
+    FROM [dbo].[tbl_portal_C_Estados] AS [tbl_portal_C_Estados]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbl_portal_C_Modelos" EntityType="Self.tbl_portal_C_Modelos" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbl_portal_C_Modelos].[id_auto] AS [id_auto], 
+    [tbl_portal_C_Modelos].[id_tipo] AS [id_tipo], 
+    [tbl_portal_C_Modelos].[id_modelo] AS [id_modelo], 
+    [tbl_portal_C_Modelos].[des_auto] AS [des_auto], 
+    [tbl_portal_C_Modelos].[descripcion_tipo] AS [descripcion_tipo], 
+    [tbl_portal_C_Modelos].[descripcion] AS [descripcion], 
+    [tbl_portal_C_Modelos].[precio] AS [precio], 
+    [tbl_portal_C_Modelos].[tipo_carrusel] AS [tipo_carrusel]
+    FROM [dbo].[tbl_portal_C_Modelos] AS [tbl_portal_C_Modelos]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbl_portal_C_plan" EntityType="Self.tbl_portal_C_plan" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbl_portal_C_plan].[id_plan] AS [id_plan], 
+    [tbl_portal_C_plan].[plan] AS [plan]
+    FROM [dbo].[tbl_portal_C_plan] AS [tbl_portal_C_plan]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbl_portal_C_PlazoAseguradora" EntityType="Self.tbl_portal_C_PlazoAseguradora" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbl_portal_C_PlazoAseguradora].[id_aseguradora] AS [id_aseguradora], 
+    [tbl_portal_C_PlazoAseguradora].[id_plazo] AS [id_plazo], 
+    [tbl_portal_C_PlazoAseguradora].[factor] AS [factor], 
+    [tbl_portal_C_PlazoAseguradora].[factor_ano] AS [factor_ano]
+    FROM [dbo].[tbl_portal_C_PlazoAseguradora] AS [tbl_portal_C_PlazoAseguradora]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbl_portal_C_Plazos" EntityType="Self.tbl_portal_C_Plazos" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbl_portal_C_Plazos].[id_plazo] AS [id_plazo], 
+    [tbl_portal_C_Plazos].[des_plazo] AS [des_plazo]
+    FROM [dbo].[tbl_portal_C_Plazos] AS [tbl_portal_C_Plazos]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbl_portal_C_Tipo" EntityType="Self.tbl_portal_C_Tipo" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbl_portal_C_Tipo].[id_tipo] AS [id_tipo], 
+    [tbl_portal_C_Tipo].[id_auto] AS [id_auto], 
+    [tbl_portal_C_Tipo].[descripcion] AS [descripcion]
+    FROM [dbo].[tbl_portal_C_Tipo] AS [tbl_portal_C_Tipo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbl_portal_C_tipo_persona" EntityType="Self.tbl_portal_C_tipo_persona" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbl_portal_C_tipo_persona].[id_tipo_persona] AS [id_tipo_persona], 
+    [tbl_portal_C_tipo_persona].[tipo_persona] AS [tipo_persona]
+    FROM [dbo].[tbl_portal_C_tipo_persona] AS [tbl_portal_C_tipo_persona]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbl_portal_C_TipoUso" EntityType="Self.tbl_portal_C_TipoUso" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbl_portal_C_TipoUso].[id_tipo_uso] AS [id_tipo_uso], 
+    [tbl_portal_C_TipoUso].[descripcion] AS [descripcion]
+    FROM [dbo].[tbl_portal_C_TipoUso] AS [tbl_portal_C_TipoUso]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbl_portal_Llaves" EntityType="Self.tbl_portal_Llaves" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbl_portal_Llaves].[id] AS [id], 
+    [tbl_portal_Llaves].[KeyValue] AS [KeyValue], 
+    [tbl_portal_Llaves].[Status] AS [Status]
+    FROM [dbo].[tbl_portal_Llaves] AS [tbl_portal_Llaves]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tbl_portal_parametros" EntityType="Self.tbl_portal_parametros" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbl_portal_parametros].[id] AS [id], 
+    [tbl_portal_parametros].[nombre] AS [nombre], 
+    [tbl_portal_parametros].[descripcion] AS [descripcion], 
+    [tbl_portal_parametros].[valor] AS [valor]
+    FROM [dbo].[tbl_portal_parametros] AS [tbl_portal_parametros]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TFSM_Portal_CotizadorModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TFSM_PortalCotizadorEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="sp_costo_total_seguro" ReturnType="Collection(TFSM_Portal_CotizadorModel.sp_costo_total_seguro_Result)">
+            <Parameter Name="Estado" Mode="In" Type="String" />
+            <Parameter Name="Aseguradora" Mode="In" Type="String" />
+            <Parameter Name="Cobertura" Mode="In" Type="String" />
+            <Parameter Name="Auto" Mode="In" Type="String" />
+            <Parameter Name="Tipo" Mode="In" Type="String" />
+            <Parameter Name="Modelo" Mode="In" Type="String" />
+            <Parameter Name="Tipo_Uso" Mode="In" Type="String" />
+            <Parameter Name="PagoInicial" Mode="In" Type="String" />
+            <Parameter Name="Plazo" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="tbl_perfilador_C_Preguntas" EntityType="TFSM_Portal_CotizadorModel.tbl_perfilador_C_Preguntas" />
+          <EntitySet Name="tbl_perfilador_Destinos" EntityType="TFSM_Portal_CotizadorModel.tbl_perfilador_Destinos" />
+          <EntitySet Name="paso_portal_C_Aseguradora" EntityType="TFSM_Portal_CotizadorModel.paso_portal_C_Aseguradora" />
+          <EntitySet Name="paso_portal_C_Auto" EntityType="TFSM_Portal_CotizadorModel.paso_portal_C_Auto" />
+          <EntitySet Name="paso_portal_C_Coberturas" EntityType="TFSM_Portal_CotizadorModel.paso_portal_C_Coberturas" />
+          <EntitySet Name="paso_portal_C_DescEstados" EntityType="TFSM_Portal_CotizadorModel.paso_portal_C_DescEstados" />
+          <EntitySet Name="paso_portal_C_Estados" EntityType="TFSM_Portal_CotizadorModel.paso_portal_C_Estados" />
+          <EntitySet Name="paso_portal_C_Modelos" EntityType="TFSM_Portal_CotizadorModel.paso_portal_C_Modelos" />
+          <EntitySet Name="paso_portal_C_PlazoAseguradora" EntityType="TFSM_Portal_CotizadorModel.paso_portal_C_PlazoAseguradora" />
+          <EntitySet Name="paso_portal_C_Plazos" EntityType="TFSM_Portal_CotizadorModel.paso_portal_C_Plazos" />
+          <EntitySet Name="paso_portal_C_Tipo" EntityType="TFSM_Portal_CotizadorModel.paso_portal_C_Tipo" />
+          <EntitySet Name="tbl_cotizador_estados" EntityType="TFSM_Portal_CotizadorModel.tbl_cotizador_estados" />
+          <EntitySet Name="tbl_cotizador_paises" EntityType="TFSM_Portal_CotizadorModel.tbl_cotizador_paises" />
+          <EntitySet Name="tbl_perfilador_Respuestas" EntityType="TFSM_Portal_CotizadorModel.tbl_perfilador_Respuestas" />
+          <EntitySet Name="tbl_portal_C_Aseguradora" EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_Aseguradora" />
+          <EntitySet Name="tbl_portal_C_Auto" EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_Auto" />
+          <EntitySet Name="tbl_portal_C_Coberturas" EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_Coberturas" />
+          <EntitySet Name="tbl_portal_C_CoeficienteAnualidad" EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_CoeficienteAnualidad" />
+          <EntitySet Name="tbl_portal_C_DescEstados" EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_DescEstados" />
+          <EntitySet Name="tbl_portal_C_DescEstados_V" EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_DescEstados_V" />
+          <EntitySet Name="tbl_portal_C_Estados" EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_Estados" />
+          <EntitySet Name="tbl_portal_C_Modelos" EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_Modelos" />
+          <EntitySet Name="tbl_portal_C_plan" EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_plan" />
+          <EntitySet Name="tbl_portal_C_PlazoAseguradora" EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_PlazoAseguradora" />
+          <EntitySet Name="tbl_portal_C_Plazos" EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_Plazos" />
+          <EntitySet Name="tbl_portal_C_Tipo" EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_Tipo" />
+          <EntitySet Name="tbl_portal_C_tipo_persona" EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_tipo_persona" />
+          <EntitySet Name="tbl_portal_C_TipoUso" EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_TipoUso" />
+          <EntitySet Name="tbl_portal_Distribuidores" EntityType="TFSM_Portal_CotizadorModel.tbl_portal_Distribuidores" />
+          <EntitySet Name="tbl_portal_Llaves" EntityType="TFSM_Portal_CotizadorModel.tbl_portal_Llaves" />
+          <EntitySet Name="tbl_portal_parametros" EntityType="TFSM_Portal_CotizadorModel.tbl_portal_parametros" />
+          <FunctionImport Name="sp_actualiza_catalogos" />
+          <FunctionImport Name="sp_actualiza_catalogos_portal" />
+          <FunctionImport Name="sp_llena_C_DescEstados_V" />
+          </EntityContainer>
+        <ComplexType Name="sp_costo_total_seguro_Result">
+          <Property Type="String" Name="Column1" Nullable="false" MaxLength="6" />
+          <Property Type="Double" Name="Column2" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="tbl_perfilador_C_Preguntas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Clave" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Titulo" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Subtitulo" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Pregunta" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Activa" Type="Boolean" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="tbl_perfilador_Destinos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Clave" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Plan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Imagen" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Activa" Type="Boolean" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="paso_portal_C_Aseguradora">
+          <Key>
+            <PropertyRef Name="id_aseguradora" />
+            <PropertyRef Name="descripcion" />
+            <PropertyRef Name="aplica_derecho" />
+          </Key>
+          <Property Name="id_aseguradora" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="aplica_derecho" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="paso_portal_C_Auto">
+          <Key>
+            <PropertyRef Name="id_auto" />
+            <PropertyRef Name="des_auto" />
+          </Key>
+          <Property Name="id_auto" Type="Int32" Nullable="false" />
+          <Property Name="des_auto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="paso_portal_C_Coberturas">
+          <Key>
+            <PropertyRef Name="id_aseguradora" />
+            <PropertyRef Name="descripcion_aseguradora" />
+            <PropertyRef Name="id_cobertura" />
+            <PropertyRef Name="descripcion" />
+            <PropertyRef Name="derecho" />
+          </Key>
+          <Property Name="id_aseguradora" Type="Int32" Nullable="false" />
+          <Property Name="descripcion_aseguradora" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_cobertura" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="derecho" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="paso_portal_C_DescEstados">
+          <Key>
+            <PropertyRef Name="id_aseguradora" />
+            <PropertyRef Name="id_modelo" />
+          </Key>
+          <Property Name="id_aseguradora" Type="Int32" Nullable="false" />
+          <Property Name="id_modelo" Type="Int32" Nullable="false" />
+          <Property Name="AGS" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="BCN" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="BCS" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="CAMP" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="CHIS" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="CHIH" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="COAH" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="COL" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="DF" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="DGO" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="EDOMEX" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="GTO" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="GRO" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="HGO" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="JAL" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="NAY" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="NVO_LEON" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="MICH" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="MOR" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="OAX" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="PUE" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="QRO" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="Q_ROO" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="SLP" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="SIN" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="SON" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="TAB" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="TAMPS" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="TLAX" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="VER" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="YUC" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="ZAC" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="BCN_FRONTERA" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="CHIH_FRONTERA" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="NVO_LEON_FRONTERA" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="SON_FRONTERA" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="Q_ROO_FRONTERA" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="TAMPS_FRONTERA" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="BCS_FRONTERA" Type="Decimal" Precision="18" Scale="10" />
+        </EntityType>
+        <EntityType Name="paso_portal_C_Estados">
+          <Key>
+            <PropertyRef Name="id_estado" />
+            <PropertyRef Name="descripcion" />
+          </Key>
+          <Property Name="id_estado" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cve" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="paso_portal_C_Modelos">
+          <Key>
+            <PropertyRef Name="id_auto" />
+            <PropertyRef Name="id_tipo" />
+            <PropertyRef Name="id_modelo" />
+            <PropertyRef Name="des_auto" />
+          </Key>
+          <Property Name="id_auto" Type="Int32" Nullable="false" />
+          <Property Name="id_tipo" Type="Int32" Nullable="false" />
+          <Property Name="id_modelo" Type="Int32" Nullable="false" />
+          <Property Name="des_auto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion_tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="precio" Type="Decimal" Precision="18" Scale="4" />
+        </EntityType>
+        <EntityType Name="paso_portal_C_PlazoAseguradora">
+          <Key>
+            <PropertyRef Name="id_aseguradora" />
+            <PropertyRef Name="id_plazo" />
+            <PropertyRef Name="factor" />
+            <PropertyRef Name="factor_ano" />
+          </Key>
+          <Property Name="id_aseguradora" Type="Int32" Nullable="false" />
+          <Property Name="id_plazo" Type="Int32" Nullable="false" />
+          <Property Name="factor" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+          <Property Name="factor_ano" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+        </EntityType>
+        <EntityType Name="paso_portal_C_Plazos">
+          <Key>
+            <PropertyRef Name="id_plazo" />
+            <PropertyRef Name="des_plazo" />
+          </Key>
+          <Property Name="id_plazo" Type="Int32" Nullable="false" />
+          <Property Name="des_plazo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="paso_portal_C_Tipo">
+          <Key>
+            <PropertyRef Name="id_tipo" />
+            <PropertyRef Name="id_auto" />
+          </Key>
+          <Property Name="id_tipo" Type="Int32" Nullable="false" />
+          <Property Name="id_auto" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_cotizador_estados">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="idPais" />
+            <PropertyRef Name="Codigo" />
+            <PropertyRef Name="estado" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPais" Type="Int32" Nullable="false" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_cotizador_paises">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="codigo" />
+            <PropertyRef Name="pais" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pais" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_perfilador_Respuestas">
+          <Key>
+            <PropertyRef Name="IdRespuesta" />
+            <PropertyRef Name="Clave" />
+            <PropertyRef Name="Orden" />
+            <PropertyRef Name="Respuesta" />
+            <PropertyRef Name="Valor" />
+            <PropertyRef Name="Activa" />
+            <PropertyRef Name="IdPregunta" />
+          </Key>
+          <Property Name="IdRespuesta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Clave" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Orden" Type="Int32" Nullable="false" />
+          <Property Name="Respuesta" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Valor" Type="Decimal" Nullable="false" Precision="8" Scale="2" />
+          <Property Name="Activa" Type="Boolean" Nullable="false" />
+          <Property Name="IdPregunta" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_portal_C_Aseguradora">
+          <Key>
+            <PropertyRef Name="id_aseguradora" />
+            <PropertyRef Name="descripcion" />
+            <PropertyRef Name="aplica_derecho" />
+          </Key>
+          <Property Name="id_aseguradora" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="aplica_derecho" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_portal_C_Auto">
+          <Key>
+            <PropertyRef Name="id_auto" />
+            <PropertyRef Name="des_auto" />
+          </Key>
+          <Property Name="id_auto" Type="Int32" Nullable="false" />
+          <Property Name="des_auto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_portal_C_Coberturas">
+          <Key>
+            <PropertyRef Name="id_aseguradora" />
+            <PropertyRef Name="descripcion_aseguradora" />
+            <PropertyRef Name="id_cobertura" />
+            <PropertyRef Name="descripcion" />
+            <PropertyRef Name="derecho" />
+          </Key>
+          <Property Name="id_aseguradora" Type="Int32" Nullable="false" />
+          <Property Name="descripcion_aseguradora" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_cobertura" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="derecho" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="tbl_portal_C_CoeficienteAnualidad">
+          <Key>
+            <PropertyRef Name="id_CoeficienteAnualidad" />
+            <PropertyRef Name="plazo" />
+            <PropertyRef Name="Minimo" />
+            <PropertyRef Name="Maximo" />
+          </Key>
+          <Property Name="id_CoeficienteAnualidad" Type="Int32" Nullable="false" />
+          <Property Name="plazo" Type="Int32" Nullable="false" />
+          <Property Name="Minimo" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+          <Property Name="Maximo" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="tbl_portal_C_DescEstados">
+          <Key>
+            <PropertyRef Name="id_aseguradora" />
+            <PropertyRef Name="id_modelo" />
+          </Key>
+          <Property Name="id_aseguradora" Type="Int32" Nullable="false" />
+          <Property Name="id_modelo" Type="Int32" Nullable="false" />
+          <Property Name="AGS" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="BCN" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="BCS" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="CAMP" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="CHIS" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="CHIH" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="COAH" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="COL" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="DF" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="DGO" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="EDOMEX" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="GTO" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="GRO" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="HGO" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="JAL" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="NAY" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="NVO_LEON" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="MICH" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="MOR" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="OAX" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="PUE" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="QRO" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="Q_ROO" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="SLP" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="SIN" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="SON" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="TAB" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="TAMPS" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="TLAX" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="VER" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="YUC" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="ZAC" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="BCN_FRONTERA" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="CHIH_FRONTERA" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="NVO_LEON_FRONTERA" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="SON_FRONTERA" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="Q_ROO_FRONTERA" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="TAMPS_FRONTERA" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="BCS_FRONTERA" Type="Decimal" Precision="18" Scale="10" />
+        </EntityType>
+        <EntityType Name="tbl_portal_C_DescEstados_V">
+          <Key>
+            <PropertyRef Name="id_aseguradora" />
+            <PropertyRef Name="id_modelo" />
+          </Key>
+          <Property Name="id_aseguradora" Type="Int32" Nullable="false" />
+          <Property Name="id_modelo" Type="Int32" Nullable="false" />
+          <Property Name="estado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="valor" Type="Decimal" Precision="18" Scale="10" />
+        </EntityType>
+        <EntityType Name="tbl_portal_C_Estados">
+          <Key>
+            <PropertyRef Name="id_estado" />
+            <PropertyRef Name="descripcion" />
+          </Key>
+          <Property Name="id_estado" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cve" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_portal_C_Modelos">
+          <Key>
+            <PropertyRef Name="id_auto" />
+            <PropertyRef Name="id_tipo" />
+            <PropertyRef Name="id_modelo" />
+            <PropertyRef Name="des_auto" />
+          </Key>
+          <Property Name="id_auto" Type="Int32" Nullable="false" />
+          <Property Name="id_tipo" Type="Int32" Nullable="false" />
+          <Property Name="id_modelo" Type="Int32" Nullable="false" />
+          <Property Name="des_auto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion_tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="precio" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="tipo_carrusel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_portal_C_plan">
+          <Key>
+            <PropertyRef Name="id_plan" />
+            <PropertyRef Name="plan" />
+          </Key>
+          <Property Name="id_plan" Type="Int32" Nullable="false" />
+          <Property Name="plan" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_portal_C_PlazoAseguradora">
+          <Key>
+            <PropertyRef Name="id_aseguradora" />
+            <PropertyRef Name="id_plazo" />
+            <PropertyRef Name="factor" />
+            <PropertyRef Name="factor_ano" />
+          </Key>
+          <Property Name="id_aseguradora" Type="Int32" Nullable="false" />
+          <Property Name="id_plazo" Type="Int32" Nullable="false" />
+          <Property Name="factor" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+          <Property Name="factor_ano" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+        </EntityType>
+        <EntityType Name="tbl_portal_C_Plazos">
+          <Key>
+            <PropertyRef Name="id_plazo" />
+            <PropertyRef Name="des_plazo" />
+          </Key>
+          <Property Name="id_plazo" Type="Int32" Nullable="false" />
+          <Property Name="des_plazo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_portal_C_Tipo">
+          <Key>
+            <PropertyRef Name="id_tipo" />
+            <PropertyRef Name="id_auto" />
+          </Key>
+          <Property Name="id_tipo" Type="Int32" Nullable="false" />
+          <Property Name="id_auto" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_portal_C_tipo_persona">
+          <Key>
+            <PropertyRef Name="id_tipo_persona" />
+            <PropertyRef Name="tipo_persona" />
+          </Key>
+          <Property Name="id_tipo_persona" Type="Int32" Nullable="false" />
+          <Property Name="tipo_persona" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_portal_C_TipoUso">
+          <Key>
+            <PropertyRef Name="id_tipo_uso" />
+          </Key>
+          <Property Name="id_tipo_uso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_portal_Distribuidores">
+          <Key>
+            <PropertyRef Name="IdDealer" />
+          </Key>
+          <Property Name="IdDealer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdState" Type="Int32" Nullable="false" />
+          <Property Name="Dealer" Type="String" Nullable="false" MaxLength="900" FixedLength="false" Unicode="false" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Adress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Lat" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Lng" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_portal_Llaves">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="KeyValue" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KeyValue" Type="String" Nullable="false" MaxLength="900" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_portal_parametros">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="valor" Type="Double" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TFSM_Portal_CotizadorModelStoreContainer" CdmEntityContainer="TFSM_PortalCotizadorEntities">
+          <FunctionImportMapping FunctionImportName="sp_costo_total_seguro" FunctionName="TFSM_Portal_CotizadorModel.Store.sp_costo_total_seguro">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TFSM_Portal_CotizadorModel.sp_costo_total_seguro_Result">
+                <ScalarProperty Name="Column1" ColumnName="Column1" />
+                <ScalarProperty Name="Column2" ColumnName="Column2" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="tbl_perfilador_C_Preguntas">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.tbl_perfilador_C_Preguntas">
+              <MappingFragment StoreEntitySet="tbl_perfilador_C_Preguntas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Activa" ColumnName="Activa" />
+                <ScalarProperty Name="Pregunta" ColumnName="Pregunta" />
+                <ScalarProperty Name="Subtitulo" ColumnName="Subtitulo" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_perfilador_Destinos">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.tbl_perfilador_Destinos">
+              <MappingFragment StoreEntitySet="tbl_perfilador_Destinos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Activa" ColumnName="Activa" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="Plan" ColumnName="Plan" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="paso_portal_C_Aseguradora">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.paso_portal_C_Aseguradora">
+              <MappingFragment StoreEntitySet="paso_portal_C_Aseguradora">
+                <ScalarProperty Name="aplica_derecho" ColumnName="aplica_derecho" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="id_aseguradora" ColumnName="id_aseguradora" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="paso_portal_C_Auto">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.paso_portal_C_Auto">
+              <MappingFragment StoreEntitySet="paso_portal_C_Auto">
+                <ScalarProperty Name="des_auto" ColumnName="des_auto" />
+                <ScalarProperty Name="id_auto" ColumnName="id_auto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="paso_portal_C_Coberturas">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.paso_portal_C_Coberturas">
+              <MappingFragment StoreEntitySet="paso_portal_C_Coberturas">
+                <ScalarProperty Name="derecho" ColumnName="derecho" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="id_cobertura" ColumnName="id_cobertura" />
+                <ScalarProperty Name="descripcion_aseguradora" ColumnName="descripcion_aseguradora" />
+                <ScalarProperty Name="id_aseguradora" ColumnName="id_aseguradora" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="paso_portal_C_DescEstados">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.paso_portal_C_DescEstados">
+              <MappingFragment StoreEntitySet="paso_portal_C_DescEstados">
+                <ScalarProperty Name="BCS_FRONTERA" ColumnName="BCS_FRONTERA" />
+                <ScalarProperty Name="TAMPS_FRONTERA" ColumnName="TAMPS_FRONTERA" />
+                <ScalarProperty Name="Q_ROO_FRONTERA" ColumnName="Q_ROO_FRONTERA" />
+                <ScalarProperty Name="SON_FRONTERA" ColumnName="SON_FRONTERA" />
+                <ScalarProperty Name="NVO_LEON_FRONTERA" ColumnName="NVO_LEON_FRONTERA" />
+                <ScalarProperty Name="CHIH_FRONTERA" ColumnName="CHIH_FRONTERA" />
+                <ScalarProperty Name="BCN_FRONTERA" ColumnName="BCN_FRONTERA" />
+                <ScalarProperty Name="ZAC" ColumnName="ZAC" />
+                <ScalarProperty Name="YUC" ColumnName="YUC" />
+                <ScalarProperty Name="VER" ColumnName="VER" />
+                <ScalarProperty Name="TLAX" ColumnName="TLAX" />
+                <ScalarProperty Name="TAMPS" ColumnName="TAMPS" />
+                <ScalarProperty Name="TAB" ColumnName="TAB" />
+                <ScalarProperty Name="SON" ColumnName="SON" />
+                <ScalarProperty Name="SIN" ColumnName="SIN" />
+                <ScalarProperty Name="SLP" ColumnName="SLP" />
+                <ScalarProperty Name="Q_ROO" ColumnName="Q_ROO" />
+                <ScalarProperty Name="QRO" ColumnName="QRO" />
+                <ScalarProperty Name="PUE" ColumnName="PUE" />
+                <ScalarProperty Name="OAX" ColumnName="OAX" />
+                <ScalarProperty Name="MOR" ColumnName="MOR" />
+                <ScalarProperty Name="MICH" ColumnName="MICH" />
+                <ScalarProperty Name="NVO_LEON" ColumnName="NVO_LEON" />
+                <ScalarProperty Name="NAY" ColumnName="NAY" />
+                <ScalarProperty Name="JAL" ColumnName="JAL" />
+                <ScalarProperty Name="HGO" ColumnName="HGO" />
+                <ScalarProperty Name="GRO" ColumnName="GRO" />
+                <ScalarProperty Name="GTO" ColumnName="GTO" />
+                <ScalarProperty Name="EDOMEX" ColumnName="EDOMEX" />
+                <ScalarProperty Name="DGO" ColumnName="DGO" />
+                <ScalarProperty Name="DF" ColumnName="DF" />
+                <ScalarProperty Name="COL" ColumnName="COL" />
+                <ScalarProperty Name="COAH" ColumnName="COAH" />
+                <ScalarProperty Name="CHIH" ColumnName="CHIH" />
+                <ScalarProperty Name="CHIS" ColumnName="CHIS" />
+                <ScalarProperty Name="CAMP" ColumnName="CAMP" />
+                <ScalarProperty Name="BCS" ColumnName="BCS" />
+                <ScalarProperty Name="BCN" ColumnName="BCN" />
+                <ScalarProperty Name="AGS" ColumnName="AGS" />
+                <ScalarProperty Name="id_modelo" ColumnName="id_modelo" />
+                <ScalarProperty Name="id_aseguradora" ColumnName="id_aseguradora" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="paso_portal_C_Estados">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.paso_portal_C_Estados">
+              <MappingFragment StoreEntitySet="paso_portal_C_Estados">
+                <ScalarProperty Name="cve" ColumnName="cve" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="paso_portal_C_Modelos">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.paso_portal_C_Modelos">
+              <MappingFragment StoreEntitySet="paso_portal_C_Modelos">
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="descripcion_tipo" ColumnName="descripcion_tipo" />
+                <ScalarProperty Name="des_auto" ColumnName="des_auto" />
+                <ScalarProperty Name="id_modelo" ColumnName="id_modelo" />
+                <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+                <ScalarProperty Name="id_auto" ColumnName="id_auto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="paso_portal_C_PlazoAseguradora">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.paso_portal_C_PlazoAseguradora">
+              <MappingFragment StoreEntitySet="paso_portal_C_PlazoAseguradora">
+                <ScalarProperty Name="factor_ano" ColumnName="factor_ano" />
+                <ScalarProperty Name="factor" ColumnName="factor" />
+                <ScalarProperty Name="id_plazo" ColumnName="id_plazo" />
+                <ScalarProperty Name="id_aseguradora" ColumnName="id_aseguradora" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="paso_portal_C_Plazos">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.paso_portal_C_Plazos">
+              <MappingFragment StoreEntitySet="paso_portal_C_Plazos">
+                <ScalarProperty Name="des_plazo" ColumnName="des_plazo" />
+                <ScalarProperty Name="id_plazo" ColumnName="id_plazo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="paso_portal_C_Tipo">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.paso_portal_C_Tipo">
+              <MappingFragment StoreEntitySet="paso_portal_C_Tipo">
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="id_auto" ColumnName="id_auto" />
+                <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_cotizador_estados">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.tbl_cotizador_estados">
+              <MappingFragment StoreEntitySet="tbl_cotizador_estados">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="idPais" ColumnName="idPais" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_cotizador_paises">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.tbl_cotizador_paises">
+              <MappingFragment StoreEntitySet="tbl_cotizador_paises">
+                <ScalarProperty Name="pais" ColumnName="pais" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_perfilador_Respuestas">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.tbl_perfilador_Respuestas">
+              <MappingFragment StoreEntitySet="tbl_perfilador_Respuestas">
+                <ScalarProperty Name="IdPregunta" ColumnName="IdPregunta" />
+                <ScalarProperty Name="Activa" ColumnName="Activa" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Respuesta" ColumnName="Respuesta" />
+                <ScalarProperty Name="Orden" ColumnName="Orden" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="IdRespuesta" ColumnName="IdRespuesta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_portal_C_Aseguradora">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.tbl_portal_C_Aseguradora">
+              <MappingFragment StoreEntitySet="tbl_portal_C_Aseguradora">
+                <ScalarProperty Name="aplica_derecho" ColumnName="aplica_derecho" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="id_aseguradora" ColumnName="id_aseguradora" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_portal_C_Auto">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.tbl_portal_C_Auto">
+              <MappingFragment StoreEntitySet="tbl_portal_C_Auto">
+                <ScalarProperty Name="des_auto" ColumnName="des_auto" />
+                <ScalarProperty Name="id_auto" ColumnName="id_auto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_portal_C_Coberturas">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.tbl_portal_C_Coberturas">
+              <MappingFragment StoreEntitySet="tbl_portal_C_Coberturas">
+                <ScalarProperty Name="derecho" ColumnName="derecho" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="id_cobertura" ColumnName="id_cobertura" />
+                <ScalarProperty Name="descripcion_aseguradora" ColumnName="descripcion_aseguradora" />
+                <ScalarProperty Name="id_aseguradora" ColumnName="id_aseguradora" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_portal_C_CoeficienteAnualidad">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.tbl_portal_C_CoeficienteAnualidad">
+              <MappingFragment StoreEntitySet="tbl_portal_C_CoeficienteAnualidad">
+                <ScalarProperty Name="Maximo" ColumnName="Maximo" />
+                <ScalarProperty Name="Minimo" ColumnName="Minimo" />
+                <ScalarProperty Name="plazo" ColumnName="plazo" />
+                <ScalarProperty Name="id_CoeficienteAnualidad" ColumnName="id_CoeficienteAnualidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_portal_C_DescEstados">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.tbl_portal_C_DescEstados">
+              <MappingFragment StoreEntitySet="tbl_portal_C_DescEstados">
+                <ScalarProperty Name="BCS_FRONTERA" ColumnName="BCS_FRONTERA" />
+                <ScalarProperty Name="TAMPS_FRONTERA" ColumnName="TAMPS_FRONTERA" />
+                <ScalarProperty Name="Q_ROO_FRONTERA" ColumnName="Q_ROO_FRONTERA" />
+                <ScalarProperty Name="SON_FRONTERA" ColumnName="SON_FRONTERA" />
+                <ScalarProperty Name="NVO_LEON_FRONTERA" ColumnName="NVO_LEON_FRONTERA" />
+                <ScalarProperty Name="CHIH_FRONTERA" ColumnName="CHIH_FRONTERA" />
+                <ScalarProperty Name="BCN_FRONTERA" ColumnName="BCN_FRONTERA" />
+                <ScalarProperty Name="ZAC" ColumnName="ZAC" />
+                <ScalarProperty Name="YUC" ColumnName="YUC" />
+                <ScalarProperty Name="VER" ColumnName="VER" />
+                <ScalarProperty Name="TLAX" ColumnName="TLAX" />
+                <ScalarProperty Name="TAMPS" ColumnName="TAMPS" />
+                <ScalarProperty Name="TAB" ColumnName="TAB" />
+                <ScalarProperty Name="SON" ColumnName="SON" />
+                <ScalarProperty Name="SIN" ColumnName="SIN" />
+                <ScalarProperty Name="SLP" ColumnName="SLP" />
+                <ScalarProperty Name="Q_ROO" ColumnName="Q_ROO" />
+                <ScalarProperty Name="QRO" ColumnName="QRO" />
+                <ScalarProperty Name="PUE" ColumnName="PUE" />
+                <ScalarProperty Name="OAX" ColumnName="OAX" />
+                <ScalarProperty Name="MOR" ColumnName="MOR" />
+                <ScalarProperty Name="MICH" ColumnName="MICH" />
+                <ScalarProperty Name="NVO_LEON" ColumnName="NVO_LEON" />
+                <ScalarProperty Name="NAY" ColumnName="NAY" />
+                <ScalarProperty Name="JAL" ColumnName="JAL" />
+                <ScalarProperty Name="HGO" ColumnName="HGO" />
+                <ScalarProperty Name="GRO" ColumnName="GRO" />
+                <ScalarProperty Name="GTO" ColumnName="GTO" />
+                <ScalarProperty Name="EDOMEX" ColumnName="EDOMEX" />
+                <ScalarProperty Name="DGO" ColumnName="DGO" />
+                <ScalarProperty Name="DF" ColumnName="DF" />
+                <ScalarProperty Name="COL" ColumnName="COL" />
+                <ScalarProperty Name="COAH" ColumnName="COAH" />
+                <ScalarProperty Name="CHIH" ColumnName="CHIH" />
+                <ScalarProperty Name="CHIS" ColumnName="CHIS" />
+                <ScalarProperty Name="CAMP" ColumnName="CAMP" />
+                <ScalarProperty Name="BCS" ColumnName="BCS" />
+                <ScalarProperty Name="BCN" ColumnName="BCN" />
+                <ScalarProperty Name="AGS" ColumnName="AGS" />
+                <ScalarProperty Name="id_modelo" ColumnName="id_modelo" />
+                <ScalarProperty Name="id_aseguradora" ColumnName="id_aseguradora" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_portal_C_DescEstados_V">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.tbl_portal_C_DescEstados_V">
+              <MappingFragment StoreEntitySet="tbl_portal_C_DescEstados_V">
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="id_modelo" ColumnName="id_modelo" />
+                <ScalarProperty Name="id_aseguradora" ColumnName="id_aseguradora" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_portal_C_Estados">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.tbl_portal_C_Estados">
+              <MappingFragment StoreEntitySet="tbl_portal_C_Estados">
+                <ScalarProperty Name="cve" ColumnName="cve" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_portal_C_Modelos">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.tbl_portal_C_Modelos">
+              <MappingFragment StoreEntitySet="tbl_portal_C_Modelos">
+                <ScalarProperty Name="tipo_carrusel" ColumnName="tipo_carrusel" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="descripcion_tipo" ColumnName="descripcion_tipo" />
+                <ScalarProperty Name="des_auto" ColumnName="des_auto" />
+                <ScalarProperty Name="id_modelo" ColumnName="id_modelo" />
+                <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+                <ScalarProperty Name="id_auto" ColumnName="id_auto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_portal_C_plan">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.tbl_portal_C_plan">
+              <MappingFragment StoreEntitySet="tbl_portal_C_plan">
+                <ScalarProperty Name="plan" ColumnName="plan" />
+                <ScalarProperty Name="id_plan" ColumnName="id_plan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_portal_C_PlazoAseguradora">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.tbl_portal_C_PlazoAseguradora">
+              <MappingFragment StoreEntitySet="tbl_portal_C_PlazoAseguradora">
+                <ScalarProperty Name="factor_ano" ColumnName="factor_ano" />
+                <ScalarProperty Name="factor" ColumnName="factor" />
+                <ScalarProperty Name="id_plazo" ColumnName="id_plazo" />
+                <ScalarProperty Name="id_aseguradora" ColumnName="id_aseguradora" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_portal_C_Plazos">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.tbl_portal_C_Plazos">
+              <MappingFragment StoreEntitySet="tbl_portal_C_Plazos">
+                <ScalarProperty Name="des_plazo" ColumnName="des_plazo" />
+                <ScalarProperty Name="id_plazo" ColumnName="id_plazo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_portal_C_Tipo">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.tbl_portal_C_Tipo">
+              <MappingFragment StoreEntitySet="tbl_portal_C_Tipo">
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="id_auto" ColumnName="id_auto" />
+                <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_portal_C_tipo_persona">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.tbl_portal_C_tipo_persona">
+              <MappingFragment StoreEntitySet="tbl_portal_C_tipo_persona">
+                <ScalarProperty Name="tipo_persona" ColumnName="tipo_persona" />
+                <ScalarProperty Name="id_tipo_persona" ColumnName="id_tipo_persona" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_portal_C_TipoUso">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.tbl_portal_C_TipoUso">
+              <MappingFragment StoreEntitySet="tbl_portal_C_TipoUso">
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="id_tipo_uso" ColumnName="id_tipo_uso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_portal_Distribuidores">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.tbl_portal_Distribuidores">
+              <MappingFragment StoreEntitySet="tbl_portal_Distribuidores">
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Lng" ColumnName="Lng" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Dealer" ColumnName="Dealer" />
+                <ScalarProperty Name="IdState" ColumnName="IdState" />
+                <ScalarProperty Name="IdDealer" ColumnName="IdDealer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_portal_Llaves">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.tbl_portal_Llaves">
+              <MappingFragment StoreEntitySet="tbl_portal_Llaves">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="KeyValue" ColumnName="KeyValue" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_portal_parametros">
+            <EntityTypeMapping TypeName="TFSM_Portal_CotizadorModel.tbl_portal_parametros">
+              <MappingFragment StoreEntitySet="tbl_portal_parametros">
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_actualiza_catalogos" FunctionName="TFSM_Portal_CotizadorModel.Store.sp_actualiza_catalogos" />
+          <FunctionImportMapping FunctionImportName="sp_actualiza_catalogos_portal" FunctionName="TFSM_Portal_CotizadorModel.Store.sp_actualiza_catalogos_portal" />
+          <FunctionImportMapping FunctionImportName="sp_llena_C_DescEstados_V" FunctionName="TFSM_Portal_CotizadorModel.Store.sp_llena_C_DescEstados_V" />
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

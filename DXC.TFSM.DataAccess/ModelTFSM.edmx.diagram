@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5ac7d22aeaa7479a8c9af76930c36e28" Name="Diagram1" ZoomLevel="59">
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.tbl_perfilador_C_Preguntas" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.tbl_perfilador_Destinos" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.paso_portal_C_Aseguradora" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.paso_portal_C_Auto" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.paso_portal_C_Coberturas" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.paso_portal_C_DescEstados" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.paso_portal_C_Estados" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.paso_portal_C_Modelos" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.paso_portal_C_PlazoAseguradora" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.paso_portal_C_Plazos" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.paso_portal_C_Tipo" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.tbl_cotizador_estados" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.tbl_cotizador_paises" Width="1.5" PointX="8.75" PointY="6.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.tbl_perfilador_Respuestas" Width="1.5" PointX="6.75" PointY="9.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_Aseguradora" Width="1.5" PointX="8.75" PointY="9.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_Auto" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_Coberturas" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_CoeficienteAnualidad" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_DescEstados" Width="1.5" PointX="10.75" PointY="6.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_DescEstados_V" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_Estados" Width="1.5" PointX="12.75" PointY="3.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_Modelos" Width="1.5" PointX="12.75" PointY="6.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_plan" Width="1.5" PointX="12.75" PointY="10.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_PlazoAseguradora" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_Plazos" Width="1.5" PointX="2.75" PointY="13.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_Tipo" Width="1.5" PointX="4.75" PointY="13.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_tipo_persona" Width="1.5" PointX="6.75" PointY="13.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.tbl_portal_C_TipoUso" Width="1.5" PointX="12.75" PointY="13.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.tbl_portal_Distribuidores" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.tbl_portal_Llaves" Width="1.5" PointX="14.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TFSM_Portal_CotizadorModel.tbl_portal_parametros" Width="1.5" PointX="14.75" PointY="7.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,60 @@
+
+    @font-face {
+        font-family: 'ToyotaBlack';
+        src: url('fonts/ToyotaType_Convertida/ToyotaType-Black.ttf') format("truetype");
+    }
+    
+    @font-face {
+        font-family: 'ToyotaBlacklt';
+        src: url('fonts/ToyotaType_Convertida/ToyotaType-Blacklt.ttf') format("truetype");
+    }
+    
+    @font-face {
+        font-family: 'ToyotaBold';
+        src: url('fonts/ToyotaType_Convertida/ToyotaType-Bold.ttf') format("truetype");
+    }
+    
+    @font-face {
+        font-family: 'ToyotaBoldlt';
+        src: url('fonts/ToyotaType_Convertida/ToyotaType-Boldlt.ttf') format("truetype");
+    }
+    
+    @font-face {
+        font-family: 'ToyotaBook';
+        src: url('fonts/ToyotaType_Convertida/ToyotaType-Book.ttf') format("truetype");
+    }
+    
+    @font-face {
+        font-family: 'ToyotaLight';
+        src: url('fonts/ToyotaType_Convertida/ToyotaType-Booklt.ttf') format("truetype");
+    }
+    
+    @font-face {
+        font-family: 'ToyotaBlacklt';
+        src: url('fonts/ToyotaType_Convertida/ToyotaType-Light.ttf') format("truetype");
+    }
+    
+    @font-face {
+        font-family: 'ToyotaLightlt';
+        src: url('fonts/ToyotaType_Convertida/ToyotaType-Lightlt.ttf') format("truetype");
+    }
+    
+    @font-face {
+        font-family: 'ToyotaRegular';
+        src: url('fonts/ToyotaType_Convertida/ToyotaType-Regular.ttf') format("truetype");
+    }
+    
+    @font-face {
+        font-family: 'ToyotaRegularlt';
+        src: url('fonts/ToyotaType_Convertida/ToyotaType-Regularlt.ttf') format("truetype");
+    }
+    
+    @font-face {
+        font-family: 'ToyotaSemibold';
+        src: url('../css/fonts/ToyotaType_Convertida/ToyotaType-Semibold.ttf') format("truetype");
+    }
+    
+    @font-face {
+        font-family: 'ToyotaSemiboldlt';
+        src: url('fonts/ToyotaType_Convertida/ToyotaType-Semiboldlt.ttf') format("truetype");
+    }

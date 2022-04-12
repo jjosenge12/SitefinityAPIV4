@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BuroCredito" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IServiceBuroCredito_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10 />
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss10>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://www.toyotafinanciamientotest.com.mx/wcfBuroCredito/ServiceBC.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://www.toyotafinanciamientotest.com.mx/wcfBuroCredito/ServiceBC.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://www.toyotafinanciamientotest.com.mx/wcfBuroCredito/ServiceBC.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFBuroCredito.Clases" />
+      <xsd:import schemaLocation="https://www.toyotafinanciamientotest.com.mx/wcfBuroCredito/ServiceBC.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://www.toyotafinanciamientotest.com.mx/wcfBuroCredito/ServiceBC.svc?xsd=xsd4" />
+      <xsd:import schemaLocation="https://www.toyotafinanciamientotest.com.mx/wcfBuroCredito/ServiceBC.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/WCFBuroCredito.Clases.PF" />
+      <xsd:import schemaLocation="https://www.toyotafinanciamientotest.com.mx/wcfBuroCredito/ServiceBC.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/WCFBuroCredito.Clases.PM" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceBuroCredito_GetBCOriginacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBCOriginacion" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBuroCredito_GetBCOriginacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBCOriginacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBuroCredito_ActualizaOriginacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaOriginacion" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBuroCredito_ActualizaOriginacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaOriginacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBuroCredito_ConsultaTransUnion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaTransUnion" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBuroCredito_ConsultaTransUnion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaTransUnionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBuroCredito_ConsultaDunBradstreet_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaDunBradstreet" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBuroCredito_ConsultaDunBradstreet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaDunBradstreetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBuroCredito_GetReportePorFolioTFSM_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportePorFolioTFSM" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBuroCredito_GetReportePorFolioTFSM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportePorFolioTFSMResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBuroCredito_ActualizaPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaPassword" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBuroCredito_ActualizaPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaPasswordResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceBuroCredito">
+    <wsdl:operation name="GetBCOriginacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBuroCredito/GetBCOriginacion" message="tns:IServiceBuroCredito_GetBCOriginacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBuroCredito/GetBCOriginacionResponse" message="tns:IServiceBuroCredito_GetBCOriginacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaOriginacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBuroCredito/ActualizaOriginacion" message="tns:IServiceBuroCredito_ActualizaOriginacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBuroCredito/ActualizaOriginacionResponse" message="tns:IServiceBuroCredito_ActualizaOriginacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTransUnion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBuroCredito/ConsultaTransUnion" message="tns:IServiceBuroCredito_ConsultaTransUnion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBuroCredito/ConsultaTransUnionResponse" message="tns:IServiceBuroCredito_ConsultaTransUnion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDunBradstreet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBuroCredito/ConsultaDunBradstreet" message="tns:IServiceBuroCredito_ConsultaDunBradstreet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBuroCredito/ConsultaDunBradstreetResponse" message="tns:IServiceBuroCredito_ConsultaDunBradstreet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportePorFolioTFSM">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBuroCredito/GetReportePorFolioTFSM" message="tns:IServiceBuroCredito_GetReportePorFolioTFSM_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBuroCredito/GetReportePorFolioTFSMResponse" message="tns:IServiceBuroCredito_GetReportePorFolioTFSM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBuroCredito/ActualizaPassword" message="tns:IServiceBuroCredito_ActualizaPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBuroCredito/ActualizaPasswordResponse" message="tns:IServiceBuroCredito_ActualizaPassword_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceBuroCredito" type="tns:IServiceBuroCredito">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IServiceBuroCredito_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetBCOriginacion">
+      <soap:operation soapAction="http://tempuri.org/IServiceBuroCredito/GetBCOriginacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaOriginacion">
+      <soap:operation soapAction="http://tempuri.org/IServiceBuroCredito/ActualizaOriginacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTransUnion">
+      <soap:operation soapAction="http://tempuri.org/IServiceBuroCredito/ConsultaTransUnion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDunBradstreet">
+      <soap:operation soapAction="http://tempuri.org/IServiceBuroCredito/ConsultaDunBradstreet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportePorFolioTFSM">
+      <soap:operation soapAction="http://tempuri.org/IServiceBuroCredito/GetReportePorFolioTFSM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaPassword">
+      <soap:operation soapAction="http://tempuri.org/IServiceBuroCredito/ActualizaPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BuroCredito">
+    <wsdl:port name="BasicHttpBinding_IServiceBuroCredito" binding="tns:BasicHttpBinding_IServiceBuroCredito">
+      <soap:address location="https://www.toyotafinanciamientotest.com.mx/wcfBuroCredito/ServiceBC.svc/Soap" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

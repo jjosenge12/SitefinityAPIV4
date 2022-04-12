@@ -1,0 +1,614 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DFB57E05-4F0C-4EA7-882A-7E9E3298345E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DXC.TFSM.Services</RootNamespace>
+    <AssemblyName>DXC.TFSM.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44386</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.BarCode, Version=2.2.2.0, Culture=neutral, PublicKeyToken=716fcc553a201e56">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Aspose.BarCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Cells, Version=3.7.2.0, Culture=neutral, PublicKeyToken=716fcc553a201e56">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Pdf, Version=3.6.2.5, Culture=neutral, PublicKeyToken=716fcc553a201e56">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Aspose.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Words, Version=5.2.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.9\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DynamicPDF.HTMLConverter.NETStandard20, Version=1.6.0.43372, Culture=neutral, PublicKeyToken=09b5ce0d5c0a9d8b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ceTe.DynamicPDF.HtmlConverter.NET.1.6.0\lib\netstandard20\DynamicPDF.HTMLConverter.NETStandard20.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ephtmltopdf, Version=12.2.0.0, Culture=neutral, PublicKeyToken=e0ae9f6e27a97018, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExpertPdfHtmlToPdf.12.2.0\lib\net40\ephtmltopdf.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer, Version=1.5.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.Core.1.5.0.5\lib\net45\HtmlRenderer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer.PdfSharp, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.PdfSharp.1.5.0.6\lib\net45\HtmlRenderer.PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.3.1.9, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.3.1\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPdf, Version=2021.9.0.3689, Culture=neutral, PublicKeyToken=94e1c31412563c75, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronPdf.Slim.2021.9.3689\lib\net40\IronPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.barcodes, Version=7.1.16.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.16\lib\net45\itext.barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.forms, Version=7.1.16.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.16\lib\net45\itext.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.html2pdf, Version=3.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.pdfhtml.3.0.5\lib\net45\itext.html2pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.io, Version=7.1.16.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.16\lib\net45\itext.io.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.kernel, Version=7.1.16.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.16\lib\net45\itext.kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.layout, Version=7.1.16.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.16\lib\net45\itext.layout.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfa, Version=7.1.16.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.16\lib\net45\itext.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.sign, Version=7.1.16.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.16\lib\net45\itext.sign.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.styledxmlparser, Version=7.1.16.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.16\lib\net45\itext.styledxmlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.svg, Version=7.1.16.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.16\lib\net45\itext.svg.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.13.2\lib\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NPOI, Version=2.5.4.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.4\lib\net45\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.4.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.4\lib\net45\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.5.4.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.4\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.5.4.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.4\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Reflection.TypeExtensions, Version=4.1.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.TypeExtensions.4.7.0\lib\net461\System.Reflection.TypeExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.4.3.0\lib\net463\System.Runtime.InteropServices.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Threading.Thread, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Thread.4.3.0\lib\net46\System.Threading.Thread.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="WkHtmlToPdfDotNet, Version=1.5.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Haukcode.WkHtmlToPdfDotNet.1.5.8\lib\netstandard2.0\WkHtmlToPdfDotNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\CotizadorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Auto.cs" />
+    <Compile Include="Models\Forms\PlanForm.cs" />
+    <Compile Include="Models\RequestPDF.cs" />
+    <Compile Include="Models\Responses\DealersByStateResponse.cs" />
+    <Compile Include="Models\Responses\GetAccessTokenResponse.cs" />
+    <Compile Include="Models\ServicePDF.cs" />
+    <Compile Include="Models\UtilsService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="HTML Templates\newsletter.html" />
+    <Content Include="HTML Templates\Planes\assets\css\fuentes.css" />
+    <Content Include="HTML Templates\Planes\assets\css\ToyotaCotAnual.css" />
+    <Content Include="HTML Templates\Planes\assets\css\ToyotaCotArrenda.css" />
+    <Content Include="HTML Templates\Planes\assets\css\ToyotaCotArrendaPuro.css" />
+    <Content Include="HTML Templates\Planes\assets\css\ToyotaCotBalloon.css" />
+    <Content Include="HTML Templates\Planes\assets\css\ToyotaCotTrad.css" />
+    <Content Include="HTML Templates\Planes\assets\images\corolla_hybrid.png" />
+    <Content Include="HTML Templates\Planes\assets\images\logo-PRIUSC.png" />
+    <Content Include="HTML Templates\Planes\assets\images\logo.png" />
+    <Content Include="HTML Templates\Planes\assets\images\logo2.png" />
+    <Content Include="HTML Templates\Planes\assets\images\logo3.png" />
+    <Content Include="HTML Templates\Planes\assets\images\logoCOROLLA_HV.png" />
+    <Content Include="HTML Templates\Planes\assets\images\logoTacoma.png" />
+    <Content Include="HTML Templates\Planes\assets\images\PRIUS C.png" />
+    <Content Include="HTML Templates\Planes\assets\images\rav4.png" />
+    <Content Include="HTML Templates\Planes\assets\images\Tacoma.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_anualidades\codigo_barras.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_anualidades\icono_calendario.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_anualidades\icono_dinero.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_anualidades\icono_plan_1.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_anualidades\icono_plan_2.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_anualidades\icono_plan_3.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_anualidades\icono_plan_4.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_anualidades\icono_plan_5.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_anualidades\icono_ubicacion.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_anualidades\logo_anualidades.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_arrendamiento_finan\codigo_barras.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_arrendamiento_finan\icono_calendario.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_arrendamiento_finan\icono_dinero.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_arrendamiento_finan\icono_plan_1.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_arrendamiento_finan\icono_plan_2.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_arrendamiento_finan\icono_plan_3.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_arrendamiento_finan\icono_plan_4.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_arrendamiento_finan\icono_ubicacion.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_arrendamiento_finan\logo_arrendamiento_finan.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_arrendamiento_puro\codigo_barras.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_arrendamiento_puro\icono_calendario.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_arrendamiento_puro\icono_dinero.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_arrendamiento_puro\icono_plan_1.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_arrendamiento_puro\icono_plan_2.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_arrendamiento_puro\icono_plan_3.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_arrendamiento_puro\icono_ubicacion.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_arrendamiento_puro\logo_arrendamiento_puro.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_balloon\codigo_barras.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_balloon\icono_calendario.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_balloon\icono_dinero.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_balloon\icono_plan_1.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_balloon\icono_plan_2.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_balloon\icono_plan_3.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_balloon\icono_plan_4.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_balloon\icono_plan_5.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_balloon\icono_ubicacion.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_balloon\logo_balloon.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_tradicional\codigo_barras.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_tradicional\icono_calendario.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_tradicional\icono_dinero.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_tradicional\icono_plan_1.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_tradicional\icono_plan_2.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_tradicional\icono_plan_3.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_tradicional\icono_plan_4.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_tradicional\icono_ubicacion.png" />
+    <Content Include="HTML Templates\Planes\assets\images\toyota_tradicional\logo_tradicional.png" />
+    <Content Include="HTML Templates\Planes\assets\images\ys.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\css\fuentes.css" />
+    <Content Include="HTML Templates\Planes\temp\assets\css\ToyotaCotAnual.css" />
+    <Content Include="HTML Templates\Planes\temp\assets\css\ToyotaCotArrenda.css" />
+    <Content Include="HTML Templates\Planes\temp\assets\css\ToyotaCotArrendaPuro.css" />
+    <Content Include="HTML Templates\Planes\temp\assets\css\ToyotaCotBalloon.css" />
+    <Content Include="HTML Templates\Planes\temp\assets\css\ToyotaCotTrad.css" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\corolla_hybrid.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\logo-PRIUSC.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\logo.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\logo2.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\logo3.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\logoCOROLLA_HV.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\logoTacoma.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\PRIUS C.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\rav4.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\Tacoma.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_anualidades\codigo_barras.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_anualidades\icono_calendario.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_anualidades\icono_dinero.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_anualidades\icono_plan_1.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_anualidades\icono_plan_2.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_anualidades\icono_plan_3.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_anualidades\icono_plan_4.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_anualidades\icono_plan_5.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_anualidades\icono_ubicacion.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_anualidades\logo_anualidades.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_arrendamiento_finan\codigo_barras.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_arrendamiento_finan\icono_calendario.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_arrendamiento_finan\icono_dinero.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_arrendamiento_finan\icono_plan_1.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_arrendamiento_finan\icono_plan_2.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_arrendamiento_finan\icono_plan_3.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_arrendamiento_finan\icono_plan_4.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_arrendamiento_finan\icono_ubicacion.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_arrendamiento_finan\logo_arrendamiento_finan.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_arrendamiento_puro\codigo_barras.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_arrendamiento_puro\icono_calendario.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_arrendamiento_puro\icono_dinero.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_arrendamiento_puro\icono_plan_1.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_arrendamiento_puro\icono_plan_2.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_arrendamiento_puro\icono_plan_3.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_arrendamiento_puro\icono_ubicacion.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_arrendamiento_puro\logo_arrendamiento_puro.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_balloon\codigo_barras.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_balloon\icono_calendario.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_balloon\icono_dinero.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_balloon\icono_plan_1.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_balloon\icono_plan_2.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_balloon\icono_plan_3.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_balloon\icono_plan_4.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_balloon\icono_plan_5.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_balloon\icono_ubicacion.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_balloon\logo_balloon.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_tradicional\codigo_barras.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_tradicional\icono_calendario.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_tradicional\icono_dinero.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_tradicional\icono_plan_1.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_tradicional\icono_plan_2.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_tradicional\icono_plan_3.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_tradicional\icono_plan_4.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_tradicional\icono_ubicacion.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\toyota_tradicional\logo_tradicional.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\transparent.png" />
+    <Content Include="HTML Templates\Planes\temp\assets\images\ys.png" />
+    <Content Include="HTML Templates\Planes\Toyota_cotiza_anualidades.html" />
+    <Content Include="HTML Templates\Planes\Toyota_cotiza_arrendamiento.html" />
+    <Content Include="HTML Templates\Planes\Toyota_cotiza_arrendamiento_puro.html" />
+    <Content Include="HTML Templates\Planes\Toyota_cotiza_balloon.html" />
+    <Content Include="HTML Templates\Planes\Toyota_cotiza_tradicional_styles.html" />
+    <Content Include="HTML Templates\Planes\Toyota_cotiza_tradicional.html" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="HTML Templates\Planes\assets\css\fonts\ToyotaType_Convertida\ToyotaType-Black.ttf" />
+    <Content Include="HTML Templates\Planes\assets\css\fonts\ToyotaType_Convertida\ToyotaType-BlackIt.ttf" />
+    <Content Include="HTML Templates\Planes\assets\css\fonts\ToyotaType_Convertida\ToyotaType-Bold.ttf" />
+    <Content Include="HTML Templates\Planes\assets\css\fonts\ToyotaType_Convertida\ToyotaType-BoldIt.ttf" />
+    <Content Include="HTML Templates\Planes\assets\css\fonts\ToyotaType_Convertida\ToyotaType-Book.ttf" />
+    <Content Include="HTML Templates\Planes\assets\css\fonts\ToyotaType_Convertida\ToyotaType-BookIt.ttf" />
+    <Content Include="HTML Templates\Planes\assets\css\fonts\ToyotaType_Convertida\ToyotaType-Light.ttf" />
+    <Content Include="HTML Templates\Planes\assets\css\fonts\ToyotaType_Convertida\ToyotaType-LightIt.ttf" />
+    <Content Include="HTML Templates\Planes\assets\css\fonts\ToyotaType_Convertida\ToyotaType-Regular.ttf" />
+    <Content Include="HTML Templates\Planes\assets\css\fonts\ToyotaType_Convertida\ToyotaType-RegularIt.ttf" />
+    <Content Include="HTML Templates\Planes\assets\css\fonts\ToyotaType_Convertida\ToyotaType-Semibold.ttf" />
+    <Content Include="HTML Templates\Planes\assets\css\fonts\ToyotaType_Convertida\ToyotaType-SemiboldIt.ttf" />
+    <Content Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </Content>
+    <Content Include="HTML Templates\Planes\temp\assets\css\fonts\ToyotaType_Convertida\ToyotaType-Black.ttf" />
+    <Content Include="HTML Templates\Planes\temp\assets\css\fonts\ToyotaType_Convertida\ToyotaType-BlackIt.ttf" />
+    <Content Include="HTML Templates\Planes\temp\assets\css\fonts\ToyotaType_Convertida\ToyotaType-Bold.ttf" />
+    <Content Include="HTML Templates\Planes\temp\assets\css\fonts\ToyotaType_Convertida\ToyotaType-BoldIt.ttf" />
+    <Content Include="HTML Templates\Planes\temp\assets\css\fonts\ToyotaType_Convertida\ToyotaType-Book.ttf" />
+    <Content Include="HTML Templates\Planes\temp\assets\css\fonts\ToyotaType_Convertida\ToyotaType-BookIt.ttf" />
+    <Content Include="HTML Templates\Planes\temp\assets\css\fonts\ToyotaType_Convertida\ToyotaType-Light.ttf" />
+    <Content Include="HTML Templates\Planes\temp\assets\css\fonts\ToyotaType_Convertida\ToyotaType-LightIt.ttf" />
+    <Content Include="HTML Templates\Planes\temp\assets\css\fonts\ToyotaType_Convertida\ToyotaType-Regular.ttf" />
+    <Content Include="HTML Templates\Planes\temp\assets\css\fonts\ToyotaType_Convertida\ToyotaType-RegularIt.ttf" />
+    <Content Include="HTML Templates\Planes\temp\assets\css\fonts\ToyotaType_Convertida\ToyotaType-Semibold.ttf" />
+    <Content Include="HTML Templates\Planes\temp\assets\css\fonts\ToyotaType_Convertida\ToyotaType-SemiboldIt.ttf" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\PDF\Response.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DXC.TFSM.Business\DXC.TFSM.Business.csproj">
+      <Project>{6c80f497-6972-4381-b293-f66412f2417b}</Project>
+      <Name>DXC.TFSM.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DXC.TFSM.DataAccess\DXC.TFSM.DataAccess.csproj">
+      <Project>{55FA9611-8BE7-42C7-AE1C-DA95B60F9078}</Project>
+      <Name>DXC.TFSM.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55447</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44386/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\IronPdf.Native.Chrome.Windows.2021.9.3632\build\net452\IronPdf.Native.Chrome.Windows.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\IronPdf.Native.Chrome.Windows.2021.9.3632\build\net452\IronPdf.Native.Chrome.Windows.targets'))" />
+    <Error Condition="!Exists('..\packages\Haukcode.WkHtmlToPdfDotNet.1.5.8\build\Haukcode.WkHtmlToPdfDotNet.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Haukcode.WkHtmlToPdfDotNet.1.5.8\build\Haukcode.WkHtmlToPdfDotNet.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\IronPdf.Native.Chrome.Windows.2021.9.3632\build\net452\IronPdf.Native.Chrome.Windows.targets" Condition="Exists('..\packages\IronPdf.Native.Chrome.Windows.2021.9.3632\build\net452\IronPdf.Native.Chrome.Windows.targets')" />
+  <Import Project="..\packages\Haukcode.WkHtmlToPdfDotNet.1.5.8\build\Haukcode.WkHtmlToPdfDotNet.targets" Condition="Exists('..\packages\Haukcode.WkHtmlToPdfDotNet.1.5.8\build\Haukcode.WkHtmlToPdfDotNet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

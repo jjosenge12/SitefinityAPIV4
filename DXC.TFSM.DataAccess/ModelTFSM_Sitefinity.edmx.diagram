@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c189879122184763bb81744a1e7c3e37" Name="Diagram1" ZoomLevel="37">
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_media_content" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.ActionLog" Width="1.5" PointX="5.75" PointY="16.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.Assignment" Width="1.5" PointX="18.25" PointY="4.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.AssignmentPeriod" Width="1.5" PointX="20.5" PointY="4.25" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.Attachment" Width="1.5" PointX="10.75" PointY="8.625" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.Client" Width="1.5" PointX="13.75" PointY="146.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.Contact" Width="1.5" PointX="13" PointY="3.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.ContactType" Width="1.5" PointX="13" PointY="22.75" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.Country" Width="1.5" PointX="11.5" PointY="147.25" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.Currency" Width="1.5" PointX="13.75" PointY="17" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.ErrorLog" Width="1.5" PointX="10.75" PointY="16.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.Invoice" Width="1.5" PointX="16" PointY="8" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.InvoiceType" Width="1.5" PointX="13.75" PointY="19.75" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.OAConflicts" Width="1.5" PointX="31" PointY="34.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.OAImportConfigurations" Width="1.5" PointX="28.75" PointY="29.25" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.oakeygen" Width="1.5" PointX="3.75" PointY="13.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.OASyncImportSummary" Width="1.5" PointX="31" PointY="30" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.OASyncListSummary" Width="1.5" PointX="22.75" PointY="3.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.OASyncLog" Width="1.5" PointX="28.75" PointY="36.625" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.Po" Width="1.5" PointX="18.25" PointY="8.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.PoVersion" Width="1.5" PointX="20.5" PointY="8.375" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.Project" Width="1.5" PointX="13" PointY="7.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.ProjectContact" Width="1.5" PointX="15.25" PointY="4.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.ProjectState" Width="1.5" PointX="10.75" PointY="14.25" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.ProjectType" Width="1.5" PointX="10.75" PointY="6" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.RedmineActivity" Width="1.5" PointX="5.75" PointY="19.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.Resource" Width="1.5" PointX="16" PointY="13.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.ResourceType" Width="1.5" PointX="13.75" PointY="14.25" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.Role" Width="1.5" PointX="30.75" PointY="5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_ab_campaign" Width="1.5" PointX="22.75" PointY="24.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_ab_test" Width="1.5" PointX="30.75" PointY="37.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_ab_test_goal" Width="1.5" PointX="35.75" PointY="17.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_ab_test_variation" Width="1.5" PointX="24.75" PointY="3.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_addresses" Width="1.5" PointX="35.75" PointY="21.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_app_setting" Width="1.5" PointX="35.75" PointY="25.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_approval_tracking_record" Width="1.5" PointX="22.75" PointY="38.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_blg_psts_pblshd_trnslations" Width="1.5" PointX="10.875" PointY="111.625" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_blog_posts" Width="1.5" PointX="8.625" PointY="107.625" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_blog_posts_category" Width="1.5" PointX="10.875" PointY="119.375" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_blog_posts_sf_commnt" Width="1.5" PointX="10.875" PointY="108.25" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_blog_posts_sf_language_data" Width="1.5" PointX="13.875" PointY="111.25" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_blog_posts_tags" Width="1.5" PointX="10.875" PointY="116.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_blogs" Width="1.5" PointX="8.625" PointY="131.75" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_blogs_sf_commnt" Width="1.5" PointX="10.875" PointY="134.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_bounce_stat" Width="1.5" PointX="24.75" PointY="38.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_calendars" Width="1.5" PointX="32.75" PointY="38.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_campaign" Width="1.5" PointX="25.75" PointY="24.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_campaign_link" Width="1.5" PointX="25.75" PointY="35.25" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_campaign_sf_campaign_link" Width="1.5" PointX="28" PointY="25.375" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_chunks" Width="1.5" PointX="22.75" PointY="9.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_cnt_location_filters" Width="1.5" PointX="35.75" PointY="36.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_cnt_locations" Width="1.5" PointX="0.75" PointY="39.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_cntnt_tems_sf_language_data" Width="1.5" PointX="13.875" PointY="91.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_cntnt_tms_pblshd_trnsltions" Width="1.5" PointX="10.875" PointY="89" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_commnt" Width="1.5" PointX="1.125" PointY="21.375" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_commnt_parent_group_ids" Width="1.5" PointX="3.375" PointY="19.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_commnt_sf_commnt" Width="1.5" PointX="3.375" PointY="16.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_config_variables" Width="1.5" PointX="22.75" PointY="18.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_content_items" Width="1.5" PointX="8.625" PointY="88.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_content_items_category" Width="1.5" PointX="10.875" PointY="94.25" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_content_items_sf_commnt" Width="1.5" PointX="13.875" PointY="88.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_content_items_tags" Width="1.5" PointX="10.875" PointY="99.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_content_link" Width="1.5" PointX="35.75" PointY="12.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_content_link_attrbutes" Width="1.5" PointX="38" PointY="13.625" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_content_relation" Width="1.5" PointX="13.75" PointY="39.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_control_properties" Width="1.5" PointX="16.75" PointY="39.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_counters" Width="1.5" PointX="27.75" PointY="22.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_cs_comments" Width="1.5" PointX="18.75" PointY="39.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_cs_groups" Width="1.5" PointX="34.75" PointY="39.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_cs_threads" Width="1.5" PointX="36.75" PointY="39.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_dashboard_log" Width="1.5" PointX="37.75" PointY="16.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_dashboard_watchlist" Width="1.5" PointX="37.75" PointY="20.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_delivery_entry" Width="1.5" PointX="37.75" PointY="23.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_draft_pages" Width="1.5" PointX="4.125" PointY="83.75" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_drft_pages_sf_language_data" Width="1.5" PointX="6.375" PointY="34.75" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_dynamic_content" Width="1.5" PointX="4.125" PointY="33.375" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_dynamic_list" Width="1.5" PointX="26.75" PointY="40.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_dynamic_type_base" Width="1.5" PointX="37.75" PointY="36.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_dynmc_cntnt_pblshd_trnsltns" Width="1.5" PointX="6.375" PointY="23.375" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_dynmc_cntnt_sf_lnguage_data" Width="1.5" PointX="6.375" PointY="38.25" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_ec_customer_profile" Width="1.5" PointX="28" PointY="8.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_events" Width="1.5" PointX="4.125" PointY="70.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_events_category" Width="1.5" PointX="6.375" PointY="75.375" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_events_sf_commnt" Width="1.5" PointX="6.375" PointY="50.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_events_sf_language_data" Width="1.5" PointX="6.375" PointY="56.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_events_tags" Width="1.5" PointX="6.375" PointY="72.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_failed_deliveries" Width="1.5" PointX="38.75" PointY="26.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_files_monitor_data" Width="1.5" PointX="38.75" PointY="30.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_folders" Width="1.5" PointX="38.75" PointY="39.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_form_description" Width="1.5" PointX="8.625" PointY="60.625" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_form_description_attrbutes" Width="1.5" PointX="10.875" PointY="70" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_form_description_category" Width="1.5" PointX="10.875" PointY="62.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_form_description_sf_commnt" Width="1.5" PointX="10.875" PointY="65.75" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_form_description_tags" Width="1.5" PointX="10.875" PointY="75.375" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_form_entry" Width="1.5" PointX="39.75" PointY="16.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_forum_groups" Width="1.5" PointX="8.625" PointY="17.25" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_forum_posts" Width="1.5" PointX="20.75" PointY="42.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_forum_threads" Width="1.5" PointX="28.75" PointY="42.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_forums" Width="1.5" PointX="4.125" PointY="56.75" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_frm_dscrptn_pblshd_trnsltns" Width="1.5" PointX="10.875" PointY="77.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_frm_dscrptn_sf_lnguage_data" Width="1.5" PointX="13.875" PointY="65.75" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_frm_dscrptn_sf_prsnttn_data" Width="1.5" PointX="13.875" PointY="62.75" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_idsrv_claims" Width="1.5" PointX="39.75" PointY="33.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_idsrv_consents" Width="1.5" PointX="39.75" PointY="23.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_idsrv_keys" Width="1.5" PointX="30.75" PointY="42.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_idsrv_tokens" Width="1.5" PointX="40.75" PointY="3.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_issue_subscriber_report" Width="1.5" PointX="0.75" PointY="43.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_language_data" Width="1.5" PointX="1.125" PointY="33.375" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_lbraries_thumbnail_profiles" Width="1.5" PointX="6.375" PointY="29.75" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_libraries" Width="1.5" PointX="4.125" PointY="22.625" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_libraries_sf_commnt" Width="1.5" PointX="6.375" PointY="26" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_lic_user_activity" Width="1.5" PointX="40.75" PointY="7.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_link_click_stat" Width="1.5" PointX="40.75" PointY="11.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_list_items" Width="1.5" PointX="8.625" PointY="25.375" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_list_items_category" Width="1.5" PointX="10.875" PointY="34.375" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_list_items_sf_commnt" Width="1.5" PointX="10.875" PointY="28.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_list_items_sf_language_data" Width="1.5" PointX="10.875" PointY="25.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_list_items_tags" Width="1.5" PointX="10.875" PointY="36.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_lists" Width="1.5" PointX="8.625" PointY="140" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_lists_sf_commnt" Width="1.5" PointX="10.875" PointY="142.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_locks" Width="1.5" PointX="22.75" PointY="43.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_lst" Width="1.5" PointX="30.75" PointY="19.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_lst_tms_pblshd_translations" Width="1.5" PointX="10.875" PointY="31.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_manager_info" Width="1.5" PointX="40.75" PointY="26.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_mb_dnc_cnt_provider" Width="1.5" PointX="8.625" PointY="21.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_mb_dynamic_module" Width="1.5" PointX="8.625" PointY="83.25" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_mb_dynamic_module_field" Width="1.5" PointX="8.625" PointY="148.375" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_mb_dynamic_module_type" Width="1.5" PointX="4.125" PointY="40" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_mb_fields_backend_section" Width="1.5" PointX="40.75" PointY="29.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_mbl_frmt_cntnt_types" Width="1.5" PointX="35.75" PointY="8" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_mbl_frmt_dfntns" Width="1.5" PointX="38" PointY="8" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_mbl_frmt_templates" Width="1.5" PointX="32.75" PointY="43.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_md_cntnt_pblshd_trnslations" Width="1.5" PointX="3.375" PointY="146" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_md_content_sf_language_data" Width="1.5" PointX="3.375" PointY="10.75" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_media_content_category" Width="1.5" PointX="3.375" PointY="158.625" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_media_content_category2" Width="1.5" PointX="3.375" PointY="153.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_media_content_category3" Width="1.5" PointX="3.375" PointY="156.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_media_content_sf_commnt" Width="1.5" PointX="3.375" PointY="7.75" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_media_content_tags" Width="1.5" PointX="3.375" PointY="151" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_media_content_tags2" Width="1.5" PointX="3.375" PointY="161.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_media_content_tags3" Width="1.5" PointX="3.375" PointY="148.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_media_file_links" Width="1.5" PointX="40.75" PointY="37.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_media_file_urls" Width="1.5" PointX="40.75" PointY="42.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_media_thumbnails" Width="1.5" PointX="41.75" PointY="14.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_message_body" Width="1.5" PointX="41.75" PointY="19.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_meta_attribute" Width="1.5" PointX="16.75" PointY="44.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_meta_data_mapping" Width="1.5" PointX="24.75" PointY="44.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_meta_fields" Width="1.5" PointX="42.75" PointY="3.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_meta_index" Width="1.5" PointX="35.75" PointY="4" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_meta_index_composite_fields" Width="1.5" PointX="38" PointY="4.375" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_meta_type_descriptions" Width="1.5" PointX="49.75" PointY="43.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_meta_types" Width="1.5" PointX="33.75" PointY="33.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_meta_types_section_names" Width="1.5" PointX="36" PointY="34.25" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_module_vrsn" Width="1.5" PointX="42.75" PointY="24.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_news_items" Width="1.5" PointX="8.625" PointY="40" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_news_items_category" Width="1.5" PointX="10.875" PointY="52" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_news_items_sf_commnt" Width="1.5" PointX="13.875" PointY="43.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_news_items_sf_language_data" Width="1.5" PointX="10.875" PointY="44.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_news_items_tags" Width="1.5" PointX="10.875" PointY="49.375" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_notif_cmplt_msg_job" Width="1.5" PointX="42.75" PointY="27.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_notif_msg_job" Width="1.5" PointX="13.75" PointY="29.375" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_notif_msg_job_log" Width="1.5" PointX="42.75" PointY="36.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_notif_msg_template" Width="1.5" PointX="34.75" PointY="45.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_notif_subscr_list" Width="1.5" PointX="42.75" PointY="39.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_notif_subscribers" Width="1.5" PointX="33.75" PointY="29" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_notif_subscriptions" Width="1.5" PointX="36.75" PointY="45.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_ntf_msg_jb_cstm_mssg_haders" Width="1.5" PointX="16" PointY="31.625" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_ntf_msg_jb_xcldd_rslvd_kys_" Width="1.5" PointX="16" PointY="29.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_ntf_sbscrbrs_cstm_prperties" Width="1.5" PointX="36" PointY="29.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_nws_tms_pblshd_translations" Width="1.5" PointX="10.875" PointY="41.375" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_object_data" Width="1.5" PointX="8.625" PointY="73.625" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_ocd_dpndncies" Width="1.5" PointX="38.75" PointY="45.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_ocd_itms" Width="1.5" PointX="42.75" PointY="42.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_ocd_typs" Width="1.5" PointX="43.75" PointY="14.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_open_stat" Width="1.5" PointX="13.75" PointY="46.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_page_data" Width="1.5" PointX="20.75" PointY="26.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_page_data_attrbutes" Width="1.5" PointX="23" PointY="35.75" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_page_data_sf_language_data" Width="1.5" PointX="26" PointY="31.625" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_page_node" Width="1.5" PointX="8.625" PointY="122.625" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_page_node_attrbutes" Width="1.5" PointX="10.875" PointY="124.625" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_page_node_references" Width="1.5" PointX="43.75" PointY="17.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_page_templates" Width="1.5" PointX="4.125" PointY="45.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_pblshng_mppng_sf_pp_mppng_t" Width="1.5" PointX="23" PointY="12.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_pblshng_mppng_src_prprty_nm" Width="1.5" PointX="23" PointY="21.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_pblshng_mppng_sttngs_sf_pbl" Width="1.5" PointX="23" PointY="15.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_pblshng_pp_sttngs_cntnt_lnk" Width="1.5" PointX="18" PointY="19.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_pblshng_pp_sttngs_ddtnl_dta" Width="1.5" PointX="18" PointY="22" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_pblshng_pp_sttngs_lngge_ids" Width="1.5" PointX="18" PointY="24.625" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_pckgng_addn_lnks" Width="1.5" PointX="43.75" PointY="20.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_pckgng_addns" Width="1.5" PointX="43.75" PointY="31.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_pckgng_addns_err_stts" Width="1.5" PointX="44.75" PointY="3.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_pckgng_addns_stts" Width="1.5" PointX="0.75" PointY="47.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_pckgng_pckgs" Width="1.5" PointX="44.75" PointY="6.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_permissions" Width="1.5" PointX="6.375" PointY="8.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_permissions_inheritance_map" Width="1.5" PointX="44.75" PointY="9.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_pg_dt_pblished_translations" Width="1.5" PointX="23" PointY="30.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_pg_nd_prmssnst_bjct_ttl_rs_" Width="1.5" PointX="10.875" PointY="127.25" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_pg_tmpltes_sf_language_data" Width="1.5" PointX="6.375" PointY="43.625" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_pg_tmplts_pblshd_trnsltions" Width="1.5" PointX="6.375" PointY="47.75" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_pipe_mapping_translation" Width="1.5" PointX="20.75" PointY="19.75" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_presentation_data" Width="1.5" PointX="11.625" PointY="80.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_prs_criteria_group" Width="1.5" PointX="25.75" PointY="16.625" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_prs_criterion" Width="1.5" PointX="25.75" PointY="13.25" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_prs_crtr_grp_sf_prs_crtrion" Width="1.5" PointX="28" PointY="16.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_prs_segment" Width="1.5" PointX="25.75" PointY="20" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_prs_sgmnt_sf_prs_crtr_group" Width="1.5" PointX="28" PointY="19.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_publishing_mapping" Width="1.5" PointX="20.75" PointY="15.375" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_publishing_mapping_settings" Width="1.5" PointX="20.75" PointY="22.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_publishing_pipe_settings" Width="1.5" PointX="15.75" PointY="18.375" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_publishing_point" Width="1.5" PointX="15.75" PointY="47.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_publishing_point_settings" Width="1.5" PointX="17.75" PointY="47.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_publishing_throttle_settings" Width="1.5" PointX="19.75" PointY="47.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_rbin_item" Width="1.5" PointX="44.75" PointY="23.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_rdsgn_media_query" Width="1.5" PointX="16" PointY="35.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_rdsgn_media_query_link" Width="1.5" PointX="13.75" PointY="35.375" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_rdsgn_media_query_rule" Width="1.5" PointX="21.75" PointY="47.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_rdsgn_nav_trnsfrmtn" Width="1.5" PointX="23.75" PointY="47.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_roles" Width="1.5" PointX="44.75" PointY="28.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_scheduled_tasks" Width="1.5" PointX="25.75" PointY="47.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_schema_vrsns" Width="1.5" PointX="30.75" PointY="25.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_schema_vrsns_meta_types" Width="1.5" PointX="33" PointY="25.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_scrty_rts_prmssnst_bjct_ttl" Width="1.5" PointX="10.875" PointY="102.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_scrty_rts_spprtd_prmssn_sts" Width="1.5" PointX="10.875" PointY="105.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_security_roots" Width="1.5" PointX="8.625" PointY="103.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_site_data_src" Width="1.5" PointX="30.75" PointY="47.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_site_data_src_lnks" Width="1.5" PointX="44.75" PointY="34.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_site_item_links" Width="1.5" PointX="44.75" PointY="37.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_sitefinity_profile" Width="1.5" PointX="28" PointY="4.375" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_sites" Width="1.5" PointX="6.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_sites_culture_keys" Width="1.5" PointX="8.625" PointY="3.25" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_sites_domain_aliases" Width="1.5" PointX="8.625" PointY="35.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_sites_sf_permissions" Width="1.5" PointX="8.625" PointY="10.75" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_stat_sentence" Width="1.5" PointX="44.75" PointY="40.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_subscriber" Width="1.5" PointX="33" PointY="19.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_subscription_info" Width="1.5" PointX="40.75" PointY="47.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_sync_lock" Width="1.5" PointX="45.75" PointY="12.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_synonyms" Width="1.5" PointX="45.75" PointY="15.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_taxa" Width="1.5" PointX="1.875" PointY="64.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_taxa_attrbutes" Width="1.5" PointX="3.75" PointY="3.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_taxonomies" Width="1.5" PointX="4.125" PointY="64.625" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_taxonomy_statistic" Width="1.5" PointX="45.75" PointY="19.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_tr_jbs" Width="1.5" PointX="27.75" PointY="48.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_tr_prjcts" Width="1.5" PointX="36.75" PointY="48.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_tr_sources" Width="1.5" PointX="42.75" PointY="48.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_tr_trnsltns" Width="1.5" PointX="44.75" PointY="48.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_tr_units" Width="1.5" PointX="46.75" PointY="3.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_txnms_prmssnst_bjct_ttl_rs_" Width="1.5" PointX="6.375" PointY="64.625" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_txnms_spprtd_prmission_sets" Width="1.5" PointX="6.375" PointY="67.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_unsubscription_info" Width="1.5" PointX="46.75" PointY="7.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_url_data" Width="1.5" PointX="46.75" PointY="23.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_user_action" Width="1.5" PointX="46.75" PointY="28.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_user_link" Width="1.5" PointX="46.75" PointY="32.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_user_profile" Width="1.5" PointX="25.75" PointY="7.375" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_user_profile_link" Width="1.5" PointX="32.75" PointY="49.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_users" Width="1.5" PointX="46.75" PointY="36.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_version_chnges" Width="1.5" PointX="33" PointY="13.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_version_dependency" Width="1.5" PointX="30.75" PointY="14.25" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_version_serial_info" Width="1.5" PointX="46.75" PointY="44.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_version_trunks" Width="1.5" PointX="46.75" PointY="47.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_vesion_items" Width="1.5" PointX="0.75" PointY="50.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_vnts_published_translations" Width="1.5" PointX="6.375" PointY="77.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_wfl_definition" Width="1.5" PointX="8.625" PointY="55.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_wfl_dfntn_prmssnst_bjct_ttl" Width="1.5" PointX="10.875" PointY="55.5" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_wfl_dfntn_spprtd_prmssn_sts" Width="1.5" PointX="10.875" PointY="58.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_wfl_level" Width="1.5" PointX="30.75" PointY="9.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_wfl_lvl_cstm_mil_recipients" Width="1.5" PointX="33" PointY="9.625" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_wfl_permission" Width="1.5" PointX="47.75" PointY="11.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_wfl_scope" Width="1.5" PointX="47.75" PointY="15.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_wfl_type_scope" Width="1.5" PointX="47.75" PointY="19.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.sf_xml_config_items" Width="1.5" PointX="17.75" PointY="50.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.Skill" Width="1.5" PointX="18.25" PointY="14.25" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.SyncSchedulerExecution" Width="1.5" PointX="29.75" PointY="50.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.SyncTask" Width="1.5" PointX="46.75" PointY="50.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.SyncTaskExecution" Width="1.5" PointX="48.75" PointY="3.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.SyncTaskLock" Width="1.5" PointX="32.75" PointY="23.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.tbl_perfilador_C_Preguntas" Width="1.5" PointX="48.75" PointY="7.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.tbl_perfilador_Destinos" Width="1.5" PointX="48.75" PointY="23.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.User" Width="1.5" PointX="33" PointY="4.125" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.voa_keygen" Width="1.5" PointX="48.75" PointY="26.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.MSreplication_options" Width="1.5" PointX="48.75" PointY="29.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.paso_portal_C_Aseguradora" Width="1.5" PointX="48.75" PointY="32.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.paso_portal_C_Auto" Width="1.5" PointX="48.75" PointY="35.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.paso_portal_C_Coberturas" Width="1.5" PointX="48.75" PointY="38.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.paso_portal_C_DescEstados" Width="1.5" PointX="48.75" PointY="41.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.paso_portal_C_Estados" Width="1.5" PointX="38.75" PointY="51.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.paso_portal_C_Modelos" Width="1.5" PointX="48.75" PointY="51.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.paso_portal_C_PlazoAseguradora" Width="1.5" PointX="49.75" PointY="10.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.paso_portal_C_Plazos" Width="1.5" PointX="49.75" PointY="13.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.paso_portal_C_Tipo" Width="1.5" PointX="49.75" PointY="16.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.spt_fallback_db" Width="1.5" PointX="49.75" PointY="19.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.spt_fallback_dev" Width="1.5" PointX="40.75" PointY="52.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.spt_fallback_usg" Width="1.5" PointX="50.75" PointY="3.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.spt_monitor" Width="1.5" PointX="13.75" PointY="53.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.tbl_cotizador_estados" Width="1.5" PointX="50.75" PointY="7.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.tbl_cotizador_paises" Width="1.5" PointX="15.75" PointY="53.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.tbl_perfilador_Respuestas" Width="1.5" PointX="17.75" PointY="53.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.tbl_portal_C_Aseguradora" Width="1.5" PointX="19.75" PointY="53.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.tbl_portal_C_Auto" Width="1.5" PointX="50.75" PointY="23.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.tbl_portal_C_Coberturas" Width="1.5" PointX="21.75" PointY="53.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.tbl_portal_C_CoeficienteAnualidad" Width="1.5" PointX="50.75" PointY="26.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.tbl_portal_C_DescEstados" Width="1.5" PointX="50.75" PointY="29.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.tbl_portal_C_DescEstados_V" Width="1.5" PointX="31.75" PointY="53.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.tbl_portal_C_Estados" Width="1.5" PointX="33.75" PointY="53.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.tbl_portal_C_Modelos" Width="1.5" PointX="35.75" PointY="53.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.tbl_portal_C_plan" Width="1.5" PointX="50.75" PointY="39.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.tbl_portal_C_PlazoAseguradora" Width="1.5" PointX="50.75" PointY="42.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.tbl_portal_C_Plazos" Width="1.5" PointX="50.75" PointY="45.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.tbl_portal_C_Tipo" Width="1.5" PointX="42.75" PointY="53.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.tbl_portal_C_tipo_persona" Width="1.5" PointX="50.75" PointY="48.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.tbl_portal_C_TipoUso" Width="1.5" PointX="50.75" PointY="51.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.tbl_portal_Distribuidores" Width="1.5" PointX="0.75" PointY="54.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.tbl_portal_Llaves" Width="1.5" PointX="51.75" PointY="10.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.tbl_portal_parametros" Width="1.5" PointX="51.75" PointY="13.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.AssignmentData" Width="1.5" PointX="51.75" PointY="16.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.ProjectData" Width="1.5" PointX="23.75" PointY="54.875" />
+        <EntityTypeShape EntityType="DxcSitefinityToyotaModel.spt_values" Width="1.5" PointX="51.75" PointY="20.875" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.FK_Assignment_Period_Assignment" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.FK_Assignment_Project" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.FK_Assignment_Resource" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.FK_Client_Client" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.FK_Client_Country" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.FK_Contact_ClientId" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.FK_Invoice_Client" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.FK_Po_Client" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.FK_Project_Client" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.FK_Project_Contact_Contact" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.FK_Project_Contact_ContactType" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.FK_Resource_Country" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.FK_Invoice_Currency" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.FK_Po_Version_Currency" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.FK_Project_Currency" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.FK_Invoice_Invoice_Type" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_OACnflcts_OAImprt_87EE1F07" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_OASyncImprtSmmry__80271C87" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.FK_Po_Version_Po" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.FK_Project_Contact_Project" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.FK_Project_Project_State" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.FK_Project_Project_Type" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.FK_Resource_Resource_Type" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.FK_User_RoleId" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_blg_psts_pblsh_133B1DFA" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_blg_psts_ctgry_0E1420AF" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_blg_psts_sf_cm_EBEDB972" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_blg_psts_sf_ln_7BCC534D" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_blg_psts_tgs_s_8440CA61" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_blg_psts_sf_cm_BE833FC3" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_blg_psts_sf_ln_23023E19" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_blgs_sf_cmmnt__E1B764AE" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_blgs_sf_cmmnt__60EBEB17" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_cmpgn_sf_cmpgn_3D3571B2" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_cmpgn_sf_cmpgn_9A451AA2" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_cntnt_tms_sf_l_468FB44F" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_cntnt_tms_sf_l_D3A810FF" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_cntnt_tms_pbls_64AAB6C3" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_cmmnt_prnt_grp_4E481DC9" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_cmmnt_sf_cmmnt_B9C81E12" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_cmmnt_sf_cmmnt_B9C81E1F" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_cntnt_tms_sf_c_3E3E23FE" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_frm_dscrptn_sf_E34452C4" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_lbrrs_sf_cmmnt_78DD7ED2" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_lst_tms_sf_cmm_09D2A916" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_lsts_sf_cmmnt__5E006C86" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_md_cntnt_sf_cm_9C7E1F5B" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_nws_tms_sf_cmm_5CA37A87" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_vnts_sf_cmmnt__A46AC163" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_cntnt_tms_ctgr_83800DF6" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_cntnt_tms_sf_c_C9444F40" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_cntnt_tms_tgs__BD164FC6" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_cntnt_lnk_ttrb_E946E39C" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_drft_pgs_sf_ln_B7881151" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_drft_pgs_sf_ln_2C0B2153" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_dynmc_cntnt_pb_494E9A61" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_dynmc_cntnt_sf_9C75A004" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_dynmc_cntnt_sf_681AF741" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_c_cstmr_prfl_s_6EB624B1" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_events_tags_sf_events" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_vnts_ctgry_sf__3DC02376" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_vnts_pblshd_tr_6DA2DE64" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_vnts_sf_cmmnt__F6782E43" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_vnts_sf_lngg_d_1534079D" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_vnts_sf_lngg_d_14085936" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_frm_dscrptn_ct_11CBF836" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_frm_dscrptn_pb_AF91AE04" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_frm_dscrptn_sf_929C00E9" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_frm_dscrptn_sf_DC8E209C" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_frm_dscrptn_sf_E5552520" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_frm_dscrptn_tg_863C6CB2" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_frm_dscrptn_tt_A8F24C50" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_frm_dscrptn_sf_A3601094" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_frm_dscrptn_sf_28F80C1E" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_lst_tms_sf_lng_663F5578" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_md_cntnt_sf_ln_638FE5E3" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_nws_tms_sf_lng_BCDDA5D5" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_pg_dt_sf_lngg__5936D8BD" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_pg_tmplts_sf_l_E6D3AFDD" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_lbrrs_thmbnl_p_88772027" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_lbrrs_sf_cmmnt_14374312" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_lst_tms_ctgry__FE1E1F41" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_lst_tms_pblshd_985914FA" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_lst_tms_sf_cmm_B563FADD" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_lst_tms_sf_lng_3054E1ED" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_lst_tms_tgs_sf_28B5A063" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_lsts_sf_cmmnt__987A7B9C" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_md_cntnt_pblsh_5088F2F2" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_md_cntnt_sf_ln_63674A2C" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_md_cntnt_ctgry_546FC87C" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_md_cntnt_ctgry_7AA70260" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_md_cntnt_ctgry_BB3D7E9D" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_md_cntnt_sf_cm_8531F6E7" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_md_cntnt_tgs_s_D4C6D2D2" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_md_cntnt_tgs2__71AE7B0C" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_md_cntnt_tgs3__9EFCCDED" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_mt_ndx_cmpst_f_55A5FF42" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_mt_typs_sctn_n_67C53CAD" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_nws_tms_ctgry__2CF409F8" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_nws_tms_pblshd_D2645765" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_nws_tms_sf_cmm_B15909E4" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_nws_tms_sf_lng_C5D9C25A" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_nws_tms_tgs_sf_FF6C0D89" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_ntf_msg_jb_cst_FF3D3E2C" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_ntf_msg_jb_xcl_3D6E6593" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_ntf_sbscrbrs_c_66278547" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_pg_dt_pblshd_t_4AD938FD" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_pg_dt_sf_lngg__78605E03" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_pg_dt_ttrbts_s_CA759A20" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_pg_nd_prmssnst_5220774D" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_pg_nd_ttrbts_s_A6852832" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_pg_tmplts_pbls_88E7C526" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_pg_tmplts_sf_l_070C78C7" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_pblshng_mppng__423E25FB" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_pblshng_mppng__99FB3F80" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_pblshng_mppng__D4283994" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_pblshng_mppng__A0EF7CD1" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_pblshng_mppng__B02ED89D" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_pblshng_pp_stt_A5119550" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_pblshng_pp_stt_8A8AB5D0" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_pblshng_pp_stt_E0AFBD06" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_sts_sf_prmssns_591B75AD" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_prs_crtr_grp_s_AA06D665" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_prs_sgmnt_sf_p_8B779700" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_prs_crtr_grp_s_3FD9548B" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_prs_sgmnt_sf_p_DCC8A1FE" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_schm_vrsns_mt__BF84E03B" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_scrty_rts_prms_D96DAF71" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_scrty_rts_sppr_7424AADB" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_stfnty_prfl_sf_125BEED3" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_sts_cltr_kys_s_821E5F65" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_sts_dmn_lss_sf_D75D2B5C" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_sts_sf_prmssns_2BA50E5F" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_taxa_attrbutes_sf_taxa" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_txnms_prmssnst_28075844" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_txnms_spprtd_p_E38DFA0F" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_wfl_dfntn_prms_AE143675" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_wfl_dfntn_sppr_035D33DF" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ref_sf_wfl_lvl_cstm_m_AB996DAB" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.AssignmentPeriodInvoice" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.AssignmentPeriodPo" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ImportWarnings" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.InvoicePo" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ResourceSkill" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_blog_posts_sf_permissions" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_blogs_sf_permissions" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_cntent_items_sf_permissions" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_dynmc_cntent_sf_permissions" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_events_sf_permissions" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_facet_facets" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_forum_groups_sf_permissions" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_forums_sf_permissions" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_frm_dscrpton_sf_permissions" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_libraries_sf_permissions" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_list_items_sf_permissions" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_lists_sf_permissions" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_lst_sf_subscriber" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_mb_dnc_cnt_prvdr_sf_prmssns" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_mb_dynmc_mdl_fld_sf_prmssns" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_mb_dynmc_mdl_sf_permissions" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_mb_dynmc_mdl_typ_sf_prmssns" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_mbl_frmt_sf_mbl_cntnt_typs" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_mdia_content_sf_permissions" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_network_subtaxa" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_network_supertaxa" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_news_items_sf_permissions" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_object_data_sf_permissions" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_page_node_sf_permissions" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_pg_templates_sf_permissions" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_rdsgn_md_qry_lnk_sf_rdsgn_m" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_scrity_roots_sf_permissions" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_taxonomies_sf_permissions" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_vrsn_chngs_sf_vrsn_dpndncy" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.sf_wfl_dfnition_sf_permissions" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.InvoiceAttachment" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.PoAttachment" />
+        <AssociationConnector Association="DxcSitefinityToyotaModel.ProjectAttachment" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

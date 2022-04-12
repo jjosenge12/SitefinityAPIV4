@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCFBuroCredito.Clases" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFBuroCredito.Clases" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://www.toyotafinanciamientotest.com.mx/wcfBuroCredito/ServiceBC.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://www.toyotafinanciamientotest.com.mx/wcfBuroCredito/ServiceBC.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://www.toyotafinanciamientotest.com.mx/wcfBuroCredito/ServiceBC.svc?xsd=xsd4" />
+  <xs:complexType name="Consulta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="actualiza" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="cotizaciones" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="idPersona" type="xs:int" />
+      <xs:element minOccurs="0" name="origen" type="tns:Origen" />
+      <xs:element minOccurs="0" name="tipo" type="tns:TipoElemento" />
+      <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Consulta" nillable="true" type="tns:Consulta" />
+  <xs:simpleType name="Origen">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="APS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COTIZADOR">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FICO">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="APPBC">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WEB">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MOBILE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COTIZADOR5">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Origen" nillable="true" type="tns:Origen" />
+  <xs:simpleType name="TipoElemento">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="COTIZACION">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CONTRATO">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TipoElemento" nillable="true" type="tns:TipoElemento" />
+  <xs:complexType name="ResponseOriginacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FolioTFSM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoPersona" type="xs:int" />
+      <xs:element minOccurs="0" name="Consultado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Errores" nillable="true" type="ArrayOfError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseOriginacion" nillable="true" type="tns:ResponseOriginacion" />
+  <xs:complexType name="ConsultaBuroCredito">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="autentica" nillable="true" type="tns:Autentica" />
+      <xs:element minOccurs="0" name="idCotizacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idDealer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="origen" type="tns:Origen" />
+      <xs:element minOccurs="0" name="p" nillable="true" type="tns:Persona" />
+      <xs:element minOccurs="0" name="producto" type="tns:ProductosTransUnion" />
+      <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultaBuroCredito" nillable="true" type="tns:ConsultaBuroCredito" />
+  <xs:complexType name="Autentica">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="autenticar" type="xs:boolean" />
+      <xs:element minOccurs="0" name="isCreditoAutomotriz" type="xs:boolean" />
+      <xs:element minOccurs="0" name="isCreditoHipotecario" type="xs:boolean" />
+      <xs:element minOccurs="0" name="isTarjetaCredito" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ultimosCuatroDigitosTC" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Autentica" nillable="true" type="tns:Autentica" />
+  <xs:complexType name="Persona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="catTipoRol" type="tns:APS_CatTipoRol" />
+      <xs:element minOccurs="0" name="domicilio" nillable="true" type="tns:Domicilio" />
+      <xs:element minOccurs="0" name="errorBC" type="xs:boolean" />
+      <xs:element minOccurs="0" name="folioBuro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idDealer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idPersona" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="idTipoRol" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="tns:Nombre" />
+      <xs:element minOccurs="0" name="tipoPersona" type="tns:TipoPersona" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Persona" nillable="true" type="tns:Persona" />
+  <xs:simpleType name="APS_CatTipoRol">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EMPTY" />
+      <xs:enumeration value="TITULAR" />
+      <xs:enumeration value="AVAL" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="APS_CatTipoRol" nillable="true" type="tns:APS_CatTipoRol" />
+  <xs:complexType name="Domicilio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ciudad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoPais" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="coloniaPoblacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="delegacionMpo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="direccion1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="direccion2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Domicilio" nillable="true" type="tns:Domicilio" />
+  <xs:complexType name="Nombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellidoMaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaNacimiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nacionalidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="primerNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rfc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="segundoNombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Nombre" nillable="true" type="tns:Nombre" />
+  <xs:simpleType name="TipoPersona">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PF">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PFAE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PM" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TipoPersona" nillable="true" type="tns:TipoPersona" />
+  <xs:simpleType name="ProductosTransUnion">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="_058">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">58</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="_107">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">107</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="_108">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">107</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ProductosTransUnion" nillable="true" type="tns:ProductosTransUnion" />
+  <xs:simpleType name="TipoResultado">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ResultadoHTML" />
+      <xs:enumeration value="ResultadoPDF" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TipoResultado" nillable="true" type="tns:TipoResultado" />
+  <xs:complexType name="SSatelitalPassword">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="member" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="newPassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sistemaReq" type="tns:Origen" />
+      <xs:element minOccurs="0" name="usuarioReq" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SSatelitalPassword" nillable="true" type="tns:SSatelitalPassword" />
+</xs:schema>

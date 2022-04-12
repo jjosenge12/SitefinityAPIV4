@@ -1,0 +1,1120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{55FA9611-8BE7-42C7-AE1C-DA95B60F9078}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DXC.TFSM.DataAccess</RootNamespace>
+    <AssemblyName>DXC.TFSM.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer, Version=1.5.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.Core.1.5.0.5\lib\net45\HtmlRenderer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer.PdfSharp, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.PdfSharp.1.5.0.6\lib\net45\HtmlRenderer.PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="iTextSharp, Version=4.1.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <HintPath>..\packages\iTextSharp-LGPL.4.1.6\lib\iTextSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionLog.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Assignment.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssignmentData.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssignmentPeriod.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Attachment.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContactType.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Country.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Currency.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorLog.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceType.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTFSM.Context.cs">
+      <DependentUpon>ModelTFSM.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="ModelTFSM.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="ModelTFSM.Designer.cs">
+      <DependentUpon>ModelTFSM.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="ModelTFSM_Sitefinity.Context.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="ModelTFSM_Sitefinity.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="ModelTFSM_Sitefinity.Designer.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="MSreplication_options.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OAConflicts.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OAImportConfigurations.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oakeygen.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OASyncImportSummary.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OASyncListSummary.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OASyncLog.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="paso_portal_C_Aseguradora.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="paso_portal_C_Auto.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="paso_portal_C_Coberturas.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="paso_portal_C_DescEstados.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="paso_portal_C_Estados.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="paso_portal_C_Modelos.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="paso_portal_C_PlazoAseguradora.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="paso_portal_C_Plazos.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="paso_portal_C_Tipo.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Po.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PoVersion.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Project.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectContact.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectData.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectState.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectType.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RedmineActivity.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Resource.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceType.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_ab_campaign.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_ab_test.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_ab_test_goal.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_ab_test_variation.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_addresses.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_approval_tracking_record.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_app_setting.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_blg_psts_pblshd_trnslations.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_blogs.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_blogs_sf_commnt.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_blog_posts.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_blog_posts_category.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_blog_posts_sf_commnt.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_blog_posts_sf_language_data.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_blog_posts_tags.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_bounce_stat.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_calendars.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_campaign.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_campaign_link.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_campaign_sf_campaign_link.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_chunks.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_cntnt_tems_sf_language_data.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_cntnt_tms_pblshd_trnsltions.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_cnt_locations.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_cnt_location_filters.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_commnt.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_commnt_parent_group_ids.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_commnt_sf_commnt.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_config_variables.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_content_items.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_content_items_category.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_content_items_sf_commnt.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_content_items_tags.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_content_link.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_content_link_attrbutes.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_content_relation.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_control_properties.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_counters.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_cs_comments.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_cs_groups.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_cs_threads.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_dashboard_log.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_dashboard_watchlist.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_delivery_entry.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_draft_pages.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_drft_pages_sf_language_data.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_dynamic_content.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_dynamic_list.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_dynamic_type_base.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_dynmc_cntnt_pblshd_trnsltns.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_dynmc_cntnt_sf_lnguage_data.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_ec_customer_profile.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_events.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_events_category.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_events_sf_commnt.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_events_sf_language_data.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_events_tags.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_failed_deliveries.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_files_monitor_data.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_folders.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_form_description.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_form_description_attrbutes.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_form_description_category.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_form_description_sf_commnt.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_form_description_tags.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_form_entry.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_forums.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_forum_groups.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_forum_posts.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_forum_threads.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_frm_dscrptn_pblshd_trnsltns.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_frm_dscrptn_sf_lnguage_data.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_frm_dscrptn_sf_prsnttn_data.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_idsrv_claims.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_idsrv_consents.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_idsrv_keys.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_idsrv_tokens.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_issue_subscriber_report.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_language_data.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_lbraries_thumbnail_profiles.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_libraries.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_libraries_sf_commnt.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_lic_user_activity.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_link_click_stat.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_lists.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_lists_sf_commnt.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_list_items.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_list_items_category.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_list_items_sf_commnt.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_list_items_sf_language_data.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_list_items_tags.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_locks.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_lst.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_lst_tms_pblshd_translations.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_manager_info.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_mbl_frmt_cntnt_types.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_mbl_frmt_dfntns.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_mbl_frmt_templates.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_mb_dnc_cnt_provider.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_mb_dynamic_module.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_mb_dynamic_module_field.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_mb_dynamic_module_type.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_mb_fields_backend_section.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_md_cntnt_pblshd_trnslations.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_md_content_sf_language_data.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_media_content.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_media_content_category.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_media_content_category2.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_media_content_category3.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_media_content_sf_commnt.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_media_content_tags.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_media_content_tags2.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_media_content_tags3.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_media_file_links.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_media_file_urls.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_media_thumbnails.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_message_body.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_meta_attribute.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_meta_data_mapping.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_meta_fields.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_meta_index.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_meta_index_composite_fields.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_meta_types.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_meta_types_section_names.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_meta_type_descriptions.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_module_vrsn.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_news_items.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_news_items_category.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_news_items_sf_commnt.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_news_items_sf_language_data.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_news_items_tags.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_notif_cmplt_msg_job.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_notif_msg_job.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_notif_msg_job_log.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_notif_msg_template.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_notif_subscribers.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_notif_subscriptions.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_notif_subscr_list.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_ntf_msg_jb_cstm_mssg_haders.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_ntf_msg_jb_xcldd_rslvd_kys_.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_ntf_sbscrbrs_cstm_prperties.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_nws_tms_pblshd_translations.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_object_data.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_ocd_dpndncies.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_ocd_itms.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_ocd_typs.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_open_stat.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_page_data.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_page_data_attrbutes.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_page_data_sf_language_data.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_page_node.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_page_node_attrbutes.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_page_node_references.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_page_templates.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_pblshng_mppng_sf_pp_mppng_t.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_pblshng_mppng_src_prprty_nm.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_pblshng_mppng_sttngs_sf_pbl.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_pblshng_pp_sttngs_cntnt_lnk.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_pblshng_pp_sttngs_ddtnl_dta.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_pblshng_pp_sttngs_lngge_ids.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_pckgng_addns.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_pckgng_addns_err_stts.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_pckgng_addns_stts.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_pckgng_addn_lnks.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_pckgng_pckgs.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_permissions.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_permissions_inheritance_map.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_pg_dt_pblished_translations.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_pg_nd_prmssnst_bjct_ttl_rs_.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_pg_tmpltes_sf_language_data.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_pg_tmplts_pblshd_trnsltions.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_pipe_mapping_translation.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_presentation_data.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_prs_criteria_group.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_prs_criterion.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_prs_crtr_grp_sf_prs_crtrion.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_prs_segment.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_prs_sgmnt_sf_prs_crtr_group.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_publishing_mapping.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_publishing_mapping_settings.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_publishing_pipe_settings.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_publishing_point.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_publishing_point_settings.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_publishing_throttle_settings.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_rbin_item.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_rdsgn_media_query.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_rdsgn_media_query_link.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_rdsgn_media_query_rule.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_rdsgn_nav_trnsfrmtn.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_roles.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_scheduled_tasks.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_schema_vrsns.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_schema_vrsns_meta_types.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_scrty_rts_prmssnst_bjct_ttl.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_scrty_rts_spprtd_prmssn_sts.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_security_roots.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_sitefinity_profile.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_sites.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_sites_culture_keys.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_sites_domain_aliases.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_sites_sf_permissions.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_site_data_src.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_site_data_src_lnks.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_site_item_links.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_stat_sentence.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_subscriber.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_subscription_info.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_sync_lock.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_synonyms.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_taxa.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_taxa_attrbutes.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_taxonomies.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_taxonomy_statistic.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_tr_jbs.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_tr_prjcts.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_tr_sources.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_tr_trnsltns.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_tr_units.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_txnms_prmssnst_bjct_ttl_rs_.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_txnms_spprtd_prmission_sets.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_unsubscription_info.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_url_data.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_users.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_user_action.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_user_link.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_user_profile.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_user_profile_link.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_version_chnges.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_version_dependency.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_version_serial_info.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_version_trunks.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_vesion_items.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_vnts_published_translations.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_wfl_definition.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_wfl_dfntn_prmssnst_bjct_ttl.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_wfl_dfntn_spprtd_prmssn_sts.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_wfl_level.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_wfl_lvl_cstm_mil_recipients.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_wfl_permission.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_wfl_scope.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_wfl_type_scope.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sf_xml_config_items.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Skill.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spt_fallback_db.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spt_fallback_dev.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spt_fallback_usg.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spt_monitor.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spt_values.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_costo_total_seguro_Result.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SyncSchedulerExecution.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SyncTask.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SyncTaskExecution.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SyncTaskLock.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_cotizador_estados.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_cotizador_paises.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_perfilador_C_Preguntas.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_perfilador_Destinos.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_perfilador_Respuestas.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_portal_C_Aseguradora.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_portal_C_Auto.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_portal_C_Coberturas.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_portal_C_CoeficienteAnualidad.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_portal_C_DescEstados.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_portal_C_DescEstados_V.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_portal_C_Estados.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_portal_C_Modelos.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_portal_C_plan.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_portal_C_PlazoAseguradora.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_portal_C_Plazos.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_portal_C_Tipo.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_portal_C_TipoUso.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_portal_C_tipo_persona.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_portal_Distribuidores.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_portal_Llaves.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_portal_parametros.cs">
+      <DependentUpon>ModelTFSM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_SELECT_CAT_AUTOS_Result.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_SEL_CAT_CARS_Result.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="voa_keygen.cs">
+      <DependentUpon>ModelTFSM_Sitefinity.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="ModelTFSM.edmx.diagram">
+      <DependentUpon>ModelTFSM.edmx</DependentUpon>
+    </None>
+    <None Include="ModelTFSM_Sitefinity.edmx.diagram">
+      <DependentUpon>ModelTFSM_Sitefinity.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ModelTFSM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelTFSM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="ModelTFSM_Sitefinity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelTFSM_Sitefinity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModelTFSM.Context.tt">
+      <DependentUpon>ModelTFSM.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelTFSM.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelTFSM.tt">
+      <DependentUpon>ModelTFSM.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelTFSM.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelTFSM_Sitefinity.Context.tt">
+      <DependentUpon>ModelTFSM_Sitefinity.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelTFSM_Sitefinity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelTFSM_Sitefinity.tt">
+      <DependentUpon>ModelTFSM_Sitefinity.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelTFSM_Sitefinity.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
