@@ -108,7 +108,7 @@ namespace DXC.TFSM.Business
             double Resultado = 0;
             try
             {
-                string PrecioAuto = tFSM_PortalEntities.tbl_portal_C_Modelos.Where(x => x.des_auto == Datos.Marca && x.descripcion_tipo.Contains(Datos.Vesion) && x.descripcion == Datos.Modelo).FirstOrDefault().precio.ToString();
+                string PrecioAuto = tFSM_PortalEntities.tbl_portal_C_Modelos.Where(x => x.des_auto == Datos.Marca && x.descripcion_tipo.ToUpper() == Datos.Vesion.ToUpper() && x.descripcion == Datos.Modelo).FirstOrDefault().precio.ToString();
                 double.TryParse(PrecioAuto, out Resultado);
             }
             catch
@@ -817,7 +817,8 @@ namespace DXC.TFSM.Business
 
                 Datos.Plazo = "24";
                 SumaPagosAnuales = 0;
-                plazo = 12;
+
+                plazo = 12 - (DateTime.Now.Month + 1);
 
 
                 ResultPrice lPrice24 = new ResultPrice();
@@ -847,10 +848,13 @@ namespace DXC.TFSM.Business
                 lPrice24.Anualidad = lPrice24.PrecioTotal * GetAnualidad(lPrice24.Plazo) / 100;
                 lPrice24.MesAnualidad = lPrice.MesAnualidad;
 
-                for (i = 1; i < (lPrice24.Plazo / 12); i++)
+                for (i = 0; i < (lPrice24.Plazo / 12); i++)
                 {
-                    SumaPagosAnuales = SumaPagosAnuales + (lPrice24.Anualidad / Math.Pow((1 + TasaEfectivaPeriodoIVA), plazo));
-                    plazo = plazo + 12;
+                    if(plazo <= lPrice24.Plazo) 
+                    { 
+                        SumaPagosAnuales = SumaPagosAnuales + (lPrice24.Anualidad / Math.Pow((1 + TasaEfectivaPeriodoIVA), plazo));
+                        plazo = plazo + 12;
+                    }
                 }
 
                 /*
@@ -880,7 +884,8 @@ namespace DXC.TFSM.Business
 
                 Datos.Plazo = "36";
                 SumaPagosAnuales = 0;
-                plazo = 12;
+
+                plazo = 12 - (DateTime.Now.Month + 1);
 
 
                 ResultPrice lPrice36 = new ResultPrice();
@@ -910,10 +915,13 @@ namespace DXC.TFSM.Business
                 lPrice36.Anualidad = lPrice36.PrecioTotal * GetAnualidad(lPrice36.Plazo) / 100;
                 lPrice36.MesAnualidad = lPrice.MesAnualidad;
 
-                for (i = 1; i < (lPrice36.Plazo / 12); i++)
+                for (i = 0; i < (lPrice36.Plazo / 12); i++)
                 {
-                    SumaPagosAnuales = SumaPagosAnuales + (lPrice36.Anualidad / Math.Pow((1 + TasaEfectivaPeriodoIVA), plazo));
-                    plazo = plazo + 12;
+                    if (plazo <= lPrice36.Plazo)
+                    {
+                        SumaPagosAnuales = SumaPagosAnuales + (lPrice36.Anualidad / Math.Pow((1 + TasaEfectivaPeriodoIVA), plazo));
+                        plazo = plazo + 12;
+                    }
                 }
 
                 lPrice36.Mensualidad = (lPrice36.PrecioTotal - SumaPagosAnuales) / ((1 / TasaEfectivaPeriodoIVA) - (1 / (TasaEfectivaPeriodoIVA * Math.Pow(TasaEfectivaPeriodoIVA + 1, lPrice36.Plazo))));
@@ -924,7 +932,7 @@ namespace DXC.TFSM.Business
 
                 Datos.Plazo = "48";
                 SumaPagosAnuales = 0;
-                plazo = 12;
+                plazo = 12 - (DateTime.Now.Month + 1);
 
 
                 ResultPrice lPrice48 = new ResultPrice();
@@ -954,10 +962,13 @@ namespace DXC.TFSM.Business
                 lPrice48.Anualidad = lPrice48.PrecioTotal * GetAnualidad(lPrice48.Plazo) / 100;
                 lPrice48.MesAnualidad = lPrice.MesAnualidad;
 
-                for (i = 1; i < (lPrice48.Plazo / 12); i++)
+                for (i = 0; i < (lPrice48.Plazo / 12); i++)
                 {
-                    SumaPagosAnuales = SumaPagosAnuales + (lPrice48.Anualidad / Math.Pow((1 + TasaEfectivaPeriodoIVA), plazo));
-                    plazo = plazo + 12;
+                    if (plazo <= lPrice48.Plazo)
+                    {
+                        SumaPagosAnuales = SumaPagosAnuales + (lPrice48.Anualidad / Math.Pow((1 + TasaEfectivaPeriodoIVA), plazo));
+                        plazo = plazo + 12;
+                    }
                 }
 
                 lPrice48.Mensualidad = (lPrice48.PrecioTotal - SumaPagosAnuales) / ((1 / TasaEfectivaPeriodoIVA) - (1 / (TasaEfectivaPeriodoIVA * Math.Pow(TasaEfectivaPeriodoIVA + 1, lPrice48.Plazo))));

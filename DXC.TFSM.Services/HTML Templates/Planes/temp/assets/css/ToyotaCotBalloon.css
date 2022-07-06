@@ -37,11 +37,9 @@
 
 .container__row1-cajaAuto {
     position: absolute;
-    right: 230px;
+    right: 210px;
     top: 20px;
-    width: 210px;
-    height: 120px;
-    max-width: 210px;
+    height: 110px;
     max-height: 120px;
 }
 
@@ -407,9 +405,9 @@
     top: 331px;
     display: block;
     float: left;
-    width: 216px;
+    width: 326px;
     height: 47px;
-    max-width: 326px;
+    max-width: 489px;
     max-height: 47px;
     background-color: white;
     border-style: solid;
@@ -458,10 +456,10 @@
 .container__row65 {
     position: absolute;
     top: 331px;
-    left: 219px;
-    width: 216px;
+    left: 329px;
+    width: 326px;
     height: 47px;
-    max-width: 326px;
+    max-width: 489px;
     max-height: 47px;
     background-color: white;
     border-style: solid;

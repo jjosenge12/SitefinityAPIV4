@@ -98,12 +98,10 @@
 
 .container__row1-cajaAuto {
     position: absolute;
-    right: 202px;
+    right: 210px;
     top: 20px;
-    width: 212px;
-    height: 108px;
-    max-width: 246px;
-    max-height: 108px;
+    height: 110px;
+    max-height: 120px;
 }
 
 .container__row1-nameplate {

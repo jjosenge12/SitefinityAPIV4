@@ -37,11 +37,9 @@
 
 .container__row1-cajaAuto {
     position: absolute;
-    right: 230px;
+    right: 210px;
     top: 20px;
-    width: 210px;
-    height: 120px;
-    max-width: 210px;
+    height: 110px;
     max-height: 120px;
 }
 

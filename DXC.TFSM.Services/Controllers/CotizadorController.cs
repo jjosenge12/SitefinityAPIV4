@@ -28,6 +28,7 @@ namespace DXC.TFSM.Services.Controllers
     {
         #region Global Variables
         readonly BssCars BssAutos = new BssCars();
+        readonly string UrlBase = "https://test.salesforce.com";
         readonly BssInsurers BssInsurers = new BssInsurers();
         readonly BssCoverages BssCoverages = new BssCoverages();
         readonly BssCountriesStates BssCStates = new BssCountriesStates();
@@ -198,7 +199,7 @@ namespace DXC.TFSM.Services.Controllers
         {
             HttpClient client = new HttpClient();
 
-            client.BaseAddress = new Uri("https://test.salesforce.com");
+            client.BaseAddress = new Uri(UrlBase);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
             var content = new FormUrlEncodedContent(new[]
@@ -242,7 +243,7 @@ namespace DXC.TFSM.Services.Controllers
         {
             HttpClient client = new HttpClient();
 
-            client.BaseAddress = new Uri("https://test.salesforce.com");
+            client.BaseAddress = new Uri(UrlBase);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
             var content = new FormUrlEncodedContent(new[]
@@ -286,7 +287,7 @@ namespace DXC.TFSM.Services.Controllers
         {
             HttpClient client = new HttpClient();
 
-            client.BaseAddress = new Uri("https://test.salesforce.com");
+            client.BaseAddress = new Uri(UrlBase);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
             var content = new FormUrlEncodedContent(new[]
@@ -321,7 +322,7 @@ namespace DXC.TFSM.Services.Controllers
         {
             HttpClient client = new HttpClient();
 
-            client.BaseAddress = new Uri("https://test.salesforce.com");
+            client.BaseAddress = new Uri(UrlBase);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
             var content = new FormUrlEncodedContent(new[]
@@ -348,7 +349,7 @@ namespace DXC.TFSM.Services.Controllers
         {
             HttpClient client = new HttpClient();
 
-            client.BaseAddress = new Uri("https://test.salesforce.com");
+            client.BaseAddress = new Uri(UrlBase);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
             var content = new FormUrlEncodedContent(new[]
@@ -377,7 +378,7 @@ namespace DXC.TFSM.Services.Controllers
         {
             HttpClient client = new HttpClient();
 
-            client.BaseAddress = new Uri("https://test.salesforce.com");
+            client.BaseAddress = new Uri(UrlBase);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
             var content = new FormUrlEncodedContent(new[]
@@ -407,7 +408,7 @@ namespace DXC.TFSM.Services.Controllers
         public async Task<IHttpActionResult> LeadDistribuidores(Business.Model.DataSalesForce data) {
             HttpClient client = new HttpClient();
 
-            client.BaseAddress = new Uri("https://test.salesforce.com");
+            client.BaseAddress = new Uri(UrlBase);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
             var content = new FormUrlEncodedContent(new[] {
@@ -434,15 +435,15 @@ namespace DXC.TFSM.Services.Controllers
         {
             HttpClient client = new HttpClient();
 
-            client.BaseAddress = new Uri("https://test.salesforce.com");
+            client.BaseAddress = new Uri(UrlBase);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
             var body = new FormUrlEncodedContent(new[] {
                 new KeyValuePair<string,string>("grant_type","password"),
-                new KeyValuePair<string,string>("client_secret","2EF4ABE7DF7ECACA5460B6D45157703E58C6495093F77BEDDFDE9C1EB9B28290"),
-                new KeyValuePair<string,string>("username","sebastian.marmol@virtualdreams.io.salt001"),
-                new KeyValuePair<string,string>("password","Sebas22!nynCmKj7Om6s7szeT3ZxuUcwM"),
-                new KeyValuePair<string,string>("client_id","3MVG9GnaLrwG9TQRGlnlDs0akv1Wv8tqkoxMJtQ6xuCLQtFMnsIRFyYN_chGD9s34HOwtIqT6_dGMGYqEonBo")
+                new KeyValuePair<string,string>("client_secret","9025EE7E585D286CA512D359EF69203CBA1E32E95D325BCF96ED0E6A535D87E5"),
+                new KeyValuePair<string,string>("username","smarmol4@virtualdreams.io.qatfs"),
+                new KeyValuePair<string,string>("password","Sebas22!KWRLMUORZpevgXpaI2z5X68bu"),
+                new KeyValuePair<string,string>("client_id","3MVG9Ccwq.TeycMY2GGgoFD543mNUxYQfSU14i9V5GtDniI4wIRys2hB2Yhy2g7X0JmpBXUjYMD_xKv0kWahV")
             });
 
             //Petición POST para generar el token
