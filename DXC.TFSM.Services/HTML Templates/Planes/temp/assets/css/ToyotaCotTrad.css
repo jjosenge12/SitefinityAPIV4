@@ -59,6 +59,10 @@
     src: url('fonts/ToyotaType_Convertida/ToyotaType-Semiboldlt.ttf') format("truetype");
 }
 
+.textX2 {
+    font-size: 10px;
+}
+
 .container {
     position: relative;
     width: 658px;

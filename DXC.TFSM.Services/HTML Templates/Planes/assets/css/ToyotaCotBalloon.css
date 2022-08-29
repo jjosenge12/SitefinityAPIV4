@@ -1,3 +1,7 @@
+.textX2 {
+    font-size: 10px;
+}
+
 .container {
     position: relative;
     width: 658px;
@@ -405,7 +409,7 @@
     top: 331px;
     display: block;
     float: left;
-    width: 216px;
+    width: 326px;
     height: 47px;
     max-width: 326px;
     max-height: 47px;
@@ -456,8 +460,8 @@
 .container__row65 {
     position: absolute;
     top: 331px;
-    left: 219px;
-    width: 216px;
+    left: 329px;
+    width: 326px;
     height: 47px;
     max-width: 326px;
     max-height: 47px;
