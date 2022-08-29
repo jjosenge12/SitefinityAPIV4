@@ -297,6 +297,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Auto.cs" />
+    <Compile Include="Models\Forms\LoginForm.cs" />
+    <Compile Include="Models\Forms\RegistroForm.cs" />
     <Compile Include="Models\Forms\PlanForm.cs" />
     <Compile Include="Models\RequestPDF.cs" />
     <Compile Include="Models\Responses\DealersByStateResponse.cs" />

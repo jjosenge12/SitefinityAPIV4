@@ -20,6 +20,7 @@ using DXC.TFSM.Services.Models.Forms;
 using System.Text;
 using System.Collections;
 using DXC.TFSM.Services.Models;
+using Newtonsoft.Json.Linq;
 
 namespace DXC.TFSM.Services.Controllers
 {
@@ -481,31 +482,155 @@ namespace DXC.TFSM.Services.Controllers
 
             string token = await GetAccessToken();
 
+            //HttpClient client = new HttpClient();
+            //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            //client.BaseAddress = new Uri("https://toyotafinancial--salt001.my.salesforce.com");
+            //client.DefaultRequestHeaders.Accept.Clear();
+            //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            var body = new Hashtable();
+            body.Add("state", form.state);
+            body.Add("FWY_Aseguradora__c", form.FWY_Aseguradora__c);
+            body.Add("Mensualidad__c", form.Mensualidad__c);
+            body.Add("Cobertura__c", form.Cobertura__c);
+            body.Add("FWY_Tipo_de_plan__c", form.FWY_Tipo_de_plan__c);
+            body.Add("MobilePhone", form.MobilePhone);
+            body.Add("Email", form.Email);
+            body.Add("FirstName", form.FirstName);
+            body.Add("LastName", form.LastName);
+            body.Add("FWY_Veh_culo__c", form.FWY_Veh_culo__c);
+            body.Add("FWY_Versi_n__c", form.FWY_Versi_n__c);
+            body.Add("FWY_Modelo__c", form.FWY_Modelo__c);
+            body.Add("FWY_Tipo_de_persona__c", form.FWY_Tipo_de_persona__c);
+            body.Add("FWY_Enganche_Monto__c", form.FWY_Enganche_Monto__c);
+            body.Add("Plazo__c", form.Plazo__c);
+            body.Add("FWY_Balloon__c", form.FWY_Balloon__c);
+            body.Add("Depositos_Garantia__c", form.Depositos_Garantia__c);
+            body.Add("Precio_Auto__c", form.Precio_Auto__c);
+            body.Add("ImagenAuto__c", form.ImagenAuto__c);
+            body.Add("LeadSource", form.LeadSource);
+            body.Add("Company", form.Company);
+
+
+            var stringPayload = JsonConvert.SerializeObject(body);
+
+            // Wrap our JSON inside a StringContent which then can be used by the HttpClient class
+            var httpContent = new StringContent(stringPayload, Encoding.UTF8, "application/json");
+
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            // Do the actual request and await the response
+            var httpResponse = new HttpResponseMessage();
+
+            if (form.Idcoti != null)
+            {
+                var request = new HttpRequestMessage(new HttpMethod("PATCH"), "https://toyotafinancial--salt001.my.salesforce.com/services/data/v54.0/sobjects/Lead/" + form.Idcoti);
+                try
+                {
+                    request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                    request.Content = httpContent;
+                    var response = await httpClient.SendAsync(request);
+                    var contents = await response.Content.ReadAsStringAsync();
+                    return Ok(response);
+                }
+                catch (Exception ex)
+                {
+                    BadRequest();
+                }
+            }
+            else
+            {
+                httpResponse = await httpClient.PostAsync("https://toyotafinancial--salt001.my.salesforce.com/services/data/v54.0/sobjects/Lead/", httpContent);
+
+                // If the response contains content we want to read it!
+                if (httpResponse.Content != null)
+                {
+                    var responseContent = await httpResponse.Content.ReadAsStringAsync();
+
+                    // From here on you could deserialize the ResponseContent back again to a concrete C# type using Json.Net
+
+                    return Ok(responseContent);
+                }
+            }
+
+
+            return BadRequest();
+        }
+
+        [Route("inicio_sesion")]
+        [HttpPost]
+        public async Task<IHttpActionResult> InicioSesion(LoginForm form)
+        {
+            if (form == null)
+            {
+                return BadRequest();
+            }
+
+            string token = await GetAccessToken();
+
+            var body = new Hashtable();
+            body.Add("idCliente_email", form.idCliente_email);
+            body.Add("password", form.password);
+            body.Add("esCliente", form.esCliente);
+
+
+            var stringPayload = JsonConvert.SerializeObject(body);
+
+            var httpContent = new StringContent(stringPayload, Encoding.UTF8, "application/json");
+
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            var httpResponse = new HttpResponseMessage();
+
+
+            httpResponse = await httpClient.PostAsync("https://toyotafinancial--salt001.my.salesforce.com/services/apexrest/SitefinityLoginWS", httpContent);
+
+            if (httpResponse.Content != null)
+            {
+                var responseContent = await httpResponse.Content.ReadAsStringAsync();
+
+
+                return Ok(responseContent);
+            }
+
+
+            return BadRequest();
+        }
+
+        [Route("coti")]
+        [HttpPost]
+        public async Task<IHttpActionResult> coti(PlanForm form)
+        {
+            if (form == null)
+            {
+                return BadRequest();
+            }
+
+            string token = await GetAccessToken();
+
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            client.BaseAddress = new Uri("https://toyotafinancial.my.salesforce.com");
+            client.BaseAddress = new Uri("https://toyotafinancial--salt001.my.salesforce.com");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             var body = new Hashtable();
-            body.Add("FirstName", form.Firstname);
-            body.Add("LastName", form.Lastname);
-            body.Add("FWY_codigo_distribuidor__c", form.DealerId.ToString());
-            body.Add("FWY_Nombre_distribuidor__c", form.Dealer);
-            body.Add("Company", form.Dealer);
-            body.Add("FWY_Veh_culo__c", string.IsNullOrEmpty(form.Vehicle) ? "RAV4" : form.Vehicle);
-            body.Add("Phone", form.Phone);
-            body.Add("Email", form.Email);
-            body.Add("FWY_Tipo_de_plan__c", form.Plan);
+            body.Add("email", form.Email);
 
             var json = JsonConvert.SerializeObject(body);
             using (var content = new StringContent(json, Encoding.UTF8, "application/json"))
             {
-                var result = await client.PostAsync("/services/data/v50.0/sobjects/lead", content);
+                var result = await client.PostAsync("/services/apexrest/sitefinity", content);
                 if (result.StatusCode == HttpStatusCode.OK || result.StatusCode == HttpStatusCode.Created)
                 {
-                    return Ok(result);
+                    var contents = await result.Content.ReadAsStringAsync();
+                    JObject o = JObject.Parse(contents);
+
+                    return Ok(o);
                 }
                 else
                 {
@@ -513,6 +638,112 @@ namespace DXC.TFSM.Services.Controllers
                     // contents to a log file
                     string resultContent = await result.Content.ReadAsStringAsync();
                     // ... write to log
+                    return BadRequest();
+                }
+            }
+        }
+
+        [Route("RegistroPC")]
+        [HttpPost]
+        public async Task<IHttpActionResult> RegistroPC(RegistroForm form)
+        {
+            if (form == null)
+            {
+                return BadRequest();
+            }
+
+            string token = await GetAccessToken();
+
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            client.BaseAddress = new Uri("https://toyotafinancial--salt001.my.salesforce.com");
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            var body = new Hashtable();
+
+            body.Add("email", form.email);
+            body.Add("rfcFull", form.rfcFull);
+            if (form.idCliente != null)
+            {
+                body.Add("idCliente", form.idCliente);
+            }
+            else
+            {
+                body.Add("name", form.name);
+                body.Add("lastName", form.lastName);
+            }
+
+            var json = JsonConvert.SerializeObject(body);
+            using (var content = new StringContent(json, Encoding.UTF8, "application/json"))
+            {
+                var result = new HttpResponseMessage();
+                if (form.idCliente != null)
+                {
+                    result = await client.PostAsync("/services/apexrest/SitefinityRegisterClientWS", content);
+                }
+                else
+                {
+                    result = await client.PostAsync("/services/apexrest/SitefinityRegisterProspectoWS", content);
+                }
+
+                if (result.StatusCode == HttpStatusCode.OK || result.StatusCode == HttpStatusCode.Created)
+                {
+                    var contents = await result.Content.ReadAsStringAsync();
+                    JObject o = JObject.Parse(contents);
+
+                    return Ok(o);
+                }
+                else
+                {
+                    string resultContent = await result.Content.ReadAsStringAsync();
+                    return BadRequest();
+                }
+            }
+        }
+
+        [Route("Put-mail")]
+        [HttpPost]
+        public async Task<IHttpActionResult> PutMail(RegistroForm form)
+        {
+            if (form == null)
+            {
+                return BadRequest();
+            }
+
+            string token = await GetAccessToken();
+
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            client.BaseAddress = new Uri("https://toyotafinancial--salt001.my.salesforce.com");
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            var body = new Hashtable();
+
+            body.Add("email", form.email);
+            body.Add("idUsuario", form.idUsuario);
+            body.Add("url", form.url);
+
+
+            var json = JsonConvert.SerializeObject(body);
+            using (var content = new StringContent(json, Encoding.UTF8, "application/json"))
+            {
+                var result = await client.PutAsync("/services/apexrest/SitefinityRegisterClientWS", content);
+
+
+                if (result.StatusCode == HttpStatusCode.OK || result.StatusCode == HttpStatusCode.Created)
+                {
+                    var contents = await result.Content.ReadAsStringAsync();
+                    JObject o = JObject.Parse(contents);
+
+                    return Ok(o);
+                }
+                else
+                {
+                    string resultContent = await result.Content.ReadAsStringAsync();
                     return BadRequest();
                 }
             }
