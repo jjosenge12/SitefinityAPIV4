@@ -28,7 +28,8 @@ namespace DXC.TFSM.Services.Controllers
     {
         #region Global Variables
         readonly BssCars BssAutos = new BssCars();
-        readonly string UrlBase = "https://test.salesforce.com";
+        readonly string UrlBase = "https://toyotafinancial.my.salesforce.com/";
+        readonly string UrlLogin = "https://login.salesforce.com/";
         readonly BssInsurers BssInsurers = new BssInsurers();
         readonly BssCoverages BssCoverages = new BssCoverages();
         readonly BssCountriesStates BssCStates = new BssCountriesStates();
@@ -133,15 +134,18 @@ namespace DXC.TFSM.Services.Controllers
         #region Cotizador
         [Route("PostCotizacion")]
         [HttpPost]
-        public IHttpActionResult PostCotizacion(Business.Model.DataPrice DatosCotizar) {
+        public IHttpActionResult PostCotizacion(Business.Model.DataPrice DatosCotizar)
+        {
             var v = string.Empty;
-            try {
+            try
+            {
                 var data = BssPrice.GetPrice(DatosCotizar);
                 return Ok(new { data });
             }
-            catch (Exception ex) {
-                v ="Exception >> " + ex.Message + " >> " + ex.InnerException.ToString();
-                return Ok( new { v });
+            catch (Exception ex)
+            {
+                v = "Exception >> " + ex.Message + " >> " + ex.InnerException.ToString();
+                return Ok(new { v });
                 throw ex;
             }
         }
@@ -204,8 +208,8 @@ namespace DXC.TFSM.Services.Controllers
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
             var content = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string,string>("oid","00D630000004s6r"),
-                new KeyValuePair<string,string>("retURL","https://tfsmpct.com.mx/."),
+                new KeyValuePair<string,string>("oid","00Dj0000000KZrJ"),
+                new KeyValuePair<string,string>("retURL","https://toyotacredito.com.mx/."),
                 new KeyValuePair<string,string>("00Nf100000Ce1Ld",DatosCotizar.Modelo),
                 new KeyValuePair<string,string>("00Nf100000Ce1LV",DatosCotizar.Vesion),
                 new KeyValuePair<string,string>("00Nf100000Ce1LZ",DatosCotizar.TipoPersona),
@@ -236,7 +240,7 @@ namespace DXC.TFSM.Services.Controllers
             var result = await client.PostAsync("/servlet/servlet.WebToLead?encoding=UTF-8", content);
             return Ok(result);
         }
-        
+
         [Route("SalesForceStep4")]
         [HttpPost]
         public async Task<IHttpActionResult> SalesFocreCommitStep4(Business.Model.DataSalesForce DatosCotizar)
@@ -248,7 +252,7 @@ namespace DXC.TFSM.Services.Controllers
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
             var content = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string,string>("oid","00D630000004s6r"),
+                new KeyValuePair<string,string>("oid","00Dj0000000KZrJ"),
                 new KeyValuePair<string,string>("retURL","https://toyotacredito.com.mx/."),
 
                 new KeyValuePair<string,string>("FWY_Aseguradora__c",DatosCotizar.Aseguradora),
@@ -277,7 +281,7 @@ namespace DXC.TFSM.Services.Controllers
             });
 
             //Petición POST para generar el token
-            var result = await client.PostAsync("/servlet/servlet.WebToLead?encoding=UTF-8", content);
+            var result = await client.PostAsync("/services/data/v50.0/sobjects/lead", content);///servlet/servlet.WebToLead?encoding=UTF-8
             return Ok(result);
         }
 
@@ -292,7 +296,7 @@ namespace DXC.TFSM.Services.Controllers
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
             var content = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string,string>("oid","00D630000004s6r"),
+                new KeyValuePair<string,string>("oid","00Dj0000000KZrJ"),
                 new KeyValuePair<string,string>("retURL","https://toyotacredito.com.mx/."),
 
                 //new KeyValuePair<string,string>("state",DatosCotizar.Estado),
@@ -327,7 +331,7 @@ namespace DXC.TFSM.Services.Controllers
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
             var content = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string,string>("oid","00D630000004s6r"),
+                new KeyValuePair<string,string>("oid","00Dj0000000KZrJ"),
                 new KeyValuePair<string,string>("retURL","https://toyotacredito.com.mx/."),
 
                 //new KeyValuePair<string,string>("state",DatosCotizar.Estado),
@@ -405,7 +409,8 @@ namespace DXC.TFSM.Services.Controllers
 
         [Route("SalesForceDistribuidores")]
         [HttpPost]
-        public async Task<IHttpActionResult> LeadDistribuidores(Business.Model.DataSalesForce data) {
+        public async Task<IHttpActionResult> LeadDistribuidores(Business.Model.DataSalesForce data)
+        {
             HttpClient client = new HttpClient();
 
             client.BaseAddress = new Uri(UrlBase);
@@ -435,15 +440,15 @@ namespace DXC.TFSM.Services.Controllers
         {
             HttpClient client = new HttpClient();
 
-            client.BaseAddress = new Uri(UrlBase);
+            client.BaseAddress = new Uri(UrlLogin);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
             var body = new FormUrlEncodedContent(new[] {
                 new KeyValuePair<string,string>("grant_type","password"),
-                new KeyValuePair<string,string>("client_secret","9025EE7E585D286CA512D359EF69203CBA1E32E95D325BCF96ED0E6A535D87E5"),
-                new KeyValuePair<string,string>("username","smarmol4@virtualdreams.io.qatfs"),
-                new KeyValuePair<string,string>("password","Sebas22!KWRLMUORZpevgXpaI2z5X68bu"),
-                new KeyValuePair<string,string>("client_id","3MVG9Ccwq.TeycMY2GGgoFD543mNUxYQfSU14i9V5GtDniI4wIRys2hB2Yhy2g7X0JmpBXUjYMD_xKv0kWahV")
+                new KeyValuePair<string,string>("client_secret","FD754CE5B4C5478ECD6693F4BF0448E2F33431AC903AF3427F88ABA094E3786A"),
+                new KeyValuePair<string,string>("username","srv_salesforce@toyota.com"),
+                new KeyValuePair<string,string>("password","S4L3sF0Rs!#RTfgkLCGsxw43Ffb98lFah4c"),
+                new KeyValuePair<string,string>("client_id","3MVG9fMtCkV6eLhcg6COLqeCqSL56UhEHwdJMyeGXWr.UkzQsjM89YD9YlZqHB4xFFtRi56V6Qf26RhTYb4Pv")
             });
 
             //Petición POST para generar el token
@@ -469,7 +474,7 @@ namespace DXC.TFSM.Services.Controllers
         [HttpPost]
         public async Task<IHttpActionResult> SubmitLead(PlanForm form)
         {
-            if(form == null)
+            if (form == null)
             {
                 return BadRequest();
             }
@@ -479,7 +484,7 @@ namespace DXC.TFSM.Services.Controllers
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            client.BaseAddress = new Uri("https://toyotafinancial--salt001.my.salesforce.com");
+            client.BaseAddress = new Uri("https://toyotafinancial.my.salesforce.com");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -550,7 +555,7 @@ namespace DXC.TFSM.Services.Controllers
                 else
                     return NotFound();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return BadRequest();
             }
@@ -612,7 +617,7 @@ namespace DXC.TFSM.Services.Controllers
                 BssDealers.SetDealersPostalCode(data);
                 return Ok();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return BadRequest();
             }
@@ -748,18 +753,22 @@ namespace DXC.TFSM.Services.Controllers
         #region BuroWS
         [Route("SendData")]
         [HttpPost]
-        public async Task<IHttpActionResult> SendDataBuro() {
-         
-            try {
-                if (Request.Content.IsMimeMultipartContent()) {
+        public async Task<IHttpActionResult> SendDataBuro()
+        {
+
+            try
+            {
+                if (Request.Content.IsMimeMultipartContent())
+                {
                     BuroCreditoBss creditoBss = new BuroCreditoBss(); BssCypher cypher = new BssCypher();
                     var stringJson = await cypher.DecryptStringAES(HttpContext.Current.Request.Params["hfData"]);
 
-                    if (stringJson != "") {
+                    if (stringJson != "")
+                    {
                         //DesSerializarlo
                         var result = JsonConvert.DeserializeObject<DXC.TFSM.Business.Model.BuroData>(stringJson);
                         //Enviarlo al servicio de buró. Y procesar la respuesta del servicio externo de buró:
-                       var dataruesult = await creditoBss.BuroWS(result);                                                
+                        var dataruesult = await creditoBss.BuroWS(result);
                     }
                     else
                     {
@@ -780,11 +789,13 @@ namespace DXC.TFSM.Services.Controllers
 
         [Route("SendDataBuroTest")]
         [HttpPost]
-        public async Task<IHttpActionResult> SendDataBuroTest(DXC.TFSM.Business.Model.BuroData xxx) {
-          
+        public async Task<IHttpActionResult> SendDataBuroTest(DXC.TFSM.Business.Model.BuroData xxx)
+        {
+
             BuroCreditoBss creditoBss = new BuroCreditoBss();
             BssCypher cypher = new BssCypher();
-            try {
+            try
+            {
                 var stringJson = await cypher.DecryptStringAES(xxx.ApellidoP);
                 if (stringJson != "")
                 {
@@ -799,7 +810,8 @@ namespace DXC.TFSM.Services.Controllers
                     return NotFound();
                 }
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 return InternalServerError();
                 throw ex;
             }
@@ -814,7 +826,7 @@ namespace DXC.TFSM.Services.Controllers
             string localFilePath;
 
             localFilePath = "C:/Users/QUALITY/Source/Workspaces/DXC/DXC.TFSM.Services/DXC.TFSM.Services/Views/PDF/Response.html";
-            
+
             PdfConverter pdfConverter = new PdfConverter();
             pdfConverter.LicenseKey = "99zF18/XwcXXxsXZx9fExtnGxdnOzs7O";
             byte[] downloadBytes = pdfConverter.GetPdfFromUrlBytes(localFilePath);
@@ -830,14 +842,16 @@ namespace DXC.TFSM.Services.Controllers
 
         [Route("GetCountriesBuro")]
         [HttpGet]
-        public IHttpActionResult GetCountriesBuro() {
+        public IHttpActionResult GetCountriesBuro()
+        {
             return Ok(new { results = buroFrm.GetCountries() }); ;
         }
 
         [Route("GetStatesBuro")]
         [HttpGet]
-        public IHttpActionResult GetStatesBuro(int id) {
-            return  Ok(new { results = buroFrm.GetTbl_Cotizador_states(id) });
+        public IHttpActionResult GetStatesBuro(int id)
+        {
+            return Ok(new { results = buroFrm.GetTbl_Cotizador_states(id) });
         }
         #endregion
 
@@ -881,7 +895,7 @@ namespace DXC.TFSM.Services.Controllers
                     return BadRequest();
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return Content(HttpStatusCode.BadRequest, e.Message);
             }
