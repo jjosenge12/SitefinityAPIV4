@@ -10,5 +10,6 @@ namespace DXC.TFSM.Services.Models.Forms
         public string idCliente_email { get; set; }
         public string password { get; set; }
         public string esCliente { get; set; }
+        public string rfc { get; set; }
     }
 }
