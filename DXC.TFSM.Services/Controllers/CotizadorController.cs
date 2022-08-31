@@ -802,6 +802,57 @@ namespace DXC.TFSM.Services.Controllers
             }
         }
 
+        [Route("UpdatePassword")]
+        [HttpPost]
+        public async Task<IHttpActionResult> UpdatePassword(RegistroForm form)
+        {
+            if (form == null)
+            {
+                return BadRequest();
+            }
+
+            string token = await GetAccessToken();
+
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            client.BaseAddress = new Uri("https://toyotafinancial.my.salesforce.com/services/apexrest/sitefinityForgotPwdWS");
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            var body = new Hashtable();
+
+            if (form.clientVisible != null)
+            {
+                body.Add("idCliente", form.clientVisible);
+            }
+            body.Add("rfcFull", form.rfcVisible);
+            body.Add("email", form.email);
+            body.Add("url", form.url);
+
+
+            var json = JsonConvert.SerializeObject(body);
+            using (var content = new StringContent(json, Encoding.UTF8, "application/json"))
+            {
+                var result = new HttpResponseMessage();
+
+                result = await client.PostAsync("services/apexrest/sitefinityForgotPwdWS", content);
+
+                if (result.StatusCode == HttpStatusCode.OK || result.StatusCode == HttpStatusCode.Created)
+                {
+                    var contents = await result.Content.ReadAsStringAsync();
+                    //JObject o = JObject.Parse(contents);
+
+                    return Ok(contents);
+                }
+                else
+                {
+                    string resultContent = await result.Content.ReadAsStringAsync();
+                    return BadRequest();
+                }
+            }
+        }
+
         #endregion
 
         #region Disribuidores

@@ -20,5 +20,7 @@ namespace DXC.TFSM.Services.Models.Forms
         public string idUsuario { get; set; }
 
         public string url { get; set; }
+        public string rfcVisible { get; set; }
+        public string clientVisible { get; set; }
     }
 }
