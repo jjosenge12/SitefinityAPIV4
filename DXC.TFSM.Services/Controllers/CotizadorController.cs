@@ -525,36 +525,19 @@ namespace DXC.TFSM.Services.Controllers
             // Do the actual request and await the response
             var httpResponse = new HttpResponseMessage();
 
-            if (form.Idcoti != null)
+
+            httpResponse = await httpClient.PostAsync("https://toyotafinancial.my.salesforce.com/services/data/v55.0/sobjects/Lead/", httpContent);
+
+            // If the response contains content we want to read it!
+            if (httpResponse.Content != null)
             {
-                var request = new HttpRequestMessage(new HttpMethod("PATCH"), "https://toyotafinancial.my.salesforce.com/services/data/v55.0/sobjects/Lead/" + form.Idcoti);
-                try
-                {
-                    request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
-                    request.Content = httpContent;
-                    var response = await httpClient.SendAsync(request);
-                    var contents = await response.Content.ReadAsStringAsync();
-                    return Ok(response);
-                }
-                catch (Exception ex)
-                {
-                    BadRequest();
-                }
+                var responseContent = await httpResponse.Content.ReadAsStringAsync();
+
+                // From here on you could deserialize the ResponseContent back again to a concrete C# type using Json.Net
+
+                return Ok(responseContent);
             }
-            else
-            {
-                httpResponse = await httpClient.PostAsync("https://toyotafinancial.my.salesforce.com/services/data/v55.0/sobjects/Lead/", httpContent);
 
-                // If the response contains content we want to read it!
-                if (httpResponse.Content != null)
-                {
-                    var responseContent = await httpResponse.Content.ReadAsStringAsync();
-
-                    // From here on you could deserialize the ResponseContent back again to a concrete C# type using Json.Net
-
-                    return Ok(responseContent);
-                }
-            }
 
 
             return BadRequest();
