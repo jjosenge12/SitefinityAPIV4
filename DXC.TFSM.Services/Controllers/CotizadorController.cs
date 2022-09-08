@@ -233,7 +233,7 @@ namespace DXC.TFSM.Services.Controllers
                 new KeyValuePair<string,string>("EstadoSeleccionado",DatosCotizar.EstadoSeleccionado),
 
                 new KeyValuePair<string,string>("00Nf100000Ce1Le",DatosCotizar.CodigoDistribuidor),
-                new KeyValuePair<string,string>("lead_source","Cotizador Web"),
+                new KeyValuePair<string,string>("lead_source","TFS - Cotizador web"),
                 new KeyValuePair<string,string>("submit","Enviar")
             });
 
@@ -313,7 +313,7 @@ namespace DXC.TFSM.Services.Controllers
                 new KeyValuePair<string,string>("visibleTFSM__c", "1"),
                 new KeyValuePair<string,string>("AceptoTerminosYCondiciones",DatosCotizar.AceptoTerminosYCondiciones),
                 new KeyValuePair<string,string>("00Nf100000Ce1Le",DatosCotizar.CodigoDistribuidor),
-                new KeyValuePair<string,string>("lead_source","Formulario de " + DatosCotizar.Plan),
+                new KeyValuePair<string,string>("lead_source","TFS - " + DatosCotizar.Plan),
                 new KeyValuePair<string,string>("submit","Enviar")
             });
 
