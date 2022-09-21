@@ -224,7 +224,7 @@ namespace DXC.TFSM.Services.Controllers
                 new KeyValuePair<string,string>("00N3D000005eK43",DatosCotizar.Ballon),
                 new KeyValuePair<string,string>("first_name",DatosCotizar.Nombre),
                 new KeyValuePair<string,string>("last_name",DatosCotizar.Apellido),
-                new KeyValuePair<string,string>("Phone",DatosCotizar.Movil),
+                new KeyValuePair<string,string>("phone",DatosCotizar.Movil),
                 new KeyValuePair<string,string>("00N3D000005eK3o",DatosCotizar.Plazo),
                 new KeyValuePair<string,string>("email",DatosCotizar.Email),
 
