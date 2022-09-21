@@ -306,7 +306,7 @@ namespace DXC.TFSM.Services.Controllers
                 new KeyValuePair<string,string>("FWY_Veh_culo__c",DatosCotizar.Marca),
                 new KeyValuePair<string,string>("first_name",DatosCotizar.Nombre),
                 new KeyValuePair<string,string>("last_name",DatosCotizar.Apellido),
-                new KeyValuePair<string,string>("Phone",DatosCotizar.Movil),
+                new KeyValuePair<string,string>("phone",DatosCotizar.Movil),
                 new KeyValuePair<string,string>("email",DatosCotizar.Email),
                 new KeyValuePair<string,string>("FWY_Nombre_distribuidor__c",DatosCotizar.Aseguradora),
                 new KeyValuePair<string,string>("Company",DatosCotizar.Aseguradora),
@@ -425,7 +425,7 @@ namespace DXC.TFSM.Services.Controllers
                 //new KeyValuePair<string,string>("CodigoDistribuidor",data.CodigoDistribuidor),
                 new KeyValuePair<string,string>("first_name",data.Nombre),
                 new KeyValuePair<string,string>("last_name",data.Apellido),
-                new KeyValuePair<string,string>("Phone",data.Movil),
+                new KeyValuePair<string,string>("phone",data.Movil),
                 new KeyValuePair<string,string>("email",data.Email),
 
                 new KeyValuePair<string,string>("00Nf100000Ce1Le",data.CodigoDistribuidor),
