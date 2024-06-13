@@ -1491,7 +1491,7 @@ namespace DXC.TFSM.Services.Controllers
                 switch (dataPdf.DatosCotizar[0].Plan)
                 {
                     case "Tradicional":
-                        res = ServicePDF.getPlanTradicionalPdf2(dataPdf);
+                        res = ServicePDF.getPlanTradicionalPdf(dataPdf);
                         break;
                     case "Balloon":
                         res = ServicePDF.getPlanBalloonPdf(dataPdf);
