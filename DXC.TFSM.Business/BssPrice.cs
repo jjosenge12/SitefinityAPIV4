@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DXC.TFSM.DataAccess;
 using DXC.TFSM.Business.Model;
 using Microsoft.Office.Interop.Excel;// referencia la libreria
+using System.Windows.Forms.VisualStyles;
 
 namespace DXC.TFSM.Business
 {
@@ -100,7 +101,7 @@ namespace DXC.TFSM.Business
         {
             var rate = (double)yearlyInterestRate / 12;
             var denominator = Math.Pow((1 + rate), totalNumberOfMonths);
-            return Math.Round(loanAmount * (rate/(denominator - 1)), 12);
+            return Math.Round(loanAmount * (rate / (denominator - 1)), 12);
         }
 
         private double GetPrecioAuto(DataPrice Datos)
@@ -754,7 +755,7 @@ namespace DXC.TFSM.Business
                 //    PrimerAnualidad = DateTime.Parse(PrimerVencimiento.AddYears(1).Year.ToString() + "/" + MesDeAnualidad.ToString() + "/" + PrimerVencimiento.Day.ToString());
                 //else
                 //    PrimerAnualidad = DateTime.Parse(PrimerVencimiento.Year.ToString() + "/" + MesDeAnualidad.ToString() + "/" + PrimerVencimiento.Day.ToString());
-
+                /*
                 PrimerAnualidad = DateTime.Now.AddYears(1);
                 if (DateTime.Now.Day < 16)
                 {
@@ -762,10 +763,81 @@ namespace DXC.TFSM.Business
                 }
                 else
                 {
-                    PrimerAnualidad = DateTime.Parse(PrimerAnualidad.Year.ToString() + "/" + PrimerAnualidad.Month.ToString() + "/01");
+                    //PrimerAnualidad = DateTime.Parse(PrimerAnualidad.Year.ToString() + "/" + PrimerAnualidad.Month.ToString() + "/01");
+                    PrimerAnualidad = DateTime.Parse(PrimerAnualidad.Year.ToString() + "/" + (PrimerAnualidad.Month+1).ToString() + "/01");
                 }
 
                 switch (PrimerAnualidad.Month)
+                {
+                    case 1:
+                        lPrice.MesAnualidad = "Enero";
+                        break;
+                    case 2:
+                        lPrice.MesAnualidad = "Febrero";
+                        break;
+                    case 3:
+                        lPrice.MesAnualidad = "Marzo";
+                        break;
+                    case 4:
+                        lPrice.MesAnualidad = "Abril";
+                        break;
+                    case 5:
+                        lPrice.MesAnualidad = "Mayo";
+                        break;
+                    case 6:
+                        lPrice.MesAnualidad = "Junio";
+                        break;
+                    case 7:
+                        lPrice.MesAnualidad = "Julio";
+                        break;
+                    case 8:
+                        lPrice.MesAnualidad = "Agosto";
+                        break;
+                    case 9:
+                        lPrice.MesAnualidad = "Septiembre";
+                        break;
+                    case 10:
+                        lPrice.MesAnualidad = "Octubre";
+                        break;
+                    case 11:
+                        lPrice.MesAnualidad = "Noviembre";
+                        break;
+                    case 12:
+                        lPrice.MesAnualidad = "Diciembre";
+                        break;
+                    default:
+                        lPrice.MesAnualidad = "N/A";
+                        break;
+                }
+                */
+                #region calculosAnualidades
+                DateTime fechaVencimiento;
+                DateTime hoy = DateTime.Now;
+
+
+
+                int mesVencimiento = hoy.Month + (hoy.Day > 15 ? 2 : 1);
+                int dia = hoy.Day <= 15 ? 16 : 1;
+                int anio = hoy.Year;
+
+                if (mesVencimiento > 12)
+                {
+                    anio += 1;
+                    mesVencimiento -= 12;
+                }
+
+                fechaVencimiento = DateTime.Parse(anio.ToString() + "/" + mesVencimiento.ToString() + "/" + dia.ToString());
+                // --- SE COMENTAN LAS LINEAS PARA ARREGLAR COMPARACION CON COTIZADOR 5 DE ANUALIDADES --- se comentan estas 2 lineas el 19-04-2024 
+                //int mesAnualidad = hoy.Month;
+                //int anioAnualidad = anio + (mesVencimiento >= mesAnualidad ? 1 : 0); 
+
+                int mesAnualidad = 12; // SE LE DEJA EL MES 12 PORQUE EL COTIZADOR SOLO COTIZA EN EL MES DE DICIEMBRE PARA ANUALIDADES
+                int anioAnualidad = anio ;
+                DateTime fechaAnualidad = DateTime.Parse(anioAnualidad.ToString() + "/" + mesAnualidad.ToString() + "/" + dia.ToString());
+                int mesPrimeraAnualidad = (fechaAnualidad.Year - fechaVencimiento.Year) * 12 + fechaAnualidad.Month - fechaVencimiento.Month + 1;
+
+
+                switch (fechaAnualidad.Month)
                 {
                     case 1:
                         lPrice.MesAnualidad = "Enero";
@@ -819,7 +891,8 @@ namespace DXC.TFSM.Business
                 SumaPagosAnuales = 0;
 
                 plazo = 12 - (DateTime.Now.Month + 1);
-
+                //plazo = ((PrimerAnualidad.Year - DateTime.Now.Year) * 12 + (-1))+1;
+                plazo = mesPrimeraAnualidad; 
 
                 ResultPrice lPrice24 = new ResultPrice();
                 lPrice24.Plazo = 24;
@@ -850,10 +923,10 @@ namespace DXC.TFSM.Business
 
                 for (i = 0; i < (lPrice24.Plazo / 12); i++)
                 {
-                    if(plazo <= lPrice24.Plazo) 
-                    { 
-                        SumaPagosAnuales = SumaPagosAnuales + (lPrice24.Anualidad / Math.Pow((1 + TasaEfectivaPeriodoIVA), plazo));
-                        plazo = plazo + 12;
+                    if (plazo <= lPrice24.Plazo)
+                    {
+                        SumaPagosAnuales += (lPrice24.Anualidad / Math.Pow((1 + TasaEfectivaPeriodoIVA), plazo));
+                        plazo += 12;
                     }
                 }
 
@@ -886,6 +959,7 @@ namespace DXC.TFSM.Business
                 SumaPagosAnuales = 0;
 
                 plazo = 12 - (DateTime.Now.Month + 1);
+                plazo = mesPrimeraAnualidad;
 
 
                 ResultPrice lPrice36 = new ResultPrice();
@@ -933,6 +1007,7 @@ namespace DXC.TFSM.Business
                 Datos.Plazo = "48";
                 SumaPagosAnuales = 0;
                 plazo = 12 - (DateTime.Now.Month + 1);
+                plazo = mesPrimeraAnualidad; 
 
 
                 ResultPrice lPrice48 = new ResultPrice();
@@ -974,6 +1049,7 @@ namespace DXC.TFSM.Business
                 lPrice48.Mensualidad = (lPrice48.PrecioTotal - SumaPagosAnuales) / ((1 / TasaEfectivaPeriodoIVA) - (1 / (TasaEfectivaPeriodoIVA * Math.Pow(TasaEfectivaPeriodoIVA + 1, lPrice48.Plazo))));
 
                 lsPrice.Add(lPrice48);
+                #endregion
             }
 
             catch (Exception ex)

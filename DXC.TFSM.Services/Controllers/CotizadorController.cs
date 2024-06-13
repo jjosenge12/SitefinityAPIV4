@@ -21,6 +21,8 @@ using System.Text;
 using System.Collections;
 using DXC.TFSM.Services.Models;
 using Newtonsoft.Json.Linq;
+using System.Security.Cryptography;
+
 
 namespace DXC.TFSM.Services.Controllers
 {
@@ -29,8 +31,12 @@ namespace DXC.TFSM.Services.Controllers
     {
         #region Global Variables
         readonly BssCars BssAutos = new BssCars();
-        readonly string UrlBase = "https://toyotafinancial.my.salesforce.com/";
-        readonly string UrlLogin = "https://login.salesforce.com/";
+        //readonly string UrlBase = "https://toyotafinancial.my.salesforce.com/"; //PROD
+        //readonly string organizationID = "00Dj0000000KZrJ"; //PROD
+        //readonly string UrlBase = "https://toyotafinancial--salt001.sandbox.my.salesforce.com/"; //SALT
+        //readonly string organizationID = "00D630000004s6r"; //SALT
+        readonly string UrlBase = Environment.GetEnvironmentVariable("SitefinityURL");
+        readonly string organizationID = Environment.GetEnvironmentVariable("SitefinityOrganizationIDSalesforce");
         readonly BssInsurers BssInsurers = new BssInsurers();
         readonly BssCoverages BssCoverages = new BssCoverages();
         readonly BssCountriesStates BssCStates = new BssCountriesStates();
@@ -209,7 +215,7 @@ namespace DXC.TFSM.Services.Controllers
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
             var content = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string,string>("oid","00Dj0000000KZrJ"),
+                new KeyValuePair<string,string>("oid",organizationID),
                 new KeyValuePair<string,string>("retURL","https://toyotacredito.com.mx/."),
                 new KeyValuePair<string,string>("00Nf100000Ce1Ld",DatosCotizar.Modelo),
                 new KeyValuePair<string,string>("00Nf100000Ce1LV",DatosCotizar.Vesion),
@@ -233,6 +239,7 @@ namespace DXC.TFSM.Services.Controllers
                 new KeyValuePair<string,string>("EstadoSeleccionado",DatosCotizar.EstadoSeleccionado),
 
                 new KeyValuePair<string,string>("00Nf100000Ce1Le",DatosCotizar.CodigoDistribuidor),
+                new KeyValuePair<string,string>("company",DatosCotizar.Distribuidor),
                 new KeyValuePair<string,string>("lead_source","TFS - Cotizador web"),
                 new KeyValuePair<string,string>("submit","Enviar")
             });
@@ -255,7 +262,7 @@ namespace DXC.TFSM.Services.Controllers
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
             var content = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string,string>("oid","00Dj0000000KZrJ"),
+                new KeyValuePair<string,string>("oid",organizationID),
                 new KeyValuePair<string,string>("retURL","https://toyotacredito.com.mx/."),
 
                 new KeyValuePair<string,string>("00Nf100000Ce1LK",DatosCotizar.Aseguradora),
@@ -298,7 +305,7 @@ namespace DXC.TFSM.Services.Controllers
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
             var content = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string,string>("oid","00Dj0000000KZrJ"),
+                new KeyValuePair<string,string>("oid",organizationID),
                 new KeyValuePair<string,string>("retURL","https://toyotacredito.com.mx/."),
 
                 //new KeyValuePair<string,string>("state",DatosCotizar.Estado),
@@ -333,7 +340,7 @@ namespace DXC.TFSM.Services.Controllers
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
             var content = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string,string>("oid","00Dj0000000KZrJ"),
+                new KeyValuePair<string,string>("oid",organizationID),
                 new KeyValuePair<string,string>("retURL","https://toyotacredito.com.mx/."),
 
                 //new KeyValuePair<string,string>("state",DatosCotizar.Estado),
@@ -360,7 +367,7 @@ namespace DXC.TFSM.Services.Controllers
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
             var content = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string,string>("oid","00D3D000000AJDJ"),
+                new KeyValuePair<string,string>("oid",organizationID),
                 new KeyValuePair<string,string>("retURL","https://toyotacredito.com.mx/."),
                 new KeyValuePair<string,string>("state",DatosCotizar.Estado),
                 //new KeyValuePair<string,string>("CodigoDistribuidor",DatosCotizar.CodigoDistribuidor),
@@ -389,7 +396,7 @@ namespace DXC.TFSM.Services.Controllers
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
             var content = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string,string>("oid","00D3D000000AJDJ"),
+                new KeyValuePair<string,string>("oid",organizationID),
                 new KeyValuePair<string,string>("retURL","https://toyotacredito.com.mx/."),
 
                 new KeyValuePair<string,string>("state",DatosCotizar.Estado),
@@ -419,7 +426,7 @@ namespace DXC.TFSM.Services.Controllers
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
             var content = new FormUrlEncodedContent(new[] {
-                new KeyValuePair<string,string>("oid","00D3D000000AJDJ"),
+                new KeyValuePair<string,string>("oid",organizationID),
                 new KeyValuePair<string,string>("retURL","https://toyotacredito.com.mx/."),
 
                 //new KeyValuePair<string,string>("CodigoDistribuidor",data.CodigoDistribuidor),
@@ -447,10 +454,24 @@ namespace DXC.TFSM.Services.Controllers
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/xml"));
             var body = new FormUrlEncodedContent(new[] {
                 new KeyValuePair<string,string>("grant_type","password"),
+                /*PRODUCCION
                 new KeyValuePair<string,string>("client_secret","FD754CE5B4C5478ECD6693F4BF0448E2F33431AC903AF3427F88ABA094E3786A"),
                 new KeyValuePair<string,string>("username","srv_salesforce@toyota.com"),
                 new KeyValuePair<string,string>("password","S4L3sF0Rs!#RTfgkLCGsxw43Ffb98lFah4c"),
                 new KeyValuePair<string,string>("client_id","3MVG9fMtCkV6eLhcg6COLqeCqSL56UhEHwdJMyeGXWr.UkzQsjM89YD9YlZqHB4xFFtRi56V6Qf26RhTYb4Pv")
+                 */
+                //*/
+                //* SALT
+                /*
+                new KeyValuePair<string,string>("client_secret","2EF4ABE7DF7ECACA5460B6D45157703E58C6495093F77BEDDFDE9C1EB9B28290"),
+                new KeyValuePair<string,string>("username","sebastian.marmol@virtualdreams.io.salt001"),
+                new KeyValuePair<string,string>("password","Sebas22!nynCmKj7Om6s7szeT3ZxuUcwM"),
+                new KeyValuePair<string,string>("client_id","3MVG9GnaLrwG9TQRGlnlDs0akv1Wv8tqkoxMJtQ6xuCLQtFMnsIRFyYN_chGD9s34HOwtIqT6_dGMGYqEonBo")
+                //*/
+                new KeyValuePair<string,string>("client_secret",Environment.GetEnvironmentVariable("SitefinityClient_secret")),
+                new KeyValuePair<string,string>("username",Environment.GetEnvironmentVariable("SitefinityUsername")),
+                new KeyValuePair<string,string>("password",Environment.GetEnvironmentVariable("SitefinityPassword")),
+                new KeyValuePair<string,string>("client_id",Environment.GetEnvironmentVariable("SitefinityClient_id"))
             });
 
             //Petición POST para generar el token
@@ -483,12 +504,12 @@ namespace DXC.TFSM.Services.Controllers
 
             string token = await GetAccessToken();
 
-            //HttpClient client = new HttpClient();
-            //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            //client.BaseAddress = new Uri("https://toyotafinancial--salt001.my.salesforce.com");
-            //client.DefaultRequestHeaders.Accept.Clear();
-            //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.BaseAddress = new Uri(UrlBase);
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             var body = new Hashtable();
             body.Add("state", form.state);
@@ -519,14 +540,15 @@ namespace DXC.TFSM.Services.Controllers
             // Wrap our JSON inside a StringContent which then can be used by the HttpClient class
             var httpContent = new StringContent(stringPayload, Encoding.UTF8, "application/json");
 
+            /*
             var httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
+*/
             // Do the actual request and await the response
             var httpResponse = new HttpResponseMessage();
 
 
-            httpResponse = await httpClient.PostAsync("https://toyotafinancial.my.salesforce.com/services/data/v55.0/sobjects/Lead/", httpContent);
+            httpResponse = await client.PostAsync("/services/data/v55.0/sobjects/Lead/", httpContent);
 
             // If the response contains content we want to read it!
             if (httpResponse.Content != null)
@@ -566,11 +588,12 @@ namespace DXC.TFSM.Services.Controllers
 
             var httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            httpClient.BaseAddress = new Uri(UrlBase);
 
             var httpResponse = new HttpResponseMessage();
 
 
-            httpResponse = await httpClient.PostAsync("https://toyotafinancial.my.salesforce.com/services/apexrest/SitefinityLoginWS", httpContent);
+            httpResponse = await httpClient.PostAsync("/services/apexrest/SitefinityLoginWS", httpContent);
 
             if (httpResponse.Content != null)
             {
@@ -598,7 +621,7 @@ namespace DXC.TFSM.Services.Controllers
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            client.BaseAddress = new Uri("https://toyotafinancial.my.salesforce.com");
+            client.BaseAddress = new Uri(UrlBase);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -641,7 +664,7 @@ namespace DXC.TFSM.Services.Controllers
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            client.BaseAddress = new Uri("https://toyotafinancial.my.salesforce.com");
+            client.BaseAddress = new Uri(UrlBase);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -701,7 +724,7 @@ namespace DXC.TFSM.Services.Controllers
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            client.BaseAddress = new Uri("https://toyotafinancial.my.salesforce.com");
+            client.BaseAddress = new Uri(UrlBase);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -753,7 +776,7 @@ namespace DXC.TFSM.Services.Controllers
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            client.BaseAddress = new Uri("https://toyotafinancial.my.salesforce.com");
+            client.BaseAddress = new Uri(UrlBase);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -799,7 +822,7 @@ namespace DXC.TFSM.Services.Controllers
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            client.BaseAddress = new Uri("https://toyotafinancial.my.salesforce.com/services/apexrest/sitefinityForgotPwdWS");
+            client.BaseAddress = new Uri(UrlBase);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -834,6 +857,222 @@ namespace DXC.TFSM.Services.Controllers
                     return BadRequest();
                 }
             }
+        }
+
+        [Route("GetURLExternalScript")]
+        [HttpGet]
+        public IHttpActionResult generateURLExternalScript(string Cotizacion, string Dealer, string Descripcion, string Fase, string FechadeCompra, string FechadeSolicitud, string Motor, string NumerodeContrato, string NumerodeSolicitud, string Proceso, string RFCdelCliente, string TipodeDocumento, string TipodePersona, string UsuarioqueCarga, string VIN)
+        {
+            DateTime fechaCom;
+            DateTime fechaSoli;
+
+            //  VARIABLES REQUERIDAS
+            string _secret = "xPoZOLwQl4N1j8At2Czz1mh8pVRKyNTxECaJ2iX5NXI=";
+            string _baseURL1 = "https://mex.review.recall.com/IM39961UT1/203AppNet//UnityForm.aspx?d1=Ab28NDSVSfdMHKr7bl0ZEPM7UjDaSreemotHv6KS1qbZB4aCTZPyJye0JaHScRlZpciciKT07AORDpJX2GFrbLXNkajrcN8iitT3nZqPw5AsMosB7kZpM1FKDOrPRAlsBojSY0zYQ6DMEXhZxSV2SFy9E%2f2QiLC6NPMABd27cATD";
+            string _params = string.Empty;
+
+            // VARIABLES PARA CALCULO DE HASH
+            byte[] tokenBytes = Convert.FromBase64String(_secret);
+            byte[] calculatedHash = null;
+            //SOLICITUD DE VALORES PARA PARAMETROS
+            //Cotizacion
+            if (!string.IsNullOrEmpty(Cotizacion))
+            {
+                _params += "&ufprecot=" + System.Uri.EscapeDataString(Cotizacion);
+            }
+            //Dealer
+            if (!string.IsNullOrEmpty(Dealer))
+            {
+                _params += "&ufpredeal=" + System.Uri.EscapeDataString(Dealer);
+            }
+            //Descripcion
+            if (!string.IsNullOrEmpty(Descripcion))
+            {
+                _params += "&ufpredscr=" + System.Uri.EscapeDataString(Descripcion);
+            }
+            //Fase
+            if (!string.IsNullOrEmpty(Fase))
+            {
+                _params += "&ufprefase=" + System.Uri.EscapeDataString(Fase);
+            }
+            //FechadeCompra
+            if (!string.IsNullOrEmpty(FechadeCompra))
+            {
+
+                if (DateTime.TryParseExact(FechadeCompra, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out fechaCom) || DateTime.TryParseExact(FechadeCompra, "dd-MM-yyyy", null, System.Globalization.DateTimeStyles.None, out fechaCom))
+                {
+                    string fcom = fechaCom.ToString("yyyy-MM-dd");
+                    _params += "&ufprefcom=" + System.Uri.EscapeDataString(fcom);
+                }
+            }
+            //FechadeSolicitud
+            if (!string.IsNullOrEmpty(FechadeSolicitud))
+            {
+                if (DateTime.TryParseExact(FechadeSolicitud, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out fechaSoli) || DateTime.TryParseExact(FechadeSolicitud, "dd-MM-yyyy", null, System.Globalization.DateTimeStyles.None, out fechaSoli))
+                {
+                    string fsol = fechaSoli.ToString("yyyy-MM-dd");
+                    _params += "&ufprefsol=" + System.Uri.EscapeDataString(fsol);
+                }
+            }
+            //Motor
+            if (!string.IsNullOrEmpty(Motor))
+            {
+                _params += "&ufpremotr=" + System.Uri.EscapeDataString(Motor);
+            }
+            //NumerodeContrato
+            if (!string.IsNullOrEmpty(NumerodeContrato))
+            {
+                _params += "&ufprencont=" + System.Uri.EscapeDataString(NumerodeContrato);
+            }
+            //NumerodeSolicitud
+            if (!string.IsNullOrEmpty(NumerodeSolicitud))
+            {
+                _params += "&ufprensol=" + System.Uri.EscapeDataString(NumerodeSolicitud);
+            }
+            //Proceso
+            if (!string.IsNullOrEmpty(Proceso))
+            {
+                _params += "&ufpreproc=" + System.Uri.EscapeDataString(Proceso);
+            }
+            //RFCdelCliente
+            if (!string.IsNullOrEmpty(RFCdelCliente))
+            {
+                _params += "&ufprerfc=" + System.Uri.EscapeDataString(RFCdelCliente);
+            }
+            //TipodeDocumento
+            if (!string.IsNullOrEmpty(TipodeDocumento))
+            {
+                _params += "&ufpretdoc=" + System.Uri.EscapeDataString(TipodeDocumento);
+            }
+            //TipodePersona
+            if (!string.IsNullOrEmpty(TipodePersona))
+            {
+                _params += "&ufpretper=" + System.Uri.EscapeDataString(TipodePersona);
+            }
+            //UsuarioqueCarga
+            if (!string.IsNullOrEmpty(UsuarioqueCarga))
+            {
+                _params += "&ufpreucrg=" + System.Uri.EscapeDataString(UsuarioqueCarga);
+            }
+            //VIN
+            if (!string.IsNullOrEmpty(VIN))
+            {
+                _params += "&ufprevin=" + System.Uri.EscapeDataString(VIN);
+            }
+
+
+
+            // PROCESAMIENTO DE HASH
+
+            using (HMACSHA256 hmac = new HMACSHA256(tokenBytes))
+            {
+                calculatedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(_params));
+            }
+            string hashString = System.Uri.EscapeDataString(Convert.ToBase64String(calculatedHash));
+
+            // CONSTRUCCIÓN DE URL FINAL
+            string url1 = _baseURL1 + _params + "&ufprehash=" + hashString;
+            //url1 = "hola";
+
+            return Ok(url1);
+
+        }
+
+        [Route("GetURLExternalScript2")]
+        [HttpGet]
+        public IHttpActionResult generateURLExternalScript2(string Cotizacion, string Dealer, string Descripcion, string Fase, string FechadeCompra, string FechadeSolicitud, string Motor, string NumerodeContrato, string NumerodeSolicitud, string Proceso, string RFCdelCliente, string TipodeDocumento, string TipodePersona, string UsuarioqueCarga, string VIN)
+        {
+            /*
+            if(Cotizacion == null || Dealer == null || Descripcion == null || Fase == null || FechadeCompra == null || FechadeSolicitud == null || Motor == null || NumerodeContrato == null || NumerodeSolicitud == null || Proceso == null || RFCdelCliente == null || TipodeDocumento == null || TipodePersona == null ||  UsuarioqueCarga == null || VIN == null)
+            {
+                throw new ArgumentException("O array de parâmetros deve conter exatamente 15 valores.");
+            }
+            */
+            if (Cotizacion == null)
+                Cotizacion = "";
+            if (Dealer == null)
+                Dealer = "";
+            if (Descripcion == null)
+                Descripcion = "";
+            if (Fase == null)
+                Fase = "";
+            if (FechadeCompra == null)
+                FechadeCompra = "";
+            if (FechadeSolicitud == null)
+                FechadeSolicitud = "";
+            if (Motor == null)
+                Motor = "";
+            if (NumerodeContrato == null)
+                NumerodeContrato = "";
+            if (NumerodeSolicitud == null)
+                NumerodeSolicitud = "";
+            if (Proceso == null)
+                Proceso = "";
+            if (RFCdelCliente == null)
+                RFCdelCliente = "";
+            if (TipodeDocumento == null)
+                TipodeDocumento = "";
+            if (TipodePersona == null)
+                TipodePersona = "";
+            if (UsuarioqueCarga == null)
+                UsuarioqueCarga = "";
+            if (VIN == null)
+                VIN = "";
+
+            //  VARIABLES REQUERIDAS
+            string _secret = "xPoZOLwQl4N1j8At2Czz1mh8pVRKyNTxECaJ2iX5NXI=";
+            string _baseURL1 = "https://mex.review.recall.com/IM39961UT1/203AppNet/UnityForm.aspx?d1=AWgri4Eie5LrkNB8NIssxdlRJJ8t60kogGE4Q%2fkBi8EGYYlZqb6tMiGJZD2KlXKLzQxS%2bgMlgVP5xgvCCAC9MQhbfNhhkbCD1HuXsOhy%2b3zBQQ2IQzdDDLqL%2f1RZo%2faE0fupstu9Q93ITWho%2fvhQpifceGy4bywbsmlpfNJkFqtp";
+            string _params = string.Empty;
+
+            // VARIABLES PARA CALCULO DE HASH
+            byte[] tokenBytes = Convert.FromBase64String(_secret);
+            byte[] calculatedHash = null;
+            //SOLICITUD DE VALORES PARA PARAMETROS
+            //Cotizacion
+            _params += "&ufprecot=" + System.Uri.EscapeDataString(Cotizacion);
+            //Dealer
+            _params += "&ufpredeal=" + System.Uri.EscapeDataString(Dealer);
+            //Descripcion
+            _params += "&ufpredscr=" + System.Uri.EscapeDataString(Descripcion);
+            //Fase
+            _params += "&ufprefase=" + System.Uri.EscapeDataString(Fase);
+            //FechadeCompra
+            _params += "&ufprefcom=" + System.Uri.EscapeDataString(FechadeCompra);
+            //FechadeSolicitud
+            _params += "&ufprefsol=" + System.Uri.EscapeDataString(FechadeSolicitud);
+            //Motor
+            _params += "&ufpremotr=" + System.Uri.EscapeDataString(Motor);
+            //NumerodeContrato
+            _params += "&ufprencont=" + System.Uri.EscapeDataString(NumerodeContrato);
+            //NumerodeSolicitud
+            _params += "&ufprensol=" + System.Uri.EscapeDataString(NumerodeSolicitud);
+            //Proceso
+            _params += "&ufpreproc=" + System.Uri.EscapeDataString(Proceso);
+            //RFCdelCliente
+            _params += "&ufprerfc=" + System.Uri.EscapeDataString(RFCdelCliente);
+            //TipodeDocumento
+            _params += "&ufpretdoc=" + System.Uri.EscapeDataString(TipodeDocumento);
+            //TipodePersona
+            _params += "&ufpretper=" + System.Uri.EscapeDataString(TipodePersona);
+            //UsuarioqueCarga
+            _params += "&ufpreucrg=" + System.Uri.EscapeDataString(UsuarioqueCarga);
+            //VIN
+            _params += "&ufprevin=" + System.Uri.EscapeDataString(VIN);
+
+
+            // PROCESAMIENTO DE HASH
+
+            using (HMACSHA256 hmac = new HMACSHA256(tokenBytes))
+            {
+                calculatedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(_params));
+            }
+            string hashString = System.Uri.EscapeDataString(Convert.ToBase64String(calculatedHash));
+
+            // CONSTRUCCIÓN DE URL FINAL
+            string url1 = _baseURL1 + _params + "&ufprehash=" + hashString;
+
+            return Ok(url1);
+
         }
 
         #endregion
@@ -927,6 +1166,34 @@ namespace DXC.TFSM.Services.Controllers
                 return NotFound();
         }
 
+        [Route("GetDealersByStateName")]
+        public async Task<IHttpActionResult> GetDealersByStateName(string stateName)
+        {
+            // Obtener la lista de distribuidores
+            var dealers = await BssDealers.GetDealers();
+
+            // Buscar el id del estado correspondiente al nombre dado
+            var states = BssCStates.GetAll();
+            List<tbl_portal_C_Estados> state = states.Where(s => s.descripcion.ToLowerInvariant().Replace("á", "a").Replace("é", "e").Replace("í", "i").Replace("ó", "o").Replace("ú", "u") == stateName.ToLowerInvariant()).ToList();
+
+            if (state == null)
+            {
+                return NotFound();
+            }
+
+            // Encontrar los distribuidores correspondientes al estado dado
+            var res = dealers.Where(x => x.IdState == state[0].id_estado).ToList();
+
+            if (res.Count > 0)
+            {
+                return Ok(new { results = res });
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
         [Route("SetDealersPostalCode")]
         [HttpPost]
         public IHttpActionResult SetDealersPostalCode(List<DealerPostalCode> data)
@@ -940,6 +1207,44 @@ namespace DXC.TFSM.Services.Controllers
             {
                 return BadRequest();
             }
+        }
+
+        [Route("getApiKey")]
+        [HttpGet]
+        public async Task<IHttpActionResult> GetApiKey()
+        {
+            //return Ok(new { results = "AIzaSyAXcPfvcjvg30JnlXggadE6_jbjnsQvCTw" });
+            // Accede a la variable de entorno
+            string apiKey = Environment.GetEnvironmentVariable("SitefinityAPI_KEY");
+
+            if (!string.IsNullOrEmpty(apiKey))
+            {
+                return Ok(new { results = apiKey });
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
+        [Route("recaptchaSiteKey")]
+        // Endpoint para obtener la clave del sitio ReCaptcha
+        [HttpGet]
+        public async Task<IHttpActionResult> GetReCaptchaSiteKey()
+        {
+            // Aquí obtienes la clave del sitio ReCaptcha desde la variable de entorno
+            string recaptchaSiteKey = Environment.GetEnvironmentVariable("SitefinityRECAPTCHA_SITE_KEY");
+            return Ok(recaptchaSiteKey);
+        }
+
+        [Route("recaptchaSecretKey")]
+        // Endpoint para obtener la clave secreta de ReCaptcha
+        [HttpGet]
+        public async Task<IHttpActionResult> GetReCaptchaSecretKey()
+        {
+            // Aquí obtienes la clave secreta de ReCaptcha desde la variable de entorno
+            string recaptchaSecretKey = Environment.GetEnvironmentVariable("SitefinityRECAPTCHA_SECRET_KEY");
+            return Ok(recaptchaSecretKey);
         }
 
         #endregion
@@ -1216,7 +1521,8 @@ namespace DXC.TFSM.Services.Controllers
             }
             catch (Exception e)
             {
-                return Content(HttpStatusCode.BadRequest, e.Message);
+                String msjError = "e.Message:" + e.Message + "\n e.Source: " + e.Source + "\n e.StackTrace:" + e.StackTrace;
+                return Content(HttpStatusCode.BadRequest, msjError);
             }
         }
 

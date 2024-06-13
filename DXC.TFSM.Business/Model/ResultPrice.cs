@@ -80,6 +80,7 @@ namespace DXC.TFSM.Business.Model
 
         public string AceptoTerminosYCondiciones { get; set; }
         public string CodigoDistribuidor { get; set; }
+        public string Distribuidor { get; set; }
         public string EstadoSeleccionado { get; set; }
         public string Precio { get; set; }
         public string ImagenAuto { get; set; }
