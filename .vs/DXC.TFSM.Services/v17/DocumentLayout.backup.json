@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\diana\\OneDrive\\Documents\\GitHub\\SitefinityAPIV4\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DFB57E05-4F0C-4EA7-882A-7E9E3298345E}|DXC.TFSM.Services\\DXC.TFSM.Services.csproj|c:\\users\\diana\\onedrive\\documents\\github\\sitefinityapiv4\\dxc.tfsm.services\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{DFB57E05-4F0C-4EA7-882A-7E9E3298345E}|DXC.TFSM.Services\\DXC.TFSM.Services.csproj|C:\\Users\\diana\\OneDrive\\Documents\\GitHub\\SitefinityAPIV4\\dxc.tfsm.services\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{DFB57E05-4F0C-4EA7-882A-7E9E3298345E}|DXC.TFSM.Services\\DXC.TFSM.Services.csproj|solutionrelative:dxc.tfsm.services\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DFB57E05-4F0C-4EA7-882A-7E9E3298345E}|DXC.TFSM.Services\\DXC.TFSM.Services.csproj|C:\\Users\\diana\\OneDrive\\Documents\\GitHub\\SitefinityAPIV4\\dxc.tfsm.services\\controllers\\cotizadorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DFB57E05-4F0C-4EA7-882A-7E9E3298345E}|DXC.TFSM.Services\\DXC.TFSM.Services.csproj|c:\\users\\diana\\onedrive\\documents\\github\\sitefinityapiv4\\dxc.tfsm.services\\controllers\\cotizadorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DFB57E05-4F0C-4EA7-882A-7E9E3298345E}|DXC.TFSM.Services\\DXC.TFSM.Services.csproj|solutionrelative:dxc.tfsm.services\\controllers\\cotizadorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -30,7 +30,8 @@
               "RelativeToolTip": "DXC.TFSM.Services\\Controllers\\CotizadorController.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T18:44:39.437Z"
+              "WhenOpened": "2024-09-05T18:44:39.437Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
